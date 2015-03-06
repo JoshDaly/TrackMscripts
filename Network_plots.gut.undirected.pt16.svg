@@ -1,0 +1,4989 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with matplotlib (http://matplotlib.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="1080pt"
+   version="1.1"
+   viewBox="0 0 2160 1080"
+   width="2160pt"
+   id="svg2"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Network_plots.gut.undirected.pt16.svg">
+  <metadata
+     id="metadata2014">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1855"
+     inkscape:window-height="992"
+     id="namedview2012"
+     showgrid="false"
+     inkscape:zoom="0.68929817"
+     inkscape:cx="1398.2413"
+     inkscape:cy="661.34563"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="figure_1" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style6">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+  </defs>
+  <g
+     id="figure_1">
+    <g
+       id="patch_1">
+      <path
+         d=" M0 1080 L2160 1080 L2160 0 L0 0 z "
+         style="fill:#ffffff;"
+         id="path10" />
+    </g>
+    <g
+       id="axes_1">
+      <g
+         id="patch_2">
+        <path
+           d=" M675 972 L1539 972 L1539 108 L675 108 z "
+           style="fill:#ffffff;"
+           id="path14" />
+      </g>
+      <g
+         id="LineCollection_1"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <defs
+           id="defs17">
+          <path
+             d=" M1412.85 -582.115 L1085 -417.94"
+             id="C0_0_78a12ff7da" />
+          <path
+             d=" M1312.22 -770.844 L1141.52 -594.889"
+             id="C0_1_95c1c29b51" />
+          <path
+             d=" M1312.22 -770.844 L1118.94 -665.66"
+             id="C0_2_5a3252339d" />
+          <path
+             d=" M1312.22 -770.844 L1208.24 -508.819"
+             id="C0_3_d96241278c" />
+          <path
+             d=" M1223.59 -253.925 L1085 -417.94"
+             id="C0_4_790d259c2e" />
+          <path
+             d=" M1223.59 -253.925 L1070.09 -233.113"
+             id="C0_5_8f2fb4e138" />
+          <path
+             d=" M1036.59 -841.085 L1263.27 -806.499"
+             id="C0_6_2045d8b576" />
+          <path
+             d=" M854.857 -360.747 L1070.09 -233.113"
+             id="C0_7_a47eb49503" />
+          <path
+             d=" M1347.86 -733.284 L1141.52 -594.889"
+             id="C0_8_5c5f1acf23" />
+          <path
+             d=" M1347.86 -733.284 L1118.94 -665.66"
+             id="C0_9_96d9f87a8b" />
+          <path
+             d=" M1347.86 -733.284 L1208.24 -508.819"
+             id="C0_a_d68f1e9ecb" />
+          <path
+             d=" M1012.93 -245.493 L1208.24 -508.819"
+             id="C0_b_332da96e00" />
+          <path
+             d=" M1012.93 -245.493 L798.429 -516.799"
+             id="C0_c_15dc2b66c7" />
+          <path
+             d=" M1012.93 -245.493 L1070.09 -233.113"
+             id="C0_d_9afc4b1179" />
+          <path
+             d=" M1415.57 -530.235 L1377.93 -391.916"
+             id="C0_e_4d767b15ee" />
+          <path
+             d=" M1415.57 -530.235 L1208.24 -508.819"
+             id="C0_f_2c95cc37dc" />
+          <path
+             d=" M1415.57 -530.235 L1409.61 -478.827"
+             id="C0_10_800f1da84e" />
+          <path
+             d=" M807.638 -461.701 L1085 -417.94"
+             id="C0_11_9628c25365" />
+          <path
+             d=" M807.638 -461.701 L931.718 -599.874"
+             id="C0_12_dcb457d09d" />
+          <path
+             d=" M807.638 -461.701 L932.369 -443.21"
+             id="C0_13_aa71ba1306" />
+          <path
+             d=" M1141.52 -594.889 L1316.54 -313.148"
+             id="C0_14_cafab67aac" />
+          <path
+             d=" M1141.52 -594.889 L899.267 -769.239"
+             id="C0_15_6eeddd458d" />
+          <path
+             d=" M1141.52 -594.889 L1118.94 -665.66"
+             id="C0_16_e0e1ffa5a7" />
+          <path
+             d=" M1141.52 -594.889 L1375.6 -692.324"
+             id="C0_17_b40f09b5ca" />
+          <path
+             d=" M1141.52 -594.889 L1263.27 -806.499"
+             id="C0_18_bd67a1bd3b" />
+          <path
+             d=" M1141.52 -594.889 L1398.16 -642.735"
+             id="C0_19_5f2766566b" />
+          <path
+             d=" M1141.52 -594.889 L1128.88 -848.325"
+             id="C0_1a_23b8e66d83" />
+          <path
+             d=" M1141.52 -594.889 L1176.78 -239.009"
+             id="C0_1b_cd334e67f6" />
+          <path
+             d=" M1141.52 -594.889 L833.89 -685.439"
+             id="C0_1c_d3e2e112dc" />
+          <path
+             d=" M1141.52 -594.889 L1278.51 -283.156"
+             id="C0_1d_016540d884" />
+          <path
+             d=" M1141.52 -594.889 L931.718 -599.874"
+             id="C0_1e_13685fb59b" />
+          <path
+             d=" M1141.52 -594.889 L1085 -417.94"
+             id="C0_1f_271cf00268" />
+          <path
+             d=" M1141.52 -594.889 L932.369 -443.21"
+             id="C0_20_daa8274816" />
+          <path
+             d=" M1141.52 -594.889 L1082.06 -848.148"
+             id="C0_21_e14c8e3af6" />
+          <path
+             d=" M1141.52 -594.889 L809.757 -626.02"
+             id="C0_22_d23c74fc6d" />
+          <path
+             d=" M809.757 -626.02 L1118.94 -665.66"
+             id="C0_23_c5d63c8808" />
+          <path
+             d=" M809.757 -626.02 L880.216 -329.628"
+             id="C0_24_d47b69896e" />
+          <path
+             d=" M880.216 -329.628 L924.812 -290.08"
+             id="C0_25_eb7216a2f1" />
+          <path
+             d=" M880.216 -329.628 L825.98 -410.537"
+             id="C0_26_afe4c3eaaf" />
+          <path
+             d=" M970.252 -262.66 L1085 -417.94"
+             id="C0_27_8e6abeb706" />
+          <path
+             d=" M1176.78 -239.009 L1070.09 -233.113"
+             id="C0_28_e4ff8c39b1" />
+          <path
+             d=" M1070.09 -233.113 L1316.54 -313.148"
+             id="C0_29_c66df4c79c" />
+          <path
+             d=" M1070.09 -233.113 L1123.94 -231.429"
+             id="C0_2a_7567d30b7e" />
+          <path
+             d=" M1070.09 -233.113 L1085 -417.94"
+             id="C0_2b_a381c5f772" />
+          <path
+             d=" M1070.09 -233.113 L932.369 -443.21"
+             id="C0_2c_429d159b60" />
+          <path
+             d=" M1278.51 -283.156 L1118.94 -665.66"
+             id="C0_2d_cbcab0043d" />
+          <path
+             d=" M937.055 -798.454 L798.429 -516.799"
+             id="C0_2e_9a97546525" />
+          <path
+             d=" M937.055 -798.454 L1215.95 -829.151"
+             id="C0_2f_af5096018b" />
+          <path
+             d=" M1208.24 -508.819 L1316.54 -313.148"
+             id="C0_30_88c596fe78" />
+          <path
+             d=" M1208.24 -508.819 L1398.16 -642.735"
+             id="C0_31_4d54c454bb" />
+          <path
+             d=" M1208.24 -508.819 L1377.93 -391.916"
+             id="C0_32_7d24b90570" />
+          <path
+             d=" M1208.24 -508.819 L799.189 -571.843"
+             id="C0_33_058f74da34" />
+          <path
+             d=" M1208.24 -508.819 L931.718 -599.874"
+             id="C0_34_9d4d951db7" />
+          <path
+             d=" M1208.24 -508.819 L1085 -417.94"
+             id="C0_35_33e284bf88" />
+          <path
+             d=" M932.369 -443.21 L1118.94 -665.66"
+             id="C0_36_3b8c56ce5a" />
+          <path
+             d=" M932.369 -443.21 L798.429 -516.799"
+             id="C0_37_1b32c5c991" />
+          <path
+             d=" M986.933 -825.007 L1172.41 -842.047"
+             id="C0_38_e4356f0748" />
+          <path
+             d=" M1350.11 -349.62 L1396.97 -433.988"
+             id="C0_39_f516c9e079" />
+          <path
+             d=" M1316.54 -313.148 L1377.93 -391.916"
+             id="C0_3a_b872894097" />
+          <path
+             d=" M1316.54 -313.148 L1409.61 -478.827"
+             id="C0_3b_06f83975e8" />
+          <path
+             d=" M1398.16 -642.735 L1118.94 -665.66"
+             id="C0_3c_0605189f04" />
+          <path
+             d=" M899.267 -769.239 L1118.94 -665.66"
+             id="C0_3d_3286765f8a" />
+          <path
+             d=" M1118.94 -665.66 L1375.6 -692.324"
+             id="C0_3e_35c634d693" />
+          <path
+             d=" M1118.94 -665.66 L1263.27 -806.499"
+             id="C0_3f_b1f88fa388" />
+          <path
+             d=" M1118.94 -665.66 L1128.88 -848.325"
+             id="C0_40_23dbb8d3e4" />
+          <path
+             d=" M1118.94 -665.66 L833.89 -685.439"
+             id="C0_41_8f26ce6e60" />
+          <path
+             d=" M1118.94 -665.66 L931.718 -599.874"
+             id="C0_42_230c41037a" />
+          <path
+             d=" M1118.94 -665.66 L1085 -417.94"
+             id="C0_43_b46594d670" />
+          <path
+             d=" M1118.94 -665.66 L1082.06 -848.148"
+             id="C0_44_be64aa6b86" />
+          <path
+             d=" M931.718 -599.874 L798.429 -516.799"
+             id="C0_45_c5fb5b7685" />
+          <path
+             d=" M1377.93 -391.916 L1409.61 -478.827"
+             id="C0_46_60d8dcf6dc" />
+          <path
+             d=" M798.429 -516.799 L858.152 -723.865"
+             id="C0_47_189423cff6" />
+          <path
+             d=" M798.429 -516.799 L1085 -417.94"
+             id="C0_48_89f5a84413" />
+        </defs>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g92">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:7;"
+             x="0.0"
+             xlink:href="#C0_0_78a12ff7da"
+             y="1080.0"
+             id="use94" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g96">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_1_95c1c29b51"
+             y="1080.0"
+             id="use98" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g100">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_2_5a3252339d"
+             y="1080.0"
+             id="use102" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g104">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3_d96241278c"
+             y="1080.0"
+             id="use106" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g108">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_4_790d259c2e"
+             y="1080.0"
+             id="use110" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g112">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_5_8f2fb4e138"
+             y="1080.0"
+             id="use114" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g116">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_6_2045d8b576"
+             y="1080.0"
+             id="use118" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g120">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_7_a47eb49503"
+             y="1080.0"
+             id="use122" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g124">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_8_5c5f1acf23"
+             y="1080.0"
+             id="use126" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g128">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_9_96d9f87a8b"
+             y="1080.0"
+             id="use130" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g132">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_a_d68f1e9ecb"
+             y="1080.0"
+             id="use134" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g136">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_b_332da96e00"
+             y="1080.0"
+             id="use138" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g140">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_c_15dc2b66c7"
+             y="1080.0"
+             id="use142" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g144">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_d_9afc4b1179"
+             y="1080.0"
+             id="use146" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g148">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_e_4d767b15ee"
+             y="1080.0"
+             id="use150" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g152">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_f_2c95cc37dc"
+             y="1080.0"
+             id="use154" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g156">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_10_800f1da84e"
+             y="1080.0"
+             id="use158" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g160">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_11_9628c25365"
+             y="1080.0"
+             id="use162" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g164">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_12_dcb457d09d"
+             y="1080.0"
+             id="use166" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g168">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_13_aa71ba1306"
+             y="1080.0"
+             id="use170" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g172">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_14_cafab67aac"
+             y="1080.0"
+             id="use174" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g176">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_15_6eeddd458d"
+             y="1080.0"
+             id="use178" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g180">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_16_e0e1ffa5a7"
+             y="1080.0"
+             id="use182" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g184">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:3;"
+             x="0.0"
+             xlink:href="#C0_17_b40f09b5ca"
+             y="1080.0"
+             id="use186" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g188">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_18_bd67a1bd3b"
+             y="1080.0"
+             id="use190" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g192">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_19_5f2766566b"
+             y="1080.0"
+             id="use194" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g196">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_1a_23b8e66d83"
+             y="1080.0"
+             id="use198" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g200">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_1b_cd334e67f6"
+             y="1080.0"
+             id="use202" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g204">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_1c_d3e2e112dc"
+             y="1080.0"
+             id="use206" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g208">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_1d_016540d884"
+             y="1080.0"
+             id="use210" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g212">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_1e_13685fb59b"
+             y="1080.0"
+             id="use214" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g216">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_1f_271cf00268"
+             y="1080.0"
+             id="use218" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g220">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:3;"
+             x="0.0"
+             xlink:href="#C0_20_daa8274816"
+             y="1080.0"
+             id="use222" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g224">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_21_e14c8e3af6"
+             y="1080.0"
+             id="use226" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g228">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:8;"
+             x="0.0"
+             xlink:href="#C0_22_d23c74fc6d"
+             y="1080.0"
+             id="use230" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g232">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_23_c5d63c8808"
+             y="1080.0"
+             id="use234" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g236">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_24_d47b69896e"
+             y="1080.0"
+             id="use238" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g240">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_25_eb7216a2f1"
+             y="1080.0"
+             id="use242" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g244">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_26_afe4c3eaaf"
+             y="1080.0"
+             id="use246" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g248">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_27_8e6abeb706"
+             y="1080.0"
+             id="use250" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g252">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_28_e4ff8c39b1"
+             y="1080.0"
+             id="use254" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g256">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_29_c66df4c79c"
+             y="1080.0"
+             id="use258" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g260">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_2a_7567d30b7e"
+             y="1080.0"
+             id="use262" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g264">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_2b_a381c5f772"
+             y="1080.0"
+             id="use266" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g268">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_2c_429d159b60"
+             y="1080.0"
+             id="use270" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g272">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_2d_cbcab0043d"
+             y="1080.0"
+             id="use274" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g276">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_2e_9a97546525"
+             y="1080.0"
+             id="use278" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g280">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_2f_af5096018b"
+             y="1080.0"
+             id="use282" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g284">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_30_88c596fe78"
+             y="1080.0"
+             id="use286" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g288">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_31_4d54c454bb"
+             y="1080.0"
+             id="use290" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g292">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_32_7d24b90570"
+             y="1080.0"
+             id="use294" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g296">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:3;"
+             x="0.0"
+             xlink:href="#C0_33_058f74da34"
+             y="1080.0"
+             id="use298" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g300">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_34_9d4d951db7"
+             y="1080.0"
+             id="use302" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g304">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_35_33e284bf88"
+             y="1080.0"
+             id="use306" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g308">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_36_3b8c56ce5a"
+             y="1080.0"
+             id="use310" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g312">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:3;"
+             x="0.0"
+             xlink:href="#C0_37_1b32c5c991"
+             y="1080.0"
+             id="use314" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g316">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_38_e4356f0748"
+             y="1080.0"
+             id="use318" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g320">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_39_f516c9e079"
+             y="1080.0"
+             id="use322" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g324">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3a_b872894097"
+             y="1080.0"
+             id="use326" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g328">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3b_06f83975e8"
+             y="1080.0"
+             id="use330" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g332">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3c_0605189f04"
+             y="1080.0"
+             id="use334" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g336">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3d_3286765f8a"
+             y="1080.0"
+             id="use338" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g340">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3e_35c634d693"
+             y="1080.0"
+             id="use342" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g344">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_3f_b1f88fa388"
+             y="1080.0"
+             id="use346" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g348">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_40_23dbb8d3e4"
+             y="1080.0"
+             id="use350" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g352">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_41_8f26ce6e60"
+             y="1080.0"
+             id="use354" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g356">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_42_230c41037a"
+             y="1080.0"
+             id="use358" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g360">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_43_b46594d670"
+             y="1080.0"
+             id="use362" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g364">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_44_be64aa6b86"
+             y="1080.0"
+             id="use366" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g368">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_45_c5fb5b7685"
+             y="1080.0"
+             id="use370" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g372">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_46_60d8dcf6dc"
+             y="1080.0"
+             id="use374" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g376">
+          <use
+             style="fill:none;stroke:#e1e1e1;"
+             x="0.0"
+             xlink:href="#C0_47_189423cff6"
+             y="1080.0"
+             id="use378" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g380">
+          <use
+             style="fill:none;stroke:#e1e1e1;stroke-width:2;"
+             x="0.0"
+             xlink:href="#C0_48_89f5a84413"
+             y="1080.0"
+             id="use382" />
+        </g>
+      </g>
+      <g
+         id="PathCollection_1"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <defs
+           id="defs385">
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_0_95d0887793" />
+          <path
+             d=" M0 7.07107 C1.87527 7.07107 3.67398 6.32602 5 5 C6.32602 3.67398 7.07107 1.87527 7.07107 0 C7.07107 -1.87527 6.32602 -3.67398 5 -5 C3.67398 -6.32602 1.87527 -7.07107 0 -7.07107 C-1.87527 -7.07107 -3.67398 -6.32602 -5 -5 C-6.32602 -3.67398 -7.07107 -1.87527 -7.07107 0 C-7.07107 1.87527 -6.32602 3.67398 -5 5 C-3.67398 6.32602 -1.87527 7.07107 0 7.07107 z "
+             id="C1_1_483d1e1a4f" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_2_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_3_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_4_95d0887793" />
+          <path
+             d=" M0 10 C2.65203 10 5.1958 8.94634 7.07107 7.07107 C8.94634 5.1958 10 2.65203 10 0 C10 -2.65203 8.94634 -5.1958 7.07107 -7.07107 C5.1958 -8.94634 2.65203 -10 0 -10 C-2.65203 -10 -5.1958 -8.94634 -7.07107 -7.07107 C-8.94634 -5.1958 -10 -2.65203 -10 0 C-10 2.65203 -8.94634 5.1958 -7.07107 7.07107 C-5.1958 8.94634 -2.65203 10 0 10 z "
+             id="C1_5_c553f55822" />
+          <path
+             d=" M0 8.66025 C2.29673 8.66025 4.49969 7.74776 6.12372 6.12372 C7.74776 4.49969 8.66025 2.29673 8.66025 0 C8.66025 -2.29673 7.74776 -4.49969 6.12372 -6.12372 C4.49969 -7.74776 2.29673 -8.66025 0 -8.66025 C-2.29673 -8.66025 -4.49969 -7.74776 -6.12372 -6.12372 C-7.74776 -4.49969 -8.66025 -2.29673 -8.66025 0 C-8.66025 2.29673 -7.74776 4.49969 -6.12372 6.12372 C-4.49969 7.74776 -2.29673 8.66025 0 8.66025 z "
+             id="C1_6_2aea4494f3" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_7_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_8_95d0887793" />
+          <path
+             d=" M0 27.8388 C7.38294 27.8388 14.4645 24.9055 19.685 19.685 C24.9055 14.4645 27.8388 7.38294 27.8388 0 C27.8388 -7.38294 24.9055 -14.4645 19.685 -19.685 C14.4645 -24.9055 7.38294 -27.8388 0 -27.8388 C-7.38294 -27.8388 -14.4645 -24.9055 -19.685 -19.685 C-24.9055 -14.4645 -27.8388 -7.38294 -27.8388 0 C-27.8388 7.38294 -24.9055 14.4645 -19.685 19.685 C-14.4645 24.9055 -7.38294 27.8388 0 27.8388 z "
+             id="C1_9_d7641bd92a" />
+          <path
+             d=" M0 8.66025 C2.29673 8.66025 4.49969 7.74776 6.12372 6.12372 C7.74776 4.49969 8.66025 2.29673 8.66025 0 C8.66025 -2.29673 7.74776 -4.49969 6.12372 -6.12372 C4.49969 -7.74776 2.29673 -8.66025 0 -8.66025 C-2.29673 -8.66025 -4.49969 -7.74776 -6.12372 -6.12372 C-7.74776 -4.49969 -8.66025 -2.29673 -8.66025 0 C-8.66025 2.29673 -7.74776 4.49969 -6.12372 6.12372 C-4.49969 7.74776 -2.29673 8.66025 0 8.66025 z "
+             id="C1_a_2aea4494f3" />
+          <path
+             d=" M0 10 C2.65203 10 5.1958 8.94634 7.07107 7.07107 C8.94634 5.1958 10 2.65203 10 0 C10 -2.65203 8.94634 -5.1958 7.07107 -7.07107 C5.1958 -8.94634 2.65203 -10 0 -10 C-2.65203 -10 -5.1958 -8.94634 -7.07107 -7.07107 C-8.94634 -5.1958 -10 -2.65203 -10 0 C-10 2.65203 -8.94634 5.1958 -7.07107 7.07107 C-5.1958 8.94634 -2.65203 10 0 10 z "
+             id="C1_b_c553f55822" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_c_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_d_95d0887793" />
+          <path
+             d=" M0 7.07107 C1.87527 7.07107 3.67398 6.32602 5 5 C6.32602 3.67398 7.07107 1.87527 7.07107 0 C7.07107 -1.87527 6.32602 -3.67398 5 -5 C3.67398 -6.32602 1.87527 -7.07107 0 -7.07107 C-1.87527 -7.07107 -3.67398 -6.32602 -5 -5 C-6.32602 -3.67398 -7.07107 -1.87527 -7.07107 0 C-7.07107 1.87527 -6.32602 3.67398 -5 5 C-3.67398 6.32602 -1.87527 7.07107 0 7.07107 z "
+             id="C1_e_483d1e1a4f" />
+          <path
+             d=" M0 7.07107 C1.87527 7.07107 3.67398 6.32602 5 5 C6.32602 3.67398 7.07107 1.87527 7.07107 0 C7.07107 -1.87527 6.32602 -3.67398 5 -5 C3.67398 -6.32602 1.87527 -7.07107 0 -7.07107 C-1.87527 -7.07107 -3.67398 -6.32602 -5 -5 C-6.32602 -3.67398 -7.07107 -1.87527 -7.07107 0 C-7.07107 1.87527 -6.32602 3.67398 -5 5 C-3.67398 6.32602 -1.87527 7.07107 0 7.07107 z "
+             id="C1_f_483d1e1a4f" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_10_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_11_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_12_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_13_95d0887793" />
+          <path
+             d=" M0 12.2474 C3.24806 12.2474 6.36353 10.957 8.66025 8.66025 C10.957 6.36353 12.2474 3.24806 12.2474 0 C12.2474 -3.24806 10.957 -6.36353 8.66025 -8.66025 C6.36353 -10.957 3.24806 -12.2474 0 -12.2474 C-3.24806 -12.2474 -6.36353 -10.957 -8.66025 -8.66025 C-10.957 -6.36353 -12.2474 -3.24806 -12.2474 0 C-12.2474 3.24806 -10.957 6.36353 -8.66025 8.66025 C-6.36353 10.957 -3.24806 12.2474 0 12.2474 z "
+             id="C1_14_12bfc86c35" />
+          <path
+             d=" M0 12.2474 C3.24806 12.2474 6.36353 10.957 8.66025 8.66025 C10.957 6.36353 12.2474 3.24806 12.2474 0 C12.2474 -3.24806 10.957 -6.36353 8.66025 -8.66025 C6.36353 -10.957 3.24806 -12.2474 0 -12.2474 C-3.24806 -12.2474 -6.36353 -10.957 -8.66025 -8.66025 C-10.957 -6.36353 -12.2474 -3.24806 -12.2474 0 C-12.2474 3.24806 -10.957 6.36353 -8.66025 8.66025 C-6.36353 10.957 -3.24806 12.2474 0 12.2474 z "
+             id="C1_15_12bfc86c35" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_16_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_17_95d0887793" />
+          <path
+             d=" M0 8.66025 C2.29673 8.66025 4.49969 7.74776 6.12372 6.12372 C7.74776 4.49969 8.66025 2.29673 8.66025 0 C8.66025 -2.29673 7.74776 -4.49969 6.12372 -6.12372 C4.49969 -7.74776 2.29673 -8.66025 0 -8.66025 C-2.29673 -8.66025 -4.49969 -7.74776 -6.12372 -6.12372 C-7.74776 -4.49969 -8.66025 -2.29673 -8.66025 0 C-8.66025 2.29673 -7.74776 4.49969 -6.12372 6.12372 C-4.49969 7.74776 -2.29673 8.66025 0 8.66025 z "
+             id="C1_18_2aea4494f3" />
+          <path
+             d=" M0 7.07107 C1.87527 7.07107 3.67398 6.32602 5 5 C6.32602 3.67398 7.07107 1.87527 7.07107 0 C7.07107 -1.87527 6.32602 -3.67398 5 -5 C3.67398 -6.32602 1.87527 -7.07107 0 -7.07107 C-1.87527 -7.07107 -3.67398 -6.32602 -5 -5 C-6.32602 -3.67398 -7.07107 -1.87527 -7.07107 0 C-7.07107 1.87527 -6.32602 3.67398 -5 5 C-3.67398 6.32602 -1.87527 7.07107 0 7.07107 z "
+             id="C1_19_483d1e1a4f" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_1a_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_1b_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_1c_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_1d_95d0887793" />
+          <path
+             d=" M0 8.66025 C2.29673 8.66025 4.49969 7.74776 6.12372 6.12372 C7.74776 4.49969 8.66025 2.29673 8.66025 0 C8.66025 -2.29673 7.74776 -4.49969 6.12372 -6.12372 C4.49969 -7.74776 2.29673 -8.66025 0 -8.66025 C-2.29673 -8.66025 -4.49969 -7.74776 -6.12372 -6.12372 C-7.74776 -4.49969 -8.66025 -2.29673 -8.66025 0 C-8.66025 2.29673 -7.74776 4.49969 -6.12372 6.12372 C-4.49969 7.74776 -2.29673 8.66025 0 8.66025 z "
+             id="C1_1e_2aea4494f3" />
+          <path
+             d=" M0 8.66025 C2.29673 8.66025 4.49969 7.74776 6.12372 6.12372 C7.74776 4.49969 8.66025 2.29673 8.66025 0 C8.66025 -2.29673 7.74776 -4.49969 6.12372 -6.12372 C4.49969 -7.74776 2.29673 -8.66025 0 -8.66025 C-2.29673 -8.66025 -4.49969 -7.74776 -6.12372 -6.12372 C-7.74776 -4.49969 -8.66025 -2.29673 -8.66025 0 C-8.66025 2.29673 -7.74776 4.49969 -6.12372 6.12372 C-4.49969 7.74776 -2.29673 8.66025 0 8.66025 z "
+             id="C1_1f_2aea4494f3" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_20_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_21_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_22_95d0887793" />
+          <path
+             d=" M0 7.07107 C1.87527 7.07107 3.67398 6.32602 5 5 C6.32602 3.67398 7.07107 1.87527 7.07107 0 C7.07107 -1.87527 6.32602 -3.67398 5 -5 C3.67398 -6.32602 1.87527 -7.07107 0 -7.07107 C-1.87527 -7.07107 -3.67398 -6.32602 -5 -5 C-6.32602 -3.67398 -7.07107 -1.87527 -7.07107 0 C-7.07107 1.87527 -6.32602 3.67398 -5 5 C-3.67398 6.32602 -1.87527 7.07107 0 7.07107 z "
+             id="C1_23_483d1e1a4f" />
+          <path
+             d=" M0 7.07107 C1.87527 7.07107 3.67398 6.32602 5 5 C6.32602 3.67398 7.07107 1.87527 7.07107 0 C7.07107 -1.87527 6.32602 -3.67398 5 -5 C3.67398 -6.32602 1.87527 -7.07107 0 -7.07107 C-1.87527 -7.07107 -3.67398 -6.32602 -5 -5 C-6.32602 -3.67398 -7.07107 -1.87527 -7.07107 0 C-7.07107 1.87527 -6.32602 3.67398 -5 5 C-3.67398 6.32602 -1.87527 7.07107 0 7.07107 z "
+             id="C1_24_483d1e1a4f" />
+          <path
+             d=" M0 36.4005 C9.65354 36.4005 18.913 32.5652 25.7391 25.7391 C32.5652 18.913 36.4005 9.65354 36.4005 0 C36.4005 -9.65354 32.5652 -18.913 25.7391 -25.7391 C18.913 -32.5652 9.65354 -36.4005 0 -36.4005 C-9.65354 -36.4005 -18.913 -32.5652 -25.7391 -25.7391 C-32.5652 -18.913 -36.4005 -9.65354 -36.4005 0 C-36.4005 9.65354 -32.5652 18.913 -25.7391 25.7391 C-18.913 32.5652 -9.65354 36.4005 0 36.4005 z "
+             id="C1_25_bae2c6c5a6" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_26_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_27_95d0887793" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_28_95d0887793" />
+          <path
+             d=" M0 19.3649 C5.13564 19.3649 10.0616 17.3245 13.6931 13.6931 C17.3245 10.0616 19.3649 5.13564 19.3649 0 C19.3649 -5.13564 17.3245 -10.0616 13.6931 -13.6931 C10.0616 -17.3245 5.13564 -19.3649 0 -19.3649 C-5.13564 -19.3649 -10.0616 -17.3245 -13.6931 -13.6931 C-17.3245 -10.0616 -19.3649 -5.13564 -19.3649 0 C-19.3649 5.13564 -17.3245 10.0616 -13.6931 13.6931 C-10.0616 17.3245 -5.13564 19.3649 0 19.3649 z "
+             id="C1_29_6b8dc3028e" />
+          <path
+             d=" M0 5 C1.32602 5 2.5979 4.47317 3.53553 3.53553 C4.47317 2.5979 5 1.32602 5 0 C5 -1.32602 4.47317 -2.5979 3.53553 -3.53553 C2.5979 -4.47317 1.32602 -5 0 -5 C-1.32602 -5 -2.5979 -4.47317 -3.53553 -3.53553 C-4.47317 -2.5979 -5 -1.32602 -5 0 C-5 1.32602 -4.47317 2.5979 -3.53553 3.53553 C-2.5979 4.47317 -1.32602 5 0 5 z "
+             id="C1_2a_95d0887793" />
+        </defs>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g430">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="1412.84614336"
+             xlink:href="#C1_0_95d0887793"
+             y="497.885211777"
+             id="use432" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g434">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1312.21754975"
+             xlink:href="#C1_1_483d1e1a4f"
+             y="309.156287836"
+             id="use436" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g438">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="1223.58896"
+             xlink:href="#C1_2_95d0887793"
+             y="826.075308925"
+             id="use440" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g442">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="1036.58746055"
+             xlink:href="#C1_3_95d0887793"
+             y="238.91506506"
+             id="use444" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g446">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="854.856513044"
+             xlink:href="#C1_4_95d0887793"
+             y="719.253362021"
+             id="use448" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g450">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1347.86461937"
+             xlink:href="#C1_5_c553f55822"
+             y="346.715549733"
+             id="use452" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g454">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1012.93369471"
+             xlink:href="#C1_6_2aea4494f3"
+             y="834.507034157"
+             id="use456" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g458">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1415.57142857"
+             xlink:href="#C1_7_95d0887793"
+             y="549.764897689"
+             id="use460" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g462">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="807.638190504"
+             xlink:href="#C1_8_95d0887793"
+             y="618.299377822"
+             id="use464" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g466">
+          <use
+             style="fill:#e41a1c;fill-opacity:0.7;"
+             x="1141.52081172"
+             xlink:href="#C1_9_d7641bd92a"
+             y="485.111367264"
+             id="use468" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g470">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="809.756668916"
+             xlink:href="#C1_a_2aea4494f3"
+             y="453.979948904"
+             id="use472" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g474">
+          <use
+             style="fill:#999999;fill-opacity:0.7;"
+             x="880.216324751"
+             xlink:href="#C1_b_c553f55822"
+             y="750.372195397"
+             id="use476" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g478">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="825.980159454"
+             xlink:href="#C1_c_95d0887793"
+             y="669.462829795"
+             id="use480" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g482">
+          <use
+             style="fill:#e41a1c;fill-opacity:0.7;"
+             x="970.251984639"
+             xlink:href="#C1_d_95d0887793"
+             y="817.340255803"
+             id="use484" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g486">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1176.77875246"
+             xlink:href="#C1_e_483d1e1a4f"
+             y="840.990845228"
+             id="use488" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g490">
+          <use
+             style="fill:#ffff33;fill-opacity:0.7;"
+             x="1070.0899801"
+             xlink:href="#C1_f_483d1e1a4f"
+             y="846.886813614"
+             id="use492" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g494">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1278.50725109"
+             xlink:href="#C1_10_95d0887793"
+             y="796.844313093"
+             id="use496" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g498">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="937.05543665"
+             xlink:href="#C1_11_95d0887793"
+             y="281.545944052"
+             id="use500" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g502">
+          <use
+             style="fill:#ffff33;fill-opacity:0.7;"
+             x="1215.94916555"
+             xlink:href="#C1_12_95d0887793"
+             y="250.849023116"
+             id="use504" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g506">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="924.811665048"
+             xlink:href="#C1_13_95d0887793"
+             y="789.919882669"
+             id="use508" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g510">
+          <use
+             style="fill:#ffff33;fill-opacity:0.7;"
+             x="1208.24483122"
+             xlink:href="#C1_14_12bfc86c35"
+             y="571.181249532"
+             id="use512" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g514">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="932.36873683"
+             xlink:href="#C1_15_12bfc86c35"
+             y="636.78983458"
+             id="use516" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g518">
+          <use
+             style="fill:#ff7f00;fill-opacity:0.7;"
+             x="986.932568985"
+             xlink:href="#C1_16_95d0887793"
+             y="254.992876344"
+             id="use520" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g522">
+          <use
+             style="fill:#e41a1c;fill-opacity:0.7;"
+             x="1350.10919924"
+             xlink:href="#C1_17_95d0887793"
+             y="730.380079915"
+             id="use524" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g526">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1316.53714043"
+             xlink:href="#C1_18_2aea4494f3"
+             y="766.851596162"
+             id="use528" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g530">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1398.16387822"
+             xlink:href="#C1_19_483d1e1a4f"
+             y="437.2652795"
+             id="use532" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g534">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="899.267417592"
+             xlink:href="#C1_1a_95d0887793"
+             y="310.761201822"
+             id="use536" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g538">
+          <use
+             style="fill:#ffff33;fill-opacity:0.7;"
+             x="1118.94375158"
+             xlink:href="#C1_1b_95d0887793"
+             y="414.340160615"
+             id="use540" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g542">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1375.60411562"
+             xlink:href="#C1_1c_95d0887793"
+             y="387.67565662"
+             id="use544" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g546">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1123.94428125"
+             xlink:href="#C1_1d_95d0887793"
+             y="848.571428571"
+             id="use548" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g550">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1263.2695736"
+             xlink:href="#C1_1e_2aea4494f3"
+             y="273.500892216"
+             id="use552" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g554">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="931.718477942"
+             xlink:href="#C1_1f_2aea4494f3"
+             y="480.125592716"
+             id="use556" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g558">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1128.88142118"
+             xlink:href="#C1_20_95d0887793"
+             y="231.674816476"
+             id="use560" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g562">
+          <use
+             style="fill:#377eb8;fill-opacity:0.7;"
+             x="1377.92547863"
+             xlink:href="#C1_21_95d0887793"
+             y="688.083862532"
+             id="use564" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g566">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="1172.41205716"
+             xlink:href="#C1_22_95d0887793"
+             y="237.953353396"
+             id="use568" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g570">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="833.889659485"
+             xlink:href="#C1_23_483d1e1a4f"
+             y="394.56106392"
+             id="use572" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g574">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1082.05935718"
+             xlink:href="#C1_24_483d1e1a4f"
+             y="231.851869249"
+             id="use576" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g578">
+          <use
+             style="fill:#01b5b5;fill-opacity:0.7;"
+             x="798.428571429"
+             xlink:href="#C1_25_bae2c6c5a6"
+             y="563.20133431"
+             id="use580" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g582">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="799.189462832"
+             xlink:href="#C1_26_95d0887793"
+             y="508.157038835"
+             id="use584" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g586">
+          <use
+             style="fill:#e41a1c;fill-opacity:0.7;"
+             x="858.152474926"
+             xlink:href="#C1_27_95d0887793"
+             y="356.134504238"
+             id="use588" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g590">
+          <use
+             style="fill:#ffff33;fill-opacity:0.7;"
+             x="1396.96512256"
+             xlink:href="#C1_28_95d0887793"
+             y="646.012344636"
+             id="use592" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g594">
+          <use
+             style="fill:#4daf4a;fill-opacity:0.7;"
+             x="1085.00422901"
+             xlink:href="#C1_29_6b8dc3028e"
+             y="662.060383878"
+             id="use596" />
+        </g>
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g598">
+          <use
+             style="fill:#984ea3;fill-opacity:0.7;"
+             x="1409.60557375"
+             xlink:href="#C1_2a_95d0887793"
+             y="601.173405051"
+             id="use600" />
+        </g>
+      </g>
+      <g
+         id="matplotlib.axis_1">
+        <g
+           id="xtick_1" />
+        <g
+           id="xtick_2" />
+        <g
+           id="xtick_3" />
+        <g
+           id="xtick_4" />
+        <g
+           id="xtick_5" />
+        <g
+           id="xtick_6" />
+        <g
+           id="xtick_7" />
+        <g
+           id="xtick_8" />
+      </g>
+      <g
+         id="matplotlib.axis_2">
+        <g
+           id="ytick_1">
+          <g
+             id="line2d_1">
+            <defs
+               id="defs614">
+              <path
+                 d=" M0 0 L4 0"
+                 id="m728421d6d4"
+                 style="stroke:#000000;stroke-width:0.5;" />
+            </defs>
+            <g
+               id="g617">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="972.0"
+                 id="use619" />
+            </g>
+          </g>
+          <g
+             id="line2d_2">
+            <defs
+               id="defs622">
+              <path
+                 d=" M0 0 L-4 0"
+                 id="mcb0005524f"
+                 style="stroke:#000000;stroke-width:0.5;" />
+            </defs>
+            <g
+               id="g625">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="972.0"
+                 id="use627" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_2">
+          <g
+             id="line2d_3">
+            <g
+               id="g631">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="848.571428571"
+                 id="use633" />
+            </g>
+          </g>
+          <g
+             id="line2d_4">
+            <g
+               id="g636">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="848.571428571"
+                 id="use638" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_3">
+          <g
+             id="line2d_5">
+            <g
+               id="g642">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="725.142857143"
+                 id="use644" />
+            </g>
+          </g>
+          <g
+             id="line2d_6">
+            <g
+               id="g647">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="725.142857143"
+                 id="use649" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_4">
+          <g
+             id="line2d_7">
+            <g
+               id="g653">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="601.714285714"
+                 id="use655" />
+            </g>
+          </g>
+          <g
+             id="line2d_8">
+            <g
+               id="g658">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="601.714285714"
+                 id="use660" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_5">
+          <g
+             id="line2d_9">
+            <g
+               id="g664">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="478.285714286"
+                 id="use666" />
+            </g>
+          </g>
+          <g
+             id="line2d_10">
+            <g
+               id="g669">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="478.285714286"
+                 id="use671" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_6">
+          <g
+             id="line2d_11">
+            <g
+               id="g675">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="354.857142857"
+                 id="use677" />
+            </g>
+          </g>
+          <g
+             id="line2d_12">
+            <g
+               id="g680">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="354.857142857"
+                 id="use682" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_7">
+          <g
+             id="line2d_13">
+            <g
+               id="g686">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="675.0"
+                 xlink:href="#m728421d6d4"
+                 y="231.428571429"
+                 id="use688" />
+            </g>
+          </g>
+          <g
+             id="line2d_14">
+            <g
+               id="g691">
+              <use
+                 style="stroke:#000000;stroke-width:0.5;"
+                 x="1539.0"
+                 xlink:href="#mcb0005524f"
+                 y="231.428571429"
+                 id="use693" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="ytick_8" />
+      </g>
+      <g
+         id="patch_3">
+        <path
+           d=" M675 108 L1539 108"
+           style="fill:none;stroke:#000000;"
+           id="path697" />
+      </g>
+      <g
+         id="patch_4">
+        <path
+           d=" M1539 972 L1539 108"
+           style="fill:none;stroke:#000000;"
+           id="path700" />
+      </g>
+      <g
+         id="patch_5">
+        <path
+           d=" M675 972 L1539 972"
+           style="fill:none;stroke:#000000;"
+           id="path703" />
+      </g>
+      <g
+         id="patch_6">
+        <path
+           d=" M675 972 L675 108"
+           style="fill:none;stroke:#000000;"
+           id="path706" />
+      </g>
+      <g
+         id="text_1"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g709">
+          <!-- Klebsiella -->
+          <defs
+             id="defs711">
+            <path
+               d=" M9.8125 72.9062 L19.6719 72.9062 L19.6719 42.0938 L52.3906 72.9062 L65.0938 72.9062 L28.9062 38.9219 L67.6719 0 L54.6875 0 L19.6719 35.1094 L19.6719 0 L9.8125 0 z "
+               id="BitstreamVeraSans-Roman-4b" />
+            <path
+               d=" M9.42188 75.9844 L18.4062 75.9844 L18.4062 0 L9.42188 0 z "
+               id="BitstreamVeraSans-Roman-6c" />
+            <path
+               d=" M9.42188 54.6875 L18.4062 54.6875 L18.4062 0 L9.42188 0 z  M9.42188 75.9844 L18.4062 75.9844 L18.4062 64.5938 L9.42188 64.5938 z "
+               id="BitstreamVeraSans-Roman-69" />
+            <path
+               d=" M56.2031 29.5938 L56.2031 25.2031 L14.8906 25.2031 Q15.4844 15.9219 20.4844 11.0625 Q25.4844 6.20312 34.4219 6.20312 Q39.5938 6.20312 44.4531 7.46875 Q49.3125 8.73438 54.1094 11.2812 L54.1094 2.78125 Q49.2656 0.734375 44.1875 -0.34375 Q39.1094 -1.42188 33.8906 -1.42188 Q20.7969 -1.42188 13.1562 6.1875 Q5.51562 13.8125 5.51562 26.8125 Q5.51562 40.2344 12.7656 48.1094 Q20.0156 56 32.3281 56 Q43.3594 56 49.7812 48.8906 Q56.2031 41.7969 56.2031 29.5938 M47.2188 32.2344 Q47.125 39.5938 43.0938 43.9844 Q39.0625 48.3906 32.4219 48.3906 Q24.9062 48.3906 20.3906 44.1406 Q15.875 39.8906 15.1875 32.1719 z "
+               id="BitstreamVeraSans-Roman-65" />
+            <path
+               d=" M34.2812 27.4844 Q23.3906 27.4844 19.1875 25 Q14.9844 22.5156 14.9844 16.5 Q14.9844 11.7188 18.1406 8.90625 Q21.2969 6.10938 26.7031 6.10938 Q34.1875 6.10938 38.7031 11.4062 Q43.2188 16.7031 43.2188 25.4844 L43.2188 27.4844 z  M52.2031 31.2031 L52.2031 0 L43.2188 0 L43.2188 8.29688 Q40.1406 3.32812 35.5469 0.953125 Q30.9531 -1.42188 24.3125 -1.42188 Q15.9219 -1.42188 10.9531 3.29688 Q6 8.01562 6 15.9219 Q6 25.1406 12.1719 29.8281 Q18.3594 34.5156 30.6094 34.5156 L43.2188 34.5156 L43.2188 35.4062 Q43.2188 41.6094 39.1406 45 Q35.0625 48.3906 27.6875 48.3906 Q23 48.3906 18.5469 47.2656 Q14.1094 46.1406 10.0156 43.8906 L10.0156 52.2031 Q14.9375 54.1094 19.5781 55.0469 Q24.2188 56 28.6094 56 Q40.4844 56 46.3438 49.8438 Q52.2031 43.7031 52.2031 31.2031"
+               id="BitstreamVeraSans-Roman-61" />
+            <path
+               d=" M44.2812 53.0781 L44.2812 44.5781 Q40.4844 46.5312 36.375 47.5 Q32.2812 48.4844 27.875 48.4844 Q21.1875 48.4844 17.8438 46.4375 Q14.5 44.3906 14.5 40.2812 Q14.5 37.1562 16.8906 35.375 Q19.2812 33.5938 26.5156 31.9844 L29.5938 31.2969 Q39.1562 29.25 43.1875 25.5156 Q47.2188 21.7812 47.2188 15.0938 Q47.2188 7.46875 41.1875 3.01562 Q35.1562 -1.42188 24.6094 -1.42188 Q20.2188 -1.42188 15.4531 -0.5625 Q10.6875 0.296875 5.42188 2 L5.42188 11.2812 Q10.4062 8.6875 15.2344 7.39062 Q20.0625 6.10938 24.8125 6.10938 Q31.1562 6.10938 34.5625 8.28125 Q37.9844 10.4531 37.9844 14.4062 Q37.9844 18.0625 35.5156 20.0156 Q33.0625 21.9688 24.7031 23.7812 L21.5781 24.5156 Q13.2344 26.2656 9.51562 29.9062 Q5.8125 33.5469 5.8125 39.8906 Q5.8125 47.6094 11.2812 51.7969 Q16.75 56 26.8125 56 Q31.7812 56 36.1719 55.2656 Q40.5781 54.5469 44.2812 53.0781"
+               id="BitstreamVeraSans-Roman-73" />
+            <path
+               d=" M48.6875 27.2969 Q48.6875 37.2031 44.6094 42.8438 Q40.5312 48.4844 33.4062 48.4844 Q26.2656 48.4844 22.1875 42.8438 Q18.1094 37.2031 18.1094 27.2969 Q18.1094 17.3906 22.1875 11.75 Q26.2656 6.10938 33.4062 6.10938 Q40.5312 6.10938 44.6094 11.75 Q48.6875 17.3906 48.6875 27.2969 M18.1094 46.3906 Q20.9531 51.2656 25.2656 53.625 Q29.5938 56 35.5938 56 Q45.5625 56 51.7812 48.0938 Q58.0156 40.1875 58.0156 27.2969 Q58.0156 14.4062 51.7812 6.48438 Q45.5625 -1.42188 35.5938 -1.42188 Q29.5938 -1.42188 25.2656 0.953125 Q20.9531 3.32812 18.1094 8.20312 L18.1094 0 L9.07812 0 L9.07812 75.9844 L18.1094 75.9844 z "
+               id="BitstreamVeraSans-Roman-62" />
+          </defs>
+          <g
+             transform="translate(1376.22739336 502.300211777)scale(0.16 -0.16)"
+             id="g720">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-4b"
+               id="use722" />
+            <use
+               x="65.576171875"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use724" />
+            <use
+               x="93.359375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use726" />
+            <use
+               x="154.8828125"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use728" />
+            <use
+               x="218.359375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use730" />
+            <use
+               x="270.458984375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use732" />
+            <use
+               x="298.2421875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use734" />
+            <use
+               x="359.765625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use736" />
+            <use
+               x="387.548828125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use738" />
+            <use
+               x="415.33203125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use740" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_2"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g743">
+          <!-- Blautia -->
+          <defs
+             id="defs745">
+            <path
+               d=" M18.3125 70.2188 L18.3125 54.6875 L36.8125 54.6875 L36.8125 47.7031 L18.3125 47.7031 L18.3125 18.0156 Q18.3125 11.3281 20.1406 9.42188 Q21.9688 7.51562 27.5938 7.51562 L36.8125 7.51562 L36.8125 0 L27.5938 0 Q17.1875 0 13.2344 3.875 Q9.28125 7.76562 9.28125 18.0156 L9.28125 47.7031 L2.6875 47.7031 L2.6875 54.6875 L9.28125 54.6875 L9.28125 70.2188 z "
+               id="BitstreamVeraSans-Roman-74" />
+            <path
+               d=" M8.5 21.5781 L8.5 54.6875 L17.4844 54.6875 L17.4844 21.9219 Q17.4844 14.1562 20.5 10.2656 Q23.5312 6.39062 29.5938 6.39062 Q36.8594 6.39062 41.0781 11.0312 Q45.3125 15.6719 45.3125 23.6875 L45.3125 54.6875 L54.2969 54.6875 L54.2969 0 L45.3125 0 L45.3125 8.40625 Q42.0469 3.42188 37.7188 1 Q33.4062 -1.42188 27.6875 -1.42188 Q18.2656 -1.42188 13.375 4.4375 Q8.5 10.2969 8.5 21.5781"
+               id="BitstreamVeraSans-Roman-75" />
+            <path
+               d=" M19.6719 34.8125 L19.6719 8.10938 L35.5 8.10938 Q43.4531 8.10938 47.2812 11.4062 Q51.125 14.7031 51.125 21.4844 Q51.125 28.3281 47.2812 31.5625 Q43.4531 34.8125 35.5 34.8125 z  M19.6719 64.7969 L19.6719 42.8281 L34.2812 42.8281 Q41.5 42.8281 45.0312 45.5312 Q48.5781 48.25 48.5781 53.8125 Q48.5781 59.3281 45.0312 62.0625 Q41.5 64.7969 34.2812 64.7969 z  M9.8125 72.9062 L35.0156 72.9062 Q46.2969 72.9062 52.3906 68.2188 Q58.5 63.5312 58.5 54.8906 Q58.5 48.1875 55.375 44.2344 Q52.25 40.2812 46.1875 39.3125 Q53.4688 37.75 57.5 32.7812 Q61.5312 27.8281 61.5312 20.4062 Q61.5312 10.6406 54.8906 5.3125 Q48.25 0 35.9844 0 L9.8125 0 z "
+               id="BitstreamVeraSans-Roman-42" />
+          </defs>
+          <g
+             transform="translate(1285.78379975 313.571287836)scale(0.16 -0.16)"
+             id="g750">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-42"
+               id="use752" />
+            <use
+               x="68.603515625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use754" />
+            <use
+               x="96.38671875"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use756" />
+            <use
+               x="157.666015625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use758" />
+            <use
+               x="221.044921875"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use760" />
+            <use
+               x="260.25390625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use762" />
+            <use
+               x="288.037109375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use764" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_3"
+         transform="translate(-54.715272,-22.436721)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g767"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- Peptoclostridium -->
+          <defs
+             id="defs769">
+            <path
+               d="M 52,44.1875 Q 55.375,50.25 60.0625,53.125 64.75,56 71.0938,56 q 8.5468,0 13.1874,-5.9844 4.6407,-5.9687 4.6407,-17 l 0,-33.0156 -9.0313,0 0,32.7188 q 0,7.8593 -2.7968,11.6562 -2.7813,3.8125 -8.4844,3.8125 -6.9844,0 -11.0469,-4.6406 -4.0469,-4.625 -4.0469,-12.6407 l 0,-30.9062 -9.0312,0 0,32.7188 q 0,7.9062 -2.7813,11.6874 -2.7812,3.7813 -8.5937,3.7813 -6.8906,0 -10.9532,-4.6563 -4.0468,-4.6562 -4.0468,-12.625 l 0,-30.9062 -9.03128,0 0,54.6875 9.03128,0 0,-8.5 q 3.0781,5.0313 7.375,7.4219 Q 29.7812,56 35.6875,56 41.6562,56 45.8281,52.9688 50,49.9531 52,44.1875"
+               id="BitstreamVeraSans-Roman-6d"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 30.6094,48.3906 q -7.2188,0 -11.4219,-5.6406 -4.2031,-5.6406 -4.2031,-15.4531 0,-9.8125 4.1718,-15.4531 4.1876,-5.64068 11.4532,-5.64068 7.1875,0 11.375,5.65628 4.2031,5.6718 4.2031,15.4375 0,9.7187 -4.2031,15.4062 -4.1875,5.6875 -11.375,5.6875 m 0,7.6094 q 11.7187,0 18.4062,-7.625 6.7032,-7.6094 6.7032,-21.0781 0,-13.4219 -6.7032,-21.07815 -6.6875,-7.64063 -18.4062,-7.64063 -11.7656,0 -18.4375,7.64063 -6.65628,7.65625 -6.65628,21.07815 0,13.4687 6.65628,21.0781 Q 18.8438,56 30.6094,56"
+               id="BitstreamVeraSans-Roman-6f"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 19.6719,64.7969 0,-27.3907 12.4062,0 q 6.8907,0 10.6407,3.5626 3.7656,3.5624 3.7656,10.1562 0,6.5469 -3.7656,10.1094 -3.75,3.5625 -10.6407,3.5625 z m -9.8594,8.1093 22.2656,0 q 12.2657,0 18.5313,-5.5468 6.2812,-5.5469 6.2812,-16.2344 0,-10.7969 -6.2812,-16.3125 -6.2656,-5.5156 -18.5313,-5.5156 l -12.4062,0 0,-29.2969 -9.8594,0 z"
+               id="BitstreamVeraSans-Roman-50"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 18.1094,8.20312 0,-29.00002 -9.03128,0 0,75.4844 9.03128,0 0,-8.2969 q 2.8437,4.875 7.1562,7.2344 Q 29.5938,56 35.5938,56 q 9.9687,0 16.1874,-7.9062 6.2344,-7.9063 6.2344,-20.7969 0,-12.8907 -6.2344,-20.81252 -6.2187,-7.90626 -16.1874,-7.90626 -6,0 -10.3282,2.375005 Q 20.9531,3.32812 18.1094,8.20312 M 48.6875,27.2969 q 0,9.9062 -4.0781,15.5469 -4.0782,5.6406 -11.2032,5.6406 -7.1406,0 -11.2187,-5.6406 -4.0781,-5.6407 -4.0781,-15.5469 0,-9.9063 4.0781,-15.5469 4.0781,-5.64062 11.2187,-5.64062 7.125,0 11.2032,5.64062 4.0781,5.6406 4.0781,15.5469"
+               id="BitstreamVeraSans-Roman-70"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 45.4062,46.3906 0,29.5938 8.9844,0 0,-75.9844 -8.9844,0 0,8.20312 Q 42.5781,3.32812 38.25,0.953125 33.9375,-1.42188 27.875,-1.42188 q -9.9062,0 -16.1406,7.90626 -6.21878,7.92182 -6.21878,20.81252 0,12.8906 6.21878,20.7969 Q 17.9688,56 27.875,56 q 6.0625,0 10.375,-2.375 4.3281,-2.3594 7.1562,-7.2344 M 14.7969,27.2969 q 0,-9.9063 4.0781,-15.5469 4.0781,-5.64062 11.2031,-5.64062 7.125,0 11.2188,5.64062 4.1093,5.6406 4.1093,15.5469 0,9.9062 -4.1093,15.5469 -4.0938,5.6406 -11.2188,5.6406 -7.125,0 -11.2031,-5.6406 -4.0781,-5.6407 -4.0781,-15.5469"
+               id="BitstreamVeraSans-Roman-64"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 41.1094,46.2969 q -1.5156,0.875 -3.2969,1.2812 Q 36.0312,48 33.8906,48 26.2656,48 22.1875,43.0469 18.1094,38.0938 18.1094,28.8125 l 0,-28.8125 -9.03128,0 0,54.6875 9.03128,0 0,-8.5 q 2.8437,4.9844 7.375,7.3906 Q 30.0312,56 36.5312,56 q 0.9219,0 2.0469,-0.125 1.125,-0.1094 2.4844,-0.3594 z"
+               id="BitstreamVeraSans-Roman-72"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 48.7812,52.5938 0,-8.4063 q -3.8124,2.1094 -7.6406,3.1563 -3.8281,1.0468 -7.7344,1.0468 -8.75,0 -13.5937,-5.5468 -4.8281,-5.5313 -4.8281,-15.5469 0,-10.0157 4.8281,-15.5625 4.8437,-5.53128 13.5937,-5.53128 3.9063,0 7.7344,1.04688 3.8282,1.04688 7.6406,3.1562 l 0,-8.31245 q -3.7656,-1.75 -7.7968,-2.625 -4.0156,-0.89063 -8.5625,-0.89063 -12.3594,0 -19.6407,7.76563 -7.26558,7.76565 -7.26558,20.95315 0,13.375 7.34378,21.0312 Q 20.2188,56 33.0156,56 q 4.1406,0 8.0938,-0.8594 3.9531,-0.8437 7.6718,-2.5468"
+               id="BitstreamVeraSans-Roman-63"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+          </defs>
+          <g
+             transform="matrix(0.16,0,0,-0.16,1016.4619,236.26687)"
+             id="g778"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-50"
+               id="use780"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="56.677734"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use782"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="118.20117"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use784"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="181.67773"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use786"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="220.88672"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use788"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="282.06836"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use790"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="337.04883"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use792"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="364.83203"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use794"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="426.01367"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use796"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="478.11328"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use798"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="517.32227"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use800"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="558.43555"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use802"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="586.21875"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use804"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="649.69531"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use806"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="677.47852"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use808"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="740.85742"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use810"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_4"
+         transform="translate(-15.592705,21.74772)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g813"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- Eggerthella -->
+          <defs
+             id="defs815">
+            <path
+               d="m 9.8125,72.9062 46.0937,0 0,-8.3124 -36.2343,0 0,-21.5782 34.7187,0 0,-8.2968 -34.7187,0 0,-26.42192 37.1093,0 L 56.7812,0 9.8125,0 z"
+               id="BitstreamVeraSans-Roman-45"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 45.4062,27.9844 q 0,9.7656 -4.0312,15.125 -4.0156,5.375 -11.2969,5.375 -7.2187,0 -11.25,-5.375 -4.0312,-5.3594 -4.0312,-15.125 0,-9.7188 4.0312,-15.0938 4.0313,-5.37498 11.25,-5.37498 7.2813,0 11.2969,5.37498 4.0312,5.375 4.0312,15.0938 M 54.3906,6.78125 q 0,-13.95313 -6.2031,-20.76565 -6.1875,-6.8125 -18.9844,-6.8125 -4.7343,0 -8.9375,0.7031 -4.2031,0.7032 -8.1562,2.1719 l 0,8.7344 q 3.9531,-2.1406 7.8125,-3.1563 3.8593,-1.0312 7.8593,-1.0312 8.8438,0 13.2344,4.60938 4.3906,4.60937 4.3906,13.9375 l 0,4.45312 Q 42.625,4.78125 38.2812,2.39062 33.9375,0 27.875,0 17.8281,0 11.6719,7.65625 5.51562,15.3281 5.51562,27.9844 q 0,12.6875 6.15628,20.3437 Q 17.8281,56 27.875,56 q 6.0625,0 10.4062,-2.3906 4.3438,-2.3906 7.125,-7.2188 l 0,8.2969 8.9844,0 z"
+               id="BitstreamVeraSans-Roman-67"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+            <path
+               d="m 54.8906,33.0156 0,-33.0156 -8.9844,0 0,32.7188 q 0,7.7656 -3.0312,11.6093 -3.0312,3.8594 -9.0781,3.8594 -7.2813,0 -11.4844,-4.6406 -4.2031,-4.625 -4.2031,-12.6407 l 0,-30.9062 -9.03128,0 0,75.9844 9.03128,0 0,-29.7969 q 3.2344,4.9375 7.5937,7.375 Q 30.0781,56 35.7969,56 q 9.4219,0 14.25,-5.8281 4.8437,-5.8281 4.8437,-17.1563"
+               id="BitstreamVeraSans-Roman-68"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+          </defs>
+          <g
+             transform="matrix(0.16,0,0,-0.16,1025.7012,851.30181)"
+             id="g820"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-45"
+               id="use822"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="63.183594"
+               xlink:href="#BitstreamVeraSans-Roman-67"
+               id="use824"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="126.66016"
+               xlink:href="#BitstreamVeraSans-Roman-67"
+               id="use826"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="190.13672"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use828"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="251.66016"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use830"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="292.77344"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use832"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="331.98242"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use834"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="395.36133"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use836"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="456.88477"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use838"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="484.66797"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use840"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="512.45117"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use842"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_5"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g845">
+          <!-- Parasutterella -->
+          <g
+             transform="translate(1169.73146 830.490308925)scale(0.16 -0.16)"
+             id="g847">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-50"
+               id="use849" />
+            <use
+               x="55.802734375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use851" />
+            <use
+               x="117.08203125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use853" />
+            <use
+               x="158.1953125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use855" />
+            <use
+               x="219.474609375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use857" />
+            <use
+               x="271.57421875"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use859" />
+            <use
+               x="334.953125"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use861" />
+            <use
+               x="374.162109375"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use863" />
+            <use
+               x="413.37109375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use865" />
+            <use
+               x="474.89453125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use867" />
+            <use
+               x="513.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use869" />
+            <use
+               x="575.28125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use871" />
+            <use
+               x="603.064453125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use873" />
+            <use
+               x="630.84765625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use875" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_6"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g878">
+          <!-- Acidaminococcus -->
+          <defs
+             id="defs880">
+            <path
+               d=" M54.8906 33.0156 L54.8906 0 L45.9062 0 L45.9062 32.7188 Q45.9062 40.4844 42.875 44.3281 Q39.8438 48.1875 33.7969 48.1875 Q26.5156 48.1875 22.3125 43.5469 Q18.1094 38.9219 18.1094 30.9062 L18.1094 0 L9.07812 0 L9.07812 54.6875 L18.1094 54.6875 L18.1094 46.1875 Q21.3438 51.125 25.7031 53.5625 Q30.0781 56 35.7969 56 Q45.2188 56 50.0469 50.1719 Q54.8906 44.3438 54.8906 33.0156"
+               id="BitstreamVeraSans-Roman-6e" />
+            <path
+               d=" M34.1875 63.1875 L20.7969 26.9062 L47.6094 26.9062 z  M28.6094 72.9062 L39.7969 72.9062 L67.5781 0 L57.3281 0 L50.6875 18.7031 L17.8281 18.7031 L11.1875 0 L0.78125 0 z "
+               id="BitstreamVeraSans-Roman-41" />
+          </defs>
+          <g
+             transform="translate(786.065263044 723.668362021)scale(0.16 -0.16)"
+             id="g884">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-41"
+               id="use886" />
+            <use
+               x="66.658203125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use888" />
+            <use
+               x="121.638671875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use890" />
+            <use
+               x="149.421875"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use892" />
+            <use
+               x="212.8984375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use894" />
+            <use
+               x="274.177734375"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use896" />
+            <use
+               x="371.58984375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use898" />
+            <use
+               x="399.373046875"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use900" />
+            <use
+               x="462.751953125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use902" />
+            <use
+               x="523.93359375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use904" />
+            <use
+               x="578.9140625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use906" />
+            <use
+               x="640.095703125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use908" />
+            <use
+               x="695.076171875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use910" />
+            <use
+               x="750.056640625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use912" />
+            <use
+               x="813.435546875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use914" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_7"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g917">
+          <!-- DSM_3991 -->
+          <defs
+             id="defs919">
+            <path
+               d=" M40.5781 39.3125 Q47.6562 37.7969 51.625 33 Q55.6094 28.2188 55.6094 21.1875 Q55.6094 10.4062 48.1875 4.48438 Q40.7656 -1.42188 27.0938 -1.42188 Q22.5156 -1.42188 17.6562 -0.515625 Q12.7969 0.390625 7.625 2.20312 L7.625 11.7188 Q11.7188 9.32812 16.5938 8.10938 Q21.4844 6.89062 26.8125 6.89062 Q36.0781 6.89062 40.9375 10.5469 Q45.7969 14.2031 45.7969 21.1875 Q45.7969 27.6406 41.2812 31.2656 Q36.7656 34.9062 28.7188 34.9062 L20.2188 34.9062 L20.2188 43.0156 L29.1094 43.0156 Q36.375 43.0156 40.2344 45.9219 Q44.0938 48.8281 44.0938 54.2969 Q44.0938 59.9062 40.1094 62.9062 Q36.1406 65.9219 28.7188 65.9219 Q24.6562 65.9219 20.0156 65.0312 Q15.375 64.1562 9.8125 62.3125 L9.8125 71.0938 Q15.4375 72.6562 20.3438 73.4375 Q25.25 74.2188 29.5938 74.2188 Q40.8281 74.2188 47.3594 69.1094 Q53.9062 64.0156 53.9062 55.3281 Q53.9062 49.2656 50.4375 45.0938 Q46.9688 40.9219 40.5781 39.3125"
+               id="BitstreamVeraSans-Roman-33" />
+            <path
+               d=" M9.8125 72.9062 L24.5156 72.9062 L43.1094 23.2969 L61.8125 72.9062 L76.5156 72.9062 L76.5156 0 L66.8906 0 L66.8906 64.0156 L48.0938 14.0156 L38.1875 14.0156 L19.3906 64.0156 L19.3906 0 L9.8125 0 z "
+               id="BitstreamVeraSans-Roman-4d" />
+            <path
+               d=" M50.9844 -16.6094 L50.9844 -23.5781 L-0.984375 -23.5781 L-0.984375 -16.6094 z "
+               id="BitstreamVeraSans-Roman-5f" />
+            <path
+               d=" M10.9844 1.51562 L10.9844 10.5 Q14.7031 8.73438 18.5 7.8125 Q22.3125 6.89062 25.9844 6.89062 Q35.75 6.89062 40.8906 13.4531 Q46.0469 20.0156 46.7812 33.4062 Q43.9531 29.2031 39.5938 26.9531 Q35.25 24.7031 29.9844 24.7031 Q19.0469 24.7031 12.6719 31.3125 Q6.29688 37.9375 6.29688 49.4219 Q6.29688 60.6406 12.9375 67.4219 Q19.5781 74.2188 30.6094 74.2188 Q43.2656 74.2188 49.9219 64.5156 Q56.5938 54.8281 56.5938 36.375 Q56.5938 19.1406 48.4062 8.85938 Q40.2344 -1.42188 26.4219 -1.42188 Q22.7031 -1.42188 18.8906 -0.6875 Q15.0938 0.046875 10.9844 1.51562 M30.6094 32.4219 Q37.25 32.4219 41.125 36.9531 Q45.0156 41.5 45.0156 49.4219 Q45.0156 57.2812 41.125 61.8438 Q37.25 66.4062 30.6094 66.4062 Q23.9688 66.4062 20.0938 61.8438 Q16.2188 57.2812 16.2188 49.4219 Q16.2188 41.5 20.0938 36.9531 Q23.9688 32.4219 30.6094 32.4219"
+               id="BitstreamVeraSans-Roman-39" />
+            <path
+               d=" M12.4062 8.29688 L28.5156 8.29688 L28.5156 63.9219 L10.9844 60.4062 L10.9844 69.3906 L28.4219 72.9062 L38.2812 72.9062 L38.2812 8.29688 L54.3906 8.29688 L54.3906 0 L12.4062 0 z "
+               id="BitstreamVeraSans-Roman-31" />
+            <path
+               d=" M19.6719 64.7969 L19.6719 8.10938 L31.5938 8.10938 Q46.6875 8.10938 53.6875 14.9375 Q60.6875 21.7812 60.6875 36.5312 Q60.6875 51.1719 53.6875 57.9844 Q46.6875 64.7969 31.5938 64.7969 z  M9.8125 72.9062 L30.0781 72.9062 Q51.2656 72.9062 61.1719 64.0938 Q71.0938 55.2812 71.0938 36.5312 Q71.0938 17.6719 61.125 8.82812 Q51.1719 0 30.0781 0 L9.8125 0 z "
+               id="BitstreamVeraSans-Roman-44" />
+            <path
+               d=" M53.5156 70.5156 L53.5156 60.8906 Q47.9062 63.5781 42.9219 64.8906 Q37.9375 66.2188 33.2969 66.2188 Q25.25 66.2188 20.875 63.0938 Q16.5 59.9688 16.5 54.2031 Q16.5 49.3594 19.4062 46.8906 Q22.3125 44.4375 30.4219 42.9219 L36.375 41.7031 Q47.4062 39.5938 52.6562 34.2969 Q57.9062 29 57.9062 20.125 Q57.9062 9.51562 50.7969 4.04688 Q43.7031 -1.42188 29.9844 -1.42188 Q24.8125 -1.42188 18.9688 -0.25 Q13.1406 0.921875 6.89062 3.21875 L6.89062 13.375 Q12.8906 10.0156 18.6562 8.29688 Q24.4219 6.59375 29.9844 6.59375 Q38.4219 6.59375 43.0156 9.90625 Q47.6094 13.2344 47.6094 19.3906 Q47.6094 24.75 44.3125 27.7812 Q41.0156 30.8125 33.5 32.3281 L27.4844 33.5 Q16.4531 35.6875 11.5156 40.375 Q6.59375 45.0625 6.59375 53.4219 Q6.59375 63.0938 13.4062 68.6562 Q20.2188 74.2188 32.1719 74.2188 Q37.3125 74.2188 42.625 73.2812 Q47.9531 72.3594 53.5156 70.5156"
+               id="BitstreamVeraSans-Roman-53" />
+          </defs>
+          <g
+             transform="translate(1306.88711937 350.766799733)scale(0.16 -0.16)"
+             id="g928">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-44"
+               id="use930" />
+            <use
+               x="77.001953125"
+               xlink:href="#BitstreamVeraSans-Roman-53"
+               id="use932" />
+            <use
+               x="140.478515625"
+               xlink:href="#BitstreamVeraSans-Roman-4d"
+               id="use934" />
+            <use
+               x="226.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-5f"
+               id="use936" />
+            <use
+               x="276.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-33"
+               id="use938" />
+            <use
+               x="340.380859375"
+               xlink:href="#BitstreamVeraSans-Roman-39"
+               id="use940" />
+            <use
+               x="404.00390625"
+               xlink:href="#BitstreamVeraSans-Roman-39"
+               id="use942" />
+            <use
+               x="467.626953125"
+               xlink:href="#BitstreamVeraSans-Roman-31"
+               id="use944" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_8"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g947">
+          <!-- Anaerostipes -->
+          <g
+             transform="translate(961.319944706 838.922034157)scale(0.16 -0.16)"
+             id="g949">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-41"
+               id="use951" />
+            <use
+               x="68.408203125"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use953" />
+            <use
+               x="131.787109375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use955" />
+            <use
+               x="193.06640625"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use957" />
+            <use
+               x="254.58984375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use959" />
+            <use
+               x="293.453125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use961" />
+            <use
+               x="354.634765625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use963" />
+            <use
+               x="406.734375"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use965" />
+            <use
+               x="445.943359375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use967" />
+            <use
+               x="473.7265625"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use969" />
+            <use
+               x="537.203125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use971" />
+            <use
+               x="598.7265625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use973" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_9"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g976">
+          <!-- Mitsuokella -->
+          <defs
+             id="defs978">
+            <path
+               d=" M9.07812 75.9844 L18.1094 75.9844 L18.1094 31.1094 L44.9219 54.6875 L56.3906 54.6875 L27.3906 29.1094 L57.625 0 L45.9062 0 L18.1094 26.7031 L18.1094 0 L9.07812 0 z "
+               id="BitstreamVeraSans-Roman-6b" />
+          </defs>
+          <g
+             transform="translate(1372.07642857 554.179897689)scale(0.16 -0.16)"
+             id="g981">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-4d"
+               id="use983" />
+            <use
+               x="86.279296875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use985" />
+            <use
+               x="114.0625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use987" />
+            <use
+               x="153.271484375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use989" />
+            <use
+               x="205.37109375"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use991" />
+            <use
+               x="268.75"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use993" />
+            <use
+               x="329.931640625"
+               xlink:href="#BitstreamVeraSans-Roman-6b"
+               id="use995" />
+            <use
+               x="384.216796875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use997" />
+            <use
+               x="445.740234375"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use999" />
+            <use
+               x="473.5234375"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1001" />
+            <use
+               x="501.306640625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1003" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_10"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1006">
+          <!-- Synergistes -->
+          <defs
+             id="defs1008">
+            <path
+               d=" M32.1719 -5.07812 Q28.375 -14.8438 24.75 -17.8125 Q21.1406 -20.7969 15.0938 -20.7969 L7.90625 -20.7969 L7.90625 -13.2812 L13.1875 -13.2812 Q16.8906 -13.2812 18.9375 -11.5156 Q21 -9.76562 23.4844 -3.21875 L25.0938 0.875 L2.98438 54.6875 L12.5 54.6875 L29.5938 11.9219 L46.6875 54.6875 L56.2031 54.6875 z "
+               id="BitstreamVeraSans-Roman-79" />
+          </defs>
+          <g
+             transform="translate(941.200068985 259.407876344)scale(0.16 -0.16)"
+             id="g1011">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-53"
+               id="use1013" />
+            <use
+               x="63.4765625"
+               xlink:href="#BitstreamVeraSans-Roman-79"
+               id="use1015" />
+            <use
+               x="122.65625"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1017" />
+            <use
+               x="186.03515625"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1019" />
+            <use
+               x="247.55859375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1021" />
+            <use
+               x="286.921875"
+               xlink:href="#BitstreamVeraSans-Roman-67"
+               id="use1023" />
+            <use
+               x="350.3984375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1025" />
+            <use
+               x="378.181640625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1027" />
+            <use
+               x="430.28125"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1029" />
+            <use
+               x="469.490234375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1031" />
+            <use
+               x="531.013671875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1033" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_11"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1036">
+          <!-- Xenorhabdus -->
+          <defs
+             id="defs1038">
+            <path
+               d=" M6.29688 72.9062 L16.8906 72.9062 L35.0156 45.7969 L53.2188 72.9062 L63.8125 72.9062 L40.375 37.8906 L65.375 0 L54.7812 0 L34.2812 31 L13.625 0 L2.98438 0 L29 38.9219 z "
+               id="BitstreamVeraSans-Roman-58" />
+          </defs>
+          <g
+             transform="translate(755.743190504 622.714377822)scale(0.16 -0.16)"
+             id="g1041">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-58"
+               id="use1043" />
+            <use
+               x="64.005859375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1045" />
+            <use
+               x="125.529296875"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1047" />
+            <use
+               x="188.908203125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1049" />
+            <use
+               x="250.08984375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1051" />
+            <use
+               x="289.453125"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use1053" />
+            <use
+               x="352.83203125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1055" />
+            <use
+               x="414.111328125"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1057" />
+            <use
+               x="477.587890625"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use1059" />
+            <use
+               x="541.064453125"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1061" />
+            <use
+               x="604.443359375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1063" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_12"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1066">
+          <!-- Alistipes -->
+          <g
+             transform="translate(1316.94919924 734.795079915)scale(0.16 -0.16)"
+             id="g1068">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-41"
+               id="use1070" />
+            <use
+               x="68.408203125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1072" />
+            <use
+               x="96.19140625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1074" />
+            <use
+               x="123.974609375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1076" />
+            <use
+               x="176.07421875"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1078" />
+            <use
+               x="215.283203125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1080" />
+            <use
+               x="243.06640625"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1082" />
+            <use
+               x="306.54296875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1084" />
+            <use
+               x="368.06640625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1086" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_13"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1089">
+          <!-- Campylobacter -->
+          <defs
+             id="defs1091">
+            <path
+               d=" M64.4062 67.2812 L64.4062 56.8906 Q59.4219 61.5312 53.7812 63.8125 Q48.1406 66.1094 41.7969 66.1094 Q29.2969 66.1094 22.6562 58.4688 Q16.0156 50.8281 16.0156 36.375 Q16.0156 21.9688 22.6562 14.3281 Q29.2969 6.6875 41.7969 6.6875 Q48.1406 6.6875 53.7812 8.98438 Q59.4219 11.2812 64.4062 15.9219 L64.4062 5.60938 Q59.2344 2.09375 53.4375 0.328125 Q47.6562 -1.42188 41.2188 -1.42188 Q24.6562 -1.42188 15.125 8.70312 Q5.60938 18.8438 5.60938 36.375 Q5.60938 53.9531 15.125 64.0781 Q24.6562 74.2188 41.2188 74.2188 Q47.75 74.2188 53.5312 72.4844 Q59.3281 70.75 64.4062 67.2812"
+               id="BitstreamVeraSans-Roman-43" />
+          </defs>
+          <g
+             transform="translate(819.725074751 754.787195397)scale(0.16 -0.16)"
+             id="g1094">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1096" />
+            <use
+               x="69.82421875"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1098" />
+            <use
+               x="131.103515625"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1100" />
+            <use
+               x="228.515625"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1102" />
+            <use
+               x="291.9921875"
+               xlink:href="#BitstreamVeraSans-Roman-79"
+               id="use1104" />
+            <use
+               x="351.171875"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1106" />
+            <use
+               x="378.955078125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1108" />
+            <use
+               x="440.13671875"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1110" />
+            <use
+               x="503.61328125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1112" />
+            <use
+               x="564.892578125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1114" />
+            <use
+               x="619.873046875"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1116" />
+            <use
+               x="659.08203125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1118" />
+            <use
+               x="720.60546875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1120" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_14"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1123">
+          <!-- Anaerococcus -->
+          <g
+             transform="translate(770.732659454 673.877829795)scale(0.16 -0.16)"
+             id="g1125">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-41"
+               id="use1127" />
+            <use
+               x="68.408203125"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1129" />
+            <use
+               x="131.787109375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1131" />
+            <use
+               x="193.06640625"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1133" />
+            <use
+               x="254.58984375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1135" />
+            <use
+               x="293.453125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1137" />
+            <use
+               x="354.634765625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1139" />
+            <use
+               x="409.615234375"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1141" />
+            <use
+               x="470.796875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1143" />
+            <use
+               x="525.77734375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1145" />
+            <use
+               x="580.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1147" />
+            <use
+               x="644.13671875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1149" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_15"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1152">
+          <!-- Tannerella -->
+          <defs
+             id="defs1154">
+            <path
+               d=" M-0.296875 72.9062 L61.375 72.9062 L61.375 64.5938 L35.5 64.5938 L35.5 0 L25.5938 0 L25.5938 64.5938 L-0.296875 64.5938 z "
+               id="BitstreamVeraSans-Roman-54" />
+          </defs>
+          <g
+             transform="translate(930.044484639 821.755255803)scale(0.16 -0.16)"
+             id="g1157">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-54"
+               id="use1159" />
+            <use
+               x="44.583984375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1161" />
+            <use
+               x="105.86328125"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1163" />
+            <use
+               x="169.2421875"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1165" />
+            <use
+               x="232.62109375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1167" />
+            <use
+               x="294.14453125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1169" />
+            <use
+               x="333.0078125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1171" />
+            <use
+               x="394.53125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1173" />
+            <use
+               x="422.314453125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1175" />
+            <use
+               x="450.09765625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1177" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_16"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1180">
+          <!-- Coprococcus -->
+          <g
+             transform="translate(1126.72500246 845.405845228)scale(0.16 -0.16)"
+             id="g1182">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1184" />
+            <use
+               x="69.82421875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1186" />
+            <use
+               x="131.005859375"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1188" />
+            <use
+               x="194.482421875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1190" />
+            <use
+               x="233.345703125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1192" />
+            <use
+               x="294.52734375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1194" />
+            <use
+               x="349.5078125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1196" />
+            <use
+               x="410.689453125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1198" />
+            <use
+               x="465.669921875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1200" />
+            <use
+               x="520.650390625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1202" />
+            <use
+               x="584.029296875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1204" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_17"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1207">
+          <!-- DSM_5050 -->
+          <defs
+             id="defs1209">
+            <path
+               d=" M31.7812 66.4062 Q24.1719 66.4062 20.3281 58.9062 Q16.5 51.4219 16.5 36.375 Q16.5 21.3906 20.3281 13.8906 Q24.1719 6.39062 31.7812 6.39062 Q39.4531 6.39062 43.2812 13.8906 Q47.125 21.3906 47.125 36.375 Q47.125 51.4219 43.2812 58.9062 Q39.4531 66.4062 31.7812 66.4062 M31.7812 74.2188 Q44.0469 74.2188 50.5156 64.5156 Q56.9844 54.8281 56.9844 36.375 Q56.9844 17.9688 50.5156 8.26562 Q44.0469 -1.42188 31.7812 -1.42188 Q19.5312 -1.42188 13.0625 8.26562 Q6.59375 17.9688 6.59375 36.375 Q6.59375 54.8281 13.0625 64.5156 Q19.5312 74.2188 31.7812 74.2188"
+               id="BitstreamVeraSans-Roman-30" />
+            <path
+               d=" M10.7969 72.9062 L49.5156 72.9062 L49.5156 64.5938 L19.8281 64.5938 L19.8281 46.7344 Q21.9688 47.4688 24.1094 47.8281 Q26.2656 48.1875 28.4219 48.1875 Q40.625 48.1875 47.75 41.5 Q54.8906 34.8125 54.8906 23.3906 Q54.8906 11.625 47.5625 5.09375 Q40.2344 -1.42188 26.9062 -1.42188 Q22.3125 -1.42188 17.5469 -0.640625 Q12.7969 0.140625 7.71875 1.70312 L7.71875 11.625 Q12.1094 9.23438 16.7969 8.0625 Q21.4844 6.89062 26.7031 6.89062 Q35.1562 6.89062 40.0781 11.3281 Q45.0156 15.7656 45.0156 23.3906 Q45.0156 31 40.0781 35.4375 Q35.1562 39.8906 26.7031 39.8906 Q22.75 39.8906 18.8125 39.0156 Q14.8906 38.1406 10.7969 36.2812 z "
+               id="BitstreamVeraSans-Roman-35" />
+          </defs>
+          <g
+             transform="translate(895.87043665 285.597194052)scale(0.16 -0.16)"
+             id="g1213">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-44"
+               id="use1215" />
+            <use
+               x="77.001953125"
+               xlink:href="#BitstreamVeraSans-Roman-53"
+               id="use1217" />
+            <use
+               x="140.478515625"
+               xlink:href="#BitstreamVeraSans-Roman-4d"
+               id="use1219" />
+            <use
+               x="226.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-5f"
+               id="use1221" />
+            <use
+               x="276.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-35"
+               id="use1223" />
+            <use
+               x="340.380859375"
+               xlink:href="#BitstreamVeraSans-Roman-30"
+               id="use1225" />
+            <use
+               x="404.00390625"
+               xlink:href="#BitstreamVeraSans-Roman-35"
+               id="use1227" />
+            <use
+               x="467.626953125"
+               xlink:href="#BitstreamVeraSans-Roman-30"
+               id="use1229" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_18"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1232">
+          <!-- Streptococcus -->
+          <g
+             transform="translate(1222.73975109 801.259313093)scale(0.16 -0.16)"
+             id="g1234">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-53"
+               id="use1236" />
+            <use
+               x="63.4765625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1238" />
+            <use
+               x="102.685546875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1240" />
+            <use
+               x="141.548828125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1242" />
+            <use
+               x="203.072265625"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1244" />
+            <use
+               x="266.548828125"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1246" />
+            <use
+               x="305.7578125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1248" />
+            <use
+               x="366.939453125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1250" />
+            <use
+               x="421.919921875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1252" />
+            <use
+               x="483.1015625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1254" />
+            <use
+               x="538.08203125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1256" />
+            <use
+               x="593.0625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1258" />
+            <use
+               x="656.44140625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1260" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_19"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1263">
+          <!-- Propionibacterium -->
+          <g
+             transform="translate(1144.42416555 255.264023116)scale(0.16 -0.16)"
+             id="g1265">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-50"
+               id="use1267" />
+            <use
+               x="58.552734375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1269" />
+            <use
+               x="97.416015625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1271" />
+            <use
+               x="158.59765625"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1273" />
+            <use
+               x="222.07421875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1275" />
+            <use
+               x="249.857421875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1277" />
+            <use
+               x="311.0390625"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1279" />
+            <use
+               x="374.41796875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1281" />
+            <use
+               x="402.201171875"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1283" />
+            <use
+               x="465.677734375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1285" />
+            <use
+               x="526.95703125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1287" />
+            <use
+               x="581.9375"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1289" />
+            <use
+               x="621.146484375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1291" />
+            <use
+               x="682.669921875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1293" />
+            <use
+               x="723.783203125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1295" />
+            <use
+               x="751.56640625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1297" />
+            <use
+               x="814.9453125"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1299" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_20"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1302">
+          <!-- Yersinia -->
+          <defs
+             id="defs1304">
+            <path
+               d=" M-0.203125 72.9062 L10.4062 72.9062 L30.6094 42.9219 L50.6875 72.9062 L61.2812 72.9062 L35.5 34.7188 L35.5 0 L25.5938 0 L25.5938 34.7188 z "
+               id="BitstreamVeraSans-Roman-59" />
+          </defs>
+          <g
+             transform="translate(894.899165048 794.334882669)scale(0.16 -0.16)"
+             id="g1307">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-59"
+               id="use1309" />
+            <use
+               x="47.833984375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1311" />
+            <use
+               x="109.357421875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1313" />
+            <use
+               x="150.470703125"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1315" />
+            <use
+               x="202.5703125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1317" />
+            <use
+               x="230.353515625"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1319" />
+            <use
+               x="293.732421875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1321" />
+            <use
+               x="321.515625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1323" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_21"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1326">
+          <!-- Bifidobacterium -->
+          <defs
+             id="defs1328">
+            <path
+               d=" M37.1094 75.9844 L37.1094 68.5 L28.5156 68.5 Q23.6875 68.5 21.7969 66.5469 Q19.9219 64.5938 19.9219 59.5156 L19.9219 54.6875 L34.7188 54.6875 L34.7188 47.7031 L19.9219 47.7031 L19.9219 0 L10.8906 0 L10.8906 47.7031 L2.29688 47.7031 L2.29688 54.6875 L10.8906 54.6875 L10.8906 58.5 Q10.8906 67.625 15.1406 71.7969 Q19.3906 75.9844 28.6094 75.9844 z "
+               id="BitstreamVeraSans-Roman-66" />
+          </defs>
+          <g
+             transform="translate(1146.17233122 575.596249532)scale(0.16 -0.16)"
+             id="g1331">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-42"
+               id="use1333" />
+            <use
+               x="68.603515625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1335" />
+            <use
+               x="96.38671875"
+               xlink:href="#BitstreamVeraSans-Roman-66"
+               id="use1337" />
+            <use
+               x="131.591796875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1339" />
+            <use
+               x="159.375"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use1341" />
+            <use
+               x="222.8515625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1343" />
+            <use
+               x="284.033203125"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1345" />
+            <use
+               x="347.509765625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1347" />
+            <use
+               x="408.7890625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1349" />
+            <use
+               x="463.76953125"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1351" />
+            <use
+               x="502.978515625"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1353" />
+            <use
+               x="564.501953125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1355" />
+            <use
+               x="605.615234375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1357" />
+            <use
+               x="633.3984375"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1359" />
+            <use
+               x="696.77734375"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1361" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_22"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1364">
+          <!-- Lachnoclostridium -->
+          <defs
+             id="defs1366">
+            <path
+               d=" M9.8125 72.9062 L19.6719 72.9062 L19.6719 8.29688 L55.1719 8.29688 L55.1719 0 L9.8125 0 z "
+               id="BitstreamVeraSans-Roman-4c" />
+          </defs>
+          <g
+             transform="translate(860.54373683 641.20483458)scale(0.16 -0.16)"
+             id="g1369">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-4c"
+               id="use1371" />
+            <use
+               x="55.712890625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1373" />
+            <use
+               x="116.9921875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1375" />
+            <use
+               x="171.97265625"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use1377" />
+            <use
+               x="235.3515625"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1379" />
+            <use
+               x="298.73046875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1381" />
+            <use
+               x="359.912109375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1383" />
+            <use
+               x="414.892578125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1385" />
+            <use
+               x="442.67578125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1387" />
+            <use
+               x="503.857421875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1389" />
+            <use
+               x="555.95703125"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1391" />
+            <use
+               x="595.166015625"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1393" />
+            <use
+               x="636.279296875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1395" />
+            <use
+               x="664.0625"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use1397" />
+            <use
+               x="727.5390625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1399" />
+            <use
+               x="755.322265625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1401" />
+            <use
+               x="818.701171875"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1403" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_23"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1406">
+          <!-- Bacteroides -->
+          <g
+             transform="translate(1095.45206172 489.526367264)scale(0.16 -0.16)"
+             id="g1408">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-42"
+               id="use1410" />
+            <use
+               x="68.603515625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1412" />
+            <use
+               x="129.8828125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1414" />
+            <use
+               x="184.86328125"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1416" />
+            <use
+               x="224.072265625"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1418" />
+            <use
+               x="285.595703125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1420" />
+            <use
+               x="324.458984375"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1422" />
+            <use
+               x="385.640625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1424" />
+            <use
+               x="413.423828125"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use1426" />
+            <use
+               x="476.900390625"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1428" />
+            <use
+               x="538.423828125"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1430" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_24"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1433">
+          <!-- Roseburia -->
+          <defs
+             id="defs1435">
+            <path
+               d=" M44.3906 34.1875 Q47.5625 33.1094 50.5625 29.5938 Q53.5625 26.0781 56.5938 19.9219 L66.6094 0 L56 0 L46.6875 18.7031 Q43.0625 26.0312 39.6719 28.4219 Q36.2812 30.8125 30.4219 30.8125 L19.6719 30.8125 L19.6719 0 L9.8125 0 L9.8125 72.9062 L32.0781 72.9062 Q44.5781 72.9062 50.7344 67.6719 Q56.8906 62.4531 56.8906 51.9062 Q56.8906 45.0156 53.6875 40.4688 Q50.4844 35.9375 44.3906 34.1875 M19.6719 64.7969 L19.6719 38.9219 L32.0781 38.9219 Q39.2031 38.9219 42.8438 42.2188 Q46.4844 45.5156 46.4844 51.9062 Q46.4844 58.2969 42.8438 61.5469 Q39.2031 64.7969 32.0781 64.7969 z "
+               id="BitstreamVeraSans-Roman-52" />
+          </defs>
+          <g
+             transform="translate(771.521668916 458.394948904)scale(0.16 -0.16)"
+             id="g1438">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-52"
+               id="use1440" />
+            <use
+               x="64.982421875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1442" />
+            <use
+               x="126.1640625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1444" />
+            <use
+               x="178.263671875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1446" />
+            <use
+               x="239.787109375"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1448" />
+            <use
+               x="303.263671875"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1450" />
+            <use
+               x="366.642578125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1452" />
+            <use
+               x="407.755859375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1454" />
+            <use
+               x="435.5390625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1456" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_25"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1459">
+          <!-- Allobaculum -->
+          <g
+             transform="translate(1267.93089043 771.266596162)scale(0.16 -0.16)"
+             id="g1461">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-41"
+               id="use1463" />
+            <use
+               x="68.408203125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1465" />
+            <use
+               x="96.19140625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1467" />
+            <use
+               x="123.974609375"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1469" />
+            <use
+               x="185.15625"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1471" />
+            <use
+               x="248.6328125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1473" />
+            <use
+               x="309.912109375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1475" />
+            <use
+               x="364.892578125"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1477" />
+            <use
+               x="428.271484375"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1479" />
+            <use
+               x="456.0546875"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1481" />
+            <use
+               x="519.43359375"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1483" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_26"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1486">
+          <!-- Faecalibacterium -->
+          <defs
+             id="defs1488">
+            <path
+               d=" M9.8125 72.9062 L51.7031 72.9062 L51.7031 64.5938 L19.6719 64.5938 L19.6719 43.1094 L48.5781 43.1094 L48.5781 34.8125 L19.6719 34.8125 L19.6719 0 L9.8125 0 z "
+               id="BitstreamVeraSans-Roman-46" />
+          </defs>
+          <g
+             transform="translate(1331.37262822 441.6802795)scale(0.16 -0.16)"
+             id="g1491">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-46"
+               id="use1493" />
+            <use
+               x="48.39453125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1495" />
+            <use
+               x="109.673828125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1497" />
+            <use
+               x="171.197265625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1499" />
+            <use
+               x="226.177734375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1501" />
+            <use
+               x="287.45703125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1503" />
+            <use
+               x="315.240234375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1505" />
+            <use
+               x="343.0234375"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1507" />
+            <use
+               x="406.5"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1509" />
+            <use
+               x="467.779296875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1511" />
+            <use
+               x="522.759765625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1513" />
+            <use
+               x="561.96875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1515" />
+            <use
+               x="623.4921875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1517" />
+            <use
+               x="664.60546875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1519" />
+            <use
+               x="692.388671875"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1521" />
+            <use
+               x="755.767578125"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1523" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_27"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1526">
+          <!-- Dialister -->
+          <g
+             transform="translate(866.807417592 315.176201822)scale(0.16 -0.16)"
+             id="g1528">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-44"
+               id="use1530" />
+            <use
+               x="77.001953125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1532" />
+            <use
+               x="104.78515625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1534" />
+            <use
+               x="166.064453125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1536" />
+            <use
+               x="193.84765625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1538" />
+            <use
+               x="221.630859375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1540" />
+            <use
+               x="273.73046875"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1542" />
+            <use
+               x="312.939453125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1544" />
+            <use
+               x="374.462890625"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1546" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_28"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1549">
+          <!-- YY7918 -->
+          <defs
+             id="defs1551">
+            <path
+               d=" M31.7812 34.625 Q24.75 34.625 20.7188 30.8594 Q16.7031 27.0938 16.7031 20.5156 Q16.7031 13.9219 20.7188 10.1562 Q24.75 6.39062 31.7812 6.39062 Q38.8125 6.39062 42.8594 10.1719 Q46.9219 13.9688 46.9219 20.5156 Q46.9219 27.0938 42.8906 30.8594 Q38.875 34.625 31.7812 34.625 M21.9219 38.8125 Q15.5781 40.375 12.0312 44.7188 Q8.5 49.0781 8.5 55.3281 Q8.5 64.0625 14.7188 69.1406 Q20.9531 74.2188 31.7812 74.2188 Q42.6719 74.2188 48.875 69.1406 Q55.0781 64.0625 55.0781 55.3281 Q55.0781 49.0781 51.5312 44.7188 Q48 40.375 41.7031 38.8125 Q48.8281 37.1562 52.7969 32.3125 Q56.7812 27.4844 56.7812 20.5156 Q56.7812 9.90625 50.3125 4.23438 Q43.8438 -1.42188 31.7812 -1.42188 Q19.7344 -1.42188 13.25 4.23438 Q6.78125 9.90625 6.78125 20.5156 Q6.78125 27.4844 10.7812 32.3125 Q14.7969 37.1562 21.9219 38.8125 M18.3125 54.3906 Q18.3125 48.7344 21.8438 45.5625 Q25.3906 42.3906 31.7812 42.3906 Q38.1406 42.3906 41.7188 45.5625 Q45.3125 48.7344 45.3125 54.3906 Q45.3125 60.0625 41.7188 63.2344 Q38.1406 66.4062 31.7812 66.4062 Q25.3906 66.4062 21.8438 63.2344 Q18.3125 60.0625 18.3125 54.3906"
+               id="BitstreamVeraSans-Roman-38" />
+            <path
+               d=" M8.20312 72.9062 L55.0781 72.9062 L55.0781 68.7031 L28.6094 0 L18.3125 0 L43.2188 64.5938 L8.20312 64.5938 z "
+               id="BitstreamVeraSans-Roman-37" />
+          </defs>
+          <g
+             transform="translate(1089.34250158 418.755160615)scale(0.16 -0.16)"
+             id="g1555">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-59"
+               id="use1557" />
+            <use
+               x="61.083984375"
+               xlink:href="#BitstreamVeraSans-Roman-59"
+               id="use1559" />
+            <use
+               x="122.16796875"
+               xlink:href="#BitstreamVeraSans-Roman-37"
+               id="use1561" />
+            <use
+               x="185.791015625"
+               xlink:href="#BitstreamVeraSans-Roman-39"
+               id="use1563" />
+            <use
+               x="249.4140625"
+               xlink:href="#BitstreamVeraSans-Roman-31"
+               id="use1565" />
+            <use
+               x="313.037109375"
+               xlink:href="#BitstreamVeraSans-Roman-38"
+               id="use1567" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_29"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1570">
+          <!-- Phascolarctobacterium -->
+          <g
+             transform="translate(1285.33411562 392.09065662)scale(0.16 -0.16)"
+             id="g1572">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-50"
+               id="use1574" />
+            <use
+               x="60.302734375"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use1576" />
+            <use
+               x="123.681640625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1578" />
+            <use
+               x="184.9609375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1580" />
+            <use
+               x="237.060546875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1582" />
+            <use
+               x="292.041015625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1584" />
+            <use
+               x="353.22265625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1586" />
+            <use
+               x="381.005859375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1588" />
+            <use
+               x="442.28515625"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1590" />
+            <use
+               x="481.1484375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1592" />
+            <use
+               x="536.12890625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1594" />
+            <use
+               x="575.337890625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1596" />
+            <use
+               x="636.51953125"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1598" />
+            <use
+               x="699.99609375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1600" />
+            <use
+               x="761.275390625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1602" />
+            <use
+               x="816.255859375"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1604" />
+            <use
+               x="855.46484375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1606" />
+            <use
+               x="916.98828125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1608" />
+            <use
+               x="958.1015625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1610" />
+            <use
+               x="985.884765625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1612" />
+            <use
+               x="1049.26367188"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1614" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_30"
+         transform="translate(22.978723,21.337386)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1617"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- DSM_753 -->
+          <g
+             transform="matrix(0.16,0,0,-0.16,1087.9593,852.62268)"
+             id="g1619"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-44"
+               id="use1621"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="77.001953"
+               xlink:href="#BitstreamVeraSans-Roman-53"
+               id="use1623"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="140.47852"
+               xlink:href="#BitstreamVeraSans-Roman-4d"
+               id="use1625"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="226.75781"
+               xlink:href="#BitstreamVeraSans-Roman-5f"
+               id="use1627"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="276.75781"
+               xlink:href="#BitstreamVeraSans-Roman-37"
+               id="use1629"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="340.38086"
+               xlink:href="#BitstreamVeraSans-Roman-35"
+               id="use1631"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="404.00391"
+               xlink:href="#BitstreamVeraSans-Roman-33"
+               id="use1633"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_31"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1636">
+          <!-- Lactobacillus -->
+          <g
+             transform="translate(1212.3695736 277.915892216)scale(0.16 -0.16)"
+             id="g1638">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-4c"
+               id="use1640" />
+            <use
+               x="55.712890625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1642" />
+            <use
+               x="116.9921875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1644" />
+            <use
+               x="171.97265625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1646" />
+            <use
+               x="211.181640625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1648" />
+            <use
+               x="272.36328125"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1650" />
+            <use
+               x="335.83984375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1652" />
+            <use
+               x="397.119140625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1654" />
+            <use
+               x="452.099609375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1656" />
+            <use
+               x="479.8828125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1658" />
+            <use
+               x="507.666015625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1660" />
+            <use
+               x="535.44921875"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1662" />
+            <use
+               x="598.828125"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1664" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_32"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1667">
+          <!-- Coprobacillus -->
+          <g
+             transform="translate(878.708477942 484.540592716)scale(0.16 -0.16)"
+             id="g1669">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1671" />
+            <use
+               x="69.82421875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1673" />
+            <use
+               x="131.005859375"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1675" />
+            <use
+               x="194.482421875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1677" />
+            <use
+               x="233.345703125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1679" />
+            <use
+               x="294.52734375"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1681" />
+            <use
+               x="358.00390625"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1683" />
+            <use
+               x="419.283203125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1685" />
+            <use
+               x="474.263671875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1687" />
+            <use
+               x="502.046875"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1689" />
+            <use
+               x="529.830078125"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1691" />
+            <use
+               x="557.61328125"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1693" />
+            <use
+               x="620.9921875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1695" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_33"
+         transform="translate(28.628843,-21.824316)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1698"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- ATCC_6056 -->
+          <defs
+             id="defs1700">
+            <path
+               d="m 33.0156,40.375 q -6.6406,0 -10.5312,-4.5469 -3.875,-4.5312 -3.875,-12.4375 0,-7.8594 3.875,-12.4375 3.8906,-4.56248 10.5312,-4.56248 6.6406,0 10.5156,4.56248 3.875,4.5781 3.875,12.4375 0,7.9063 -3.875,12.4375 -3.875,4.5469 -10.5156,4.5469 m 19.5782,30.9219 0,-8.9844 q -3.7188,1.75 -7.5,2.6719 -3.7813,0.9375 -7.5,0.9375 -9.7657,0 -14.9219,-6.5938 -5.1407,-6.5937 -5.875,-19.9219 2.875,4.25 7.2187,6.5157 4.3594,2.2656 9.5782,2.2656 10.9843,0 17.3593,-6.6719 6.375,-6.6562 6.375,-18.125 0,-11.2344 -6.6406,-18.03122 -6.6406,-6.78126 -17.6719,-6.78126 -12.6562,0 -19.3437,9.6875 -6.68752,9.70318 -6.68752,28.10938 0,17.2812 8.20312,27.5625 8.2031,10.2813 22.0156,10.2813 3.7188,0 7.5,-0.7344 3.7813,-0.7344 7.8907,-2.1875"
+               id="BitstreamVeraSans-Roman-36"
+               inkscape:connector-curvature="0"
+               style="stroke-linecap:butt;stroke-linejoin:round" />
+          </defs>
+          <g
+             transform="matrix(0.16,0,0,-0.16,1084.6464,235.72607)"
+             id="g1703"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-41"
+               id="use1705"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="60.658203"
+               xlink:href="#BitstreamVeraSans-Roman-54"
+               id="use1707"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="115.86719"
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1709"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="185.69141"
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1711"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="255.51562"
+               xlink:href="#BitstreamVeraSans-Roman-5f"
+               id="use1713"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="305.51562"
+               xlink:href="#BitstreamVeraSans-Roman-36"
+               id="use1715"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="369.13867"
+               xlink:href="#BitstreamVeraSans-Roman-30"
+               id="use1717"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="432.76172"
+               xlink:href="#BitstreamVeraSans-Roman-35"
+               id="use1719"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="496.38477"
+               xlink:href="#BitstreamVeraSans-Roman-36"
+               id="use1721"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_34"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1724">
+          <!-- Victivallis -->
+          <defs
+             id="defs1726">
+            <path
+               d=" M2.98438 54.6875 L12.5 54.6875 L29.5938 8.79688 L46.6875 54.6875 L56.2031 54.6875 L35.6875 0 L23.4844 0 z "
+               id="BitstreamVeraSans-Roman-76" />
+            <path
+               d=" M28.6094 0 L0.78125 72.9062 L11.0781 72.9062 L34.1875 11.5312 L57.3281 72.9062 L67.5781 72.9062 L39.7969 0 z "
+               id="BitstreamVeraSans-Roman-56" />
+          </defs>
+          <g
+             transform="translate(1340.63297863 692.498862532)scale(0.16 -0.16)"
+             id="g1730">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-56"
+               id="use1732" />
+            <use
+               x="66.158203125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1734" />
+            <use
+               x="93.94140625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1736" />
+            <use
+               x="148.921875"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1738" />
+            <use
+               x="188.130859375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1740" />
+            <use
+               x="215.9140625"
+               xlink:href="#BitstreamVeraSans-Roman-76"
+               id="use1742" />
+            <use
+               x="275.09375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1744" />
+            <use
+               x="336.373046875"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1746" />
+            <use
+               x="364.15625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1748" />
+            <use
+               x="391.939453125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1750" />
+            <use
+               x="419.72265625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1752" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_35"
+         transform="translate(59.908815,-9.8066869)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1755"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- Desulfovibrio -->
+          <g
+             transform="matrix(0.16,0,0,-0.16,1120.9383,242.36835)"
+             id="g1757"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-44"
+               id="use1759"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="77.001953"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1761"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="138.52539"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1763"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="190.625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1765"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="254.00391"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1767"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="281.78711"
+               xlink:href="#BitstreamVeraSans-Roman-66"
+               id="use1769"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="316.99219"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1771"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="378.17383"
+               xlink:href="#BitstreamVeraSans-Roman-76"
+               id="use1773"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="437.35352"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1775"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="465.13672"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1777"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="528.61328"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1779"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="569.72656"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1781"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="597.50977"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1783"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_36"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1786">
+          <!-- Enterococcus -->
+          <g
+             transform="translate(781.548409485 398.97606392)scale(0.16 -0.16)"
+             id="g1788">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-45"
+               id="use1790" />
+            <use
+               x="63.18359375"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1792" />
+            <use
+               x="126.5625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1794" />
+            <use
+               x="165.771484375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1796" />
+            <use
+               x="227.294921875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1798" />
+            <use
+               x="266.158203125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1800" />
+            <use
+               x="327.33984375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1802" />
+            <use
+               x="382.3203125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1804" />
+            <use
+               x="443.501953125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1806" />
+            <use
+               x="498.482421875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1808" />
+            <use
+               x="553.462890625"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1810" />
+            <use
+               x="616.841796875"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1812" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_37"
+         transform="translate(-55.805471,-6.1550152)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1815"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- Providencia -->
+          <g
+             transform="matrix(0.16,0,0,-0.16,991.85871,243.33007)"
+             id="g1817"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-50"
+               id="use1819"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="58.552734"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1821"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="97.416016"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1823"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="158.59766"
+               xlink:href="#BitstreamVeraSans-Roman-76"
+               id="use1825"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="217.77734"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1827"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="245.56055"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use1829"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="309.03711"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1831"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="370.56055"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1833"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="433.93945"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1835"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="488.91992"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1837"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+            <use
+               x="516.70312"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1839"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="2160"
+               height="1080" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_38"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1842">
+          <!-- Escherichia -->
+          <g
+             transform="translate(754.221071429 567.61633431)scale(0.16 -0.16)"
+             id="g1844">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-45"
+               id="use1846" />
+            <use
+               x="63.18359375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1848" />
+            <use
+               x="115.283203125"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1850" />
+            <use
+               x="170.263671875"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use1852" />
+            <use
+               x="233.642578125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1854" />
+            <use
+               x="295.166015625"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1856" />
+            <use
+               x="336.279296875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1858" />
+            <use
+               x="364.0625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1860" />
+            <use
+               x="419.04296875"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use1862" />
+            <use
+               x="482.421875"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1864" />
+            <use
+               x="510.205078125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1866" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_39"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1869">
+          <!-- Catenibacterium -->
+          <g
+             transform="translate(733.664462832 512.572038835)scale(0.16 -0.16)"
+             id="g1871">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1873" />
+            <use
+               x="69.82421875"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1875" />
+            <use
+               x="131.103515625"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1877" />
+            <use
+               x="170.3125"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1879" />
+            <use
+               x="231.8359375"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1881" />
+            <use
+               x="295.21484375"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1883" />
+            <use
+               x="322.998046875"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1885" />
+            <use
+               x="386.474609375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1887" />
+            <use
+               x="447.75390625"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1889" />
+            <use
+               x="502.734375"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1891" />
+            <use
+               x="541.943359375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1893" />
+            <use
+               x="603.466796875"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1895" />
+            <use
+               x="644.580078125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1897" />
+            <use
+               x="672.36328125"
+               xlink:href="#BitstreamVeraSans-Roman-75"
+               id="use1899" />
+            <use
+               x="735.7421875"
+               xlink:href="#BitstreamVeraSans-Roman-6d"
+               id="use1901" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_40"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1904">
+          <!-- Parabacteroides -->
+          <g
+             transform="translate(794.936224926 360.549504238)scale(0.16 -0.16)"
+             id="g1906">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-50"
+               id="use1908" />
+            <use
+               x="55.802734375"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1910" />
+            <use
+               x="117.08203125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1912" />
+            <use
+               x="158.1953125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1914" />
+            <use
+               x="219.474609375"
+               xlink:href="#BitstreamVeraSans-Roman-62"
+               id="use1916" />
+            <use
+               x="282.951171875"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1918" />
+            <use
+               x="344.23046875"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1920" />
+            <use
+               x="399.2109375"
+               xlink:href="#BitstreamVeraSans-Roman-74"
+               id="use1922" />
+            <use
+               x="438.419921875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1924" />
+            <use
+               x="499.943359375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1926" />
+            <use
+               x="538.806640625"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1928" />
+            <use
+               x="599.98828125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1930" />
+            <use
+               x="627.771484375"
+               xlink:href="#BitstreamVeraSans-Roman-64"
+               id="use1932" />
+            <use
+               x="691.248046875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1934" />
+            <use
+               x="752.771484375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1936" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_41"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1939">
+          <!-- Collinsella -->
+          <g
+             transform="translate(1357.48387256 650.427344636)scale(0.16 -0.16)"
+             id="g1941">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-43"
+               id="use1943" />
+            <use
+               x="69.82421875"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1945" />
+            <use
+               x="131.005859375"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1947" />
+            <use
+               x="158.7890625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1949" />
+            <use
+               x="186.572265625"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use1951" />
+            <use
+               x="214.35546875"
+               xlink:href="#BitstreamVeraSans-Roman-6e"
+               id="use1953" />
+            <use
+               x="277.734375"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1955" />
+            <use
+               x="329.833984375"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1957" />
+            <use
+               x="391.357421875"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1959" />
+            <use
+               x="419.140625"
+               xlink:href="#BitstreamVeraSans-Roman-6c"
+               id="use1961" />
+            <use
+               x="446.923828125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1963" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_42"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1966">
+          <!-- Dorea -->
+          <g
+             transform="translate(1062.52672901 666.475383878)scale(0.16 -0.16)"
+             id="g1968">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-44"
+               id="use1970" />
+            <use
+               x="77.001953125"
+               xlink:href="#BitstreamVeraSans-Roman-6f"
+               id="use1972" />
+            <use
+               x="138.18359375"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1974" />
+            <use
+               x="177.046875"
+               xlink:href="#BitstreamVeraSans-Roman-65"
+               id="use1976" />
+            <use
+               x="238.5703125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1978" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="text_43"
+         inkscape:export-filename="/srv/trackmProject/batch7/inter_phyla_analysis/improved_Taxonomy/plots/network_plots/Network_plot.inter.gastro.dodgey_rem.pt16.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <g
+           clip-path="url(#p1fb0a211ba)"
+           id="g1981">
+          <!-- Brachyspira -->
+          <g
+             transform="translate(1363.57307375 605.588405051)scale(0.16 -0.16)"
+             id="g1983">
+            <use
+               xlink:href="#BitstreamVeraSans-Roman-42"
+               id="use1985" />
+            <use
+               x="68.603515625"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use1987" />
+            <use
+               x="109.716796875"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use1989" />
+            <use
+               x="170.99609375"
+               xlink:href="#BitstreamVeraSans-Roman-63"
+               id="use1991" />
+            <use
+               x="225.9765625"
+               xlink:href="#BitstreamVeraSans-Roman-68"
+               id="use1993" />
+            <use
+               x="289.35546875"
+               xlink:href="#BitstreamVeraSans-Roman-79"
+               id="use1995" />
+            <use
+               x="348.53515625"
+               xlink:href="#BitstreamVeraSans-Roman-73"
+               id="use1997" />
+            <use
+               x="400.634765625"
+               xlink:href="#BitstreamVeraSans-Roman-70"
+               id="use1999" />
+            <use
+               x="464.111328125"
+               xlink:href="#BitstreamVeraSans-Roman-69"
+               id="use2001" />
+            <use
+               x="491.89453125"
+               xlink:href="#BitstreamVeraSans-Roman-72"
+               id="use2003" />
+            <use
+               x="533.0078125"
+               xlink:href="#BitstreamVeraSans-Roman-61"
+               id="use2005" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <defs
+     id="defs2007">
+    <clipPath
+       id="p1fb0a211ba">
+      <rect
+         height="864.0"
+         width="864.0"
+         x="675.0"
+         y="108.0"
+         id="rect2010" />
+    </clipPath>
+  </defs>
+</svg>
