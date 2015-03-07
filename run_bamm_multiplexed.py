@@ -59,7 +59,7 @@ class BamMRunner(object):
         self.working_gids       = {}
         self.genomes_to_update  = {}
         
-    def wrapper(self, sra_master_list, genomes_dir, bamm_dir, process_to_run, genomes_to_update, num_threads):
+    def wrapper(self, sra_master_list, genomes_dir, bamm_dir, process_to_run, genomes_to_update):
         
         # get list of genomes to run bamm make 
         self.readGenomesToUpdate(genomes_to_update)
@@ -73,17 +73,16 @@ class BamMRunner(object):
                           bamm_dir,
                           genomes_to_update)
         
-            # multithreading
-            pool = Pool(num_threads)
-            
             # run bamm make 
-            print pool.map(runCommand, self.bamm_make_cmds)
+            for cmd in self.bamm_make_cmds:
+                runCommand(cmd)
         
             # make bamm parse commands
             self.bammParse(bamm_dir)
     
             # run bamm parse
-            print pool.map(runCommand, self.bamm_parse_cmds)
+            for cmd in self.bamm_parse_cmds:
+                runCommand(cmd)
                     
         elif process_to_run.lower() == 'make':
             # make bamm make commands
@@ -164,11 +163,9 @@ class BamMRunner(object):
         img_id                  = self.Path.gid_to_img[gid]
         genome_fasta            = os.path.join(genomes_dir, img_id)
         if os.path.exists(genome_fasta):
-            print genome_fasta
             # genome fasta exists
             pass
         else:
-            print 'genome does not exist'
             # create symbolic link to genome fasta
             cmd = "ln -s %s %s" % (path_to_genome_fasta,
                                    genome_fasta)
@@ -290,8 +287,7 @@ def doWork( args ):
                args.genomes_dir,
                args.bamm_dir,
                args.process_to_run,
-               args.genomes_to_update,
-               args.num_threads
+               args.genomes_to_update
                )
                 
 
@@ -309,7 +305,6 @@ if __name__ == '__main__':
     parser.add_argument('bamm_dir', help="")
     parser.add_argument('-ptr','--process_to_run', default='all',help="Parse, make or all")
     parser.add_argument('-gtu','--genomes_to_update', help="")
-    parser.add_argument('-t','--num_threads', default=1, type=int, help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
