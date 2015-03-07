@@ -59,7 +59,7 @@ class BamMRunner(object):
         self.working_gids       = {}
         self.genomes_to_update  = {}
         
-    def wrapper(self, sra_master_list, genomes_dir, bamm_dir, process_to_run, genomes_to_update):
+    def wrapper(self, sra_master_list, genomes_dir, bamm_dir, process_to_run, genomes_to_update, num_threads):
         
         # get list of genomes to run bamm make 
         self.readGenomesToUpdate(genomes_to_update)
@@ -73,16 +73,17 @@ class BamMRunner(object):
                           bamm_dir,
                           genomes_to_update)
         
+            # multithreading
+            pool = Pool(num_threads)
+            
             # run bamm make 
-            for cmd in self.bamm_make_cmds:
-                runCommand(cmd)
+            print pool.map(runCommand, self.bamm_make_cmds)
         
             # make bamm parse commands
-            self.bammParse()
+            self.bammParse(bamm_dir)
     
             # run bamm parse
-            for cmd in self.bamm_parse_cmds:
-                runCommand(cmd)
+            print pool.map(runCommand, self.bamm_parse_cmds)
                     
         elif process_to_run.lower() == 'make':
             # make bamm make commands
@@ -96,7 +97,7 @@ class BamMRunner(object):
         
         elif process_to_run.lower() == 'parse':
             # make bamm parse commands
-            self.bammParse()
+            self.bammParse(bamm_dir)
     
             # run bamm parse
             for cmd in self.bamm_parse_cmds:
@@ -116,9 +117,10 @@ class BamMRunner(object):
     def readSRAMasterList(self, sra_master_list):
         with open(sra_master_list) as fh:
             for l in fh:
-                tabs = l.rstrip().split("\t")
-                gid = tabs[0]
-                for tab in tabs[1:]:
+                tabs        = l.rstrip().split("\t")
+                gid         = tabs[0]
+                project_id  = tabs[1]
+                for tab in tabs[2:]:
                     sra = tab
                     try:
                         self.genome_sras[gid][sra] = 1 
@@ -139,8 +141,35 @@ class BamMRunner(object):
                 img_id      = self.Path.gid_to_img[gid]
                 sra_paired, sra_single = self.matchSRAwithGID(gid)
                 
+                # check if directory exists
+                self.doesDirectoryExist(gid, bamm_dir)
+                
+                # check if genome.fna exists 
+                self.doesGenomeFastaExist(gid, genomes_dir)
+                
                 # create BamM make commands
                 self.makeBammCmds(genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid) 
+
+    def doesDirectoryExist(self, gid, bamm_dir):
+        outdir = os.path.join(bamm_dir, gid)
+        if os.path.exists(outdir):
+            # directory already exists
+            pass
+        else:
+            # create directory
+            os.mkdir(outdir)
+        
+    def doesGenomeFastaExist(self, gid, genomes_dir):
+        path_to_genome_fasta    = self.Path.gid_to_file[gid]
+        genome_fasta            = os.path.join(genome_dir)
+        if os.path.exists(genome_fasta):
+            # genome fasta exists
+            pass
+        else:
+            # create symbolic link to genome fasta
+            cmd = "ln -s %s %s" % (path_to_genome_fasta,
+                                   genome_fasta)
+            runCommand(cmd)
             
     def checkGenomesToUpdate(self, gid, genomes_to_update):
         if genomes_to_update:
@@ -151,6 +180,7 @@ class BamMRunner(object):
                 return False
         else:
             return True
+        
     def makeBammCmds(self, genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid):
         if len(sra_paired) > 0 and len(sra_single) > 0:
             self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -c %s -s %s -t 20 -o %s/%s" % (genomes_dir,
@@ -192,9 +222,13 @@ class BamMRunner(object):
                         sra_single += '%s ' % sra_file
         return sra_paired, sra_single
     
-    def bammParse(self):
+    def bammParse(self, bamm_dir):
         for gid in self.genome_sras.keys():
-            bamm_dir    = '/srv/projects/trackm/batch7/inter_phyla_analysis/improved_Taxonomy/transfer_groups/sra/bamm/%s' % gid
+            # check if directory exists
+            self.doesDirectoryExist(gid, bamm_dir)
+            
+            bamm_dir    = os.path.join(bamm_dir, gid)
+            
             try:
                 bamm_files = glob.glob('%s/*.bam' % bamm_dir)
                 #bamm_file  = glob.glob('%s/*.bam' % bamm_dir)[0]
@@ -253,7 +287,8 @@ def doWork( args ):
                args.genomes_dir,
                args.bamm_dir,
                args.process_to_run,
-               args.genomes_to_update
+               args.genomes_to_update,
+               args.num_threads
                )
                 
 
@@ -271,6 +306,7 @@ if __name__ == '__main__':
     parser.add_argument('bamm_dir', help="")
     parser.add_argument('-ptr','--process_to_run', default='all',help="Parse, make or all")
     parser.add_argument('-gtu','--genomes_to_update', help="")
+    parser.add_argument('-t','--num_threads', help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
