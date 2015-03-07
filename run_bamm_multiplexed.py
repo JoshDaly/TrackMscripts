@@ -276,9 +276,9 @@ def runCommand(cmd):
         Must be outside class object!!!!!!!
         """
         print cmd
-        args = shlex.split(cmd)
-        p = subprocess.Popen(args)
-        return p.communicate() 
+        #args = shlex.split(cmd)
+        #p = subprocess.Popen(args)
+        #return p.communicate() 
         
 def doWork( args ):
     """ Main wrapper"""
@@ -306,7 +306,7 @@ if __name__ == '__main__':
     parser.add_argument('bamm_dir', help="")
     parser.add_argument('-ptr','--process_to_run', default='all',help="Parse, make or all")
     parser.add_argument('-gtu','--genomes_to_update', help="")
-    parser.add_argument('-t','--num_threads', help="")
+    parser.add_argument('-t','--num_threads', default=1, type=int, help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
