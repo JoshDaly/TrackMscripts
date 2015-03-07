@@ -151,6 +151,7 @@ class BamMRunner(object):
                 self.makeBammCmds(genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid) 
 
     def doesDirectoryExist(self, gid, bamm_dir):
+        print 'Im getting to here'
         outdir = os.path.join(bamm_dir, gid)
         if os.path.exists(outdir):
             # directory already exists
