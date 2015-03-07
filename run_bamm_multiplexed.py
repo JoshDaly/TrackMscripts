@@ -161,7 +161,7 @@ class BamMRunner(object):
         
     def doesGenomeFastaExist(self, gid, genomes_dir):
         path_to_genome_fasta    = self.Path.gid_to_file[gid]
-        genome_fasta            = os.path.join(genome_dir)
+        genome_fasta            = os.path.join(genomes_dir)
         if os.path.exists(genome_fasta):
             # genome fasta exists
             pass
