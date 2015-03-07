@@ -276,9 +276,9 @@ def runCommand(cmd):
         Must be outside class object!!!!!!!
         """
         print cmd
-        #args = shlex.split(cmd)
-        #p = subprocess.Popen(args)
-        #return p.communicate() 
+        args = shlex.split(cmd)
+        p = subprocess.Popen(args)
+        return p.communicate() 
         
 def doWork( args ):
     """ Main wrapper"""
