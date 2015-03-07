@@ -151,7 +151,6 @@ class BamMRunner(object):
                 self.makeBammCmds(genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid) 
 
     def doesDirectoryExist(self, gid, bamm_dir):
-        print 'Im getting to here'
         outdir = os.path.join(bamm_dir, gid)
         if os.path.exists(outdir):
             # directory already exists
@@ -164,9 +163,11 @@ class BamMRunner(object):
         path_to_genome_fasta    = self.Path.gid_to_file[gid]
         genome_fasta            = os.path.join(genomes_dir)
         if os.path.exists(genome_fasta):
+            print 'genome exists!'
             # genome fasta exists
             pass
         else:
+            print 'genome does not exist'
             # create symbolic link to genome fasta
             cmd = "ln -s %s %s" % (path_to_genome_fasta,
                                    genome_fasta)
