@@ -111,24 +111,24 @@ class Contigs(object):
             if gid in self.contam_contigs:
             
                 # remove E.coli from analysis
-                if self.TD.taxon_genus[gid] != 'Escherichia':
+                #if self.TD.taxon_genus[gid] != 'Escherichia':
                     
-                    BFP = TFP.BlastFileParser(blast_file)
+                BFP = TFP.BlastFileParser(blast_file)
+                
+                for query_id in BFP.isvector.keys():
+                    contig_id = self.getContigID(query_id)
+                    if contig_id in self.contam_contigs[gid]:
+                        self.isVector[contig_id]     = BFP.isvector[query_id]
+                
+                for query_id in BFP.topHits2.keys():
+                    contig_id = self.getContigID(query_id)
+                    if contig_id in self.contam_contigs[gid]:
+                        self.blast_data[contig_id]   = BFP.topHits2[query_id]
                     
-                    for query_id in BFP.isvector.keys():
-                        contig_id = self.getContigID(query_id)
-                        if contig_id in self.contam_contigs[gid]:
-                            self.isVector[contig_id]     = BFP.isvector[query_id]
-                    
-                    for query_id in BFP.topHits2.keys():
-                        contig_id = self.getContigID(query_id)
-                        if contig_id in self.contam_contigs[gid]:
-                            self.blast_data[contig_id]   = BFP.topHits2[query_id]
-                        
-                    for query_id in BFP.contig_len.keys():
-                        contig_id = self.getContigID(query_id)
-                        if contig_id in self.contam_contigs[gid]:
-                            self.contig_len[contig_id]   = BFP.contig_len[query_id]
+                for query_id in BFP.contig_len.keys():
+                    contig_id = self.getContigID(query_id)
+                    if contig_id in self.contam_contigs[gid]:
+                        self.contig_len[contig_id]   = BFP.contig_len[query_id]
     
             if count > 2000:
                 break
