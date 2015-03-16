@@ -245,7 +245,6 @@ class Contigs(object):
         contig1 = self.HD.contig_name[pidsqid][0]
         contig2 = self.HD.contig_name[pidsqid][1]
         if contig1 in self.blast_data or contig2 in self.blast_data:
-            print pidsqid
             return False
         else:
             return True
