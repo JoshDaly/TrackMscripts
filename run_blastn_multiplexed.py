@@ -118,6 +118,8 @@ class Blast(object):
                 tabs    = l.rstrip().split("\t")
                 gid     = tabs[0]
                 contig  = tabs[1]
+                coverage= tabs[2]
+                linkage = tabs[3]
                 try:
                     self.contigs[gid][contig] = contig
                 except KeyError:
@@ -152,7 +154,7 @@ class Blast(object):
                             fasta_file      = self.fasta_files[gid][contig]
                             outfile         = os.path.join(blastdir, gid, "%s_%s_vs_nr.blast20151802" % (gid,contig))
                             self.blast_cmds.append("blastn -db /srv/db/ncbi/20151802/nt/nt -query %s -outfmt 1 -out %s" % (fasta_file,
-                                                                                                                   outfile))
+                                                                                                                           outfile))
         # run cmds in multiple threads
         #print str(len(self.blast_cmds))
         

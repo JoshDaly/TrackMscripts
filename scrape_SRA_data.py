@@ -42,8 +42,6 @@ import os
 import errno
 import shlex
 import subprocess
-#import numpy as np
-#np.seterr(all='raise')
 
 # local imports
 import trackm_file_parser as TFP
@@ -61,7 +59,7 @@ class ShortReadArchive(object):
         self.SRAs           = {}
         self.cmds           = []
 
-    def wrapper(self, project_ids, print_to_file, outdir, num_threads):
+    def wrapper(self, project_ids, print_to_file, outdir, num_threads, outfile):
         # get project ids
         self.getProjectIds(project_ids)
         
@@ -70,24 +68,28 @@ class ShortReadArchive(object):
         
         # print to file
         if print_to_file:
-            self.print_to_file(outdir)
+            self.print_to_file(outdir, outfile)
             
         # run wget to grab sra files
         self.downloadSRAFiles(num_threads, outdir)
     
     def getProjectIds(self, project_ids):
+        count = 0 
         with open(project_ids) as fh:
             for l in fh:
                 tabs = l.rstrip().split("\t")
                 try:
                     gid         = tabs[0]
                     project_id  = tabs[1]
-                    if self.checkIfFileExists(gid):
+                    if self.checkIfDirExists(gid):
                         self.project_ids[gid] = project_id
                     else:
                         print gid
                 except IndexError:
                     pass
+                #count += 1
+                if count >10:
+                    break
                 
     def  grabSRRIds(self):
         count = 0 
@@ -166,8 +168,8 @@ class ShortReadArchive(object):
             except KeyError:
                 dict[gid] = {project_id:[sra]}
                 
-    def print_to_file(self,outdir):
-        output_file = os.path.join(outdir, 'inter_phyla.gids.project_ids.sras.csv')
+    def print_to_file(self,outdir, outfile):
+        output_file = os.path.join(outdir, outfile)
         f = open(output_file, 'w')
         for gid in self.SRAs.keys():
             for project_id in self.SRAs[gid]:
@@ -175,9 +177,9 @@ class ShortReadArchive(object):
                 string_to_print = "\t".join([gid,project_id,sras])
                 f.write("%s\n" % string_to_print)
                 
-    def checkIfFileExists(self, gid):
+    def checkIfDirExists(self, gid):
         file = '/srv/projects/trackm/batch7/inter_phyla_analysis/improved_Taxonomy/transfer_groups/sra/bamm/%s' % gid
-        if os.path.isfile(file):
+        if os.path.isdir(file):
             return False
         else:
             # file is not present 
@@ -197,14 +199,6 @@ class ShortReadArchive(object):
                     self.cmds.append(cmd)
         print pool.map(runCommand, self.cmds)
         
-            
-        """
-# run somethign external in threads
-pool = Pool(6)
-cmds = ['ls -l', 'ls -alh', 'ps -ef']
-print pool.map(runCommand, cmds)
-"""         
-
 ###############################################################################
 ###############################################################################
 ###############################################################################
@@ -230,7 +224,9 @@ def doWork( args ):
     SRA.wrapper(args.project_ids,
                 args.print_to_file,
                 args.outdir,
-                args.num_threads)
+                args.num_threads,
+                args.outfile
+                )
 
 
 ###############################################################################
@@ -245,6 +241,7 @@ if __name__ == '__main__':
     parser.add_argument('-p','--print_to_file', default=False, help="")
     parser.add_argument('-o','--outdir', help="")
     parser.add_argument('-t','--num_threads', default=1, type=int, help="")
+    parser.add_argument('-of','--outfile', help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

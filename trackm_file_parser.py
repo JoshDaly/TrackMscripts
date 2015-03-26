@@ -86,8 +86,13 @@ class TaxonomyFileParser(object):
 class TaxonomyData(object):
     def __init__(self, taxon_data):
         self.taxon_genus    = {}
+        self.taxon_family   = {}
+        self.taxon_order    = {}
+        self.taxon_class    = {}
         self.taxon_phylum   = {}
         self.taxon_string   = {}
+        self.taxon_organism = {}
+        self.gids           = {}
         self.buildTaxonData(taxon_data)
         
     def buildTaxonData(self, taxon_data):
@@ -95,27 +100,56 @@ class TaxonomyData(object):
             for l in fh:
                 TFP = TaxonomyFileParser(l)
                 
-                # phylum-level taxonomy
-                phylum  = TFP.taxonomy.split(";")[1][1:]
-                self.taxon_phylum[TFP.gid]  = phylum
+                semi_colon_data = TFP.taxonomy.split(";")
+                organism = TFP.organism.split()
                 
-                # try to grab genus-level taxonomy
-                if "g__" in TFP.taxonomy:
-                    taxons = TFP.taxonomy.split()
-                    for taxon in taxons:
-                        if taxon[0:3] == "g__":
-                            if ";" in taxon:
-                                genus = taxon[:-1]
-                            else:
-                                genus = taxon
-                            self.taxon_genus[TFP.gid]   = genus[3:]
-                            self.taxon_string[genus] = TFP.taxonomy
-                else:
-                    organism = TFP.organism.split()[0]
-                    if '"' in organism:
-                        organism = organism[1:]
-                    self.taxon_genus[TFP.gid] = organism
-                    self.taxon_string[organism] = TFP.taxonomy
+                self.gids[TFP.gid] = 1
+                
+                _organism, _genus, _family, _order, _class, _phylum = self.getTaxonData(semi_colon_data, organism)
+                
+                self.addTaxonData(TFP.gid, _organism, _genus, _family, _order, _class, _phylum)         
+                
+                self.taxon_string[_organism] = TFP.taxonomy
+    
+    def getTaxonData(self, taxon_string, organism):
+        _organism  = ''
+        _genus     = ''
+        _family    = ''
+        _order     = ''
+        _class     = ''
+        _phylum    = ''
+        if organism[0][0] == '"':
+            _organism = organism[0][1:]
+        else:
+            _organism = organism[0]
+        
+        for taxon_rank in taxon_string:
+            if 'p__' in taxon_rank:
+                _phylum    = self.removeSemiColon(taxon_rank).lower()
+            elif 'c__' in taxon_rank:
+                _class     = self.removeSemiColon(taxon_rank).lower()
+            elif 'o__' in taxon_rank:
+                _order     = self.removeSemiColon(taxon_rank).lower()
+            elif 'f__' in taxon_rank:
+                _family    = self.removeSemiColon(taxon_rank).lower()
+            elif 'g__' in taxon_rank:
+                _genus     = self.removeSemiColon(taxon_rank).lower()
+                
+        return _organism, _genus, _family, _order, _class, _phylum
+                
+    def removeSemiColon(self, taxon_rank):
+        if ';' in taxon_rank:
+            return taxon_rank[4:-1]
+        else:
+            return taxon_rank[4:]
+        
+    def addTaxonData(self, gid, _organism, _genus, _family, _order, _class, _phylum):
+        self.taxon_phylum[gid]  = _phylum
+        self.taxon_class[gid]   = _class
+        self.taxon_order[gid]   = _order
+        self.taxon_family[gid]  = _family
+        self.taxon_genus[gid]   = _genus
+        self.taxon_organism[gid]= _organism
 
 ###############################################################################                    
 ###############################################################################
@@ -220,6 +254,10 @@ class HitData(object):
         self.genome_status              = {}
         self.transfer_group_to_contigs  = {}
         self.tranfer_groups_per_genome  = {}
+        self.gid_status                 = {}
+        self.contig_to_gid              = {}
+        self.contig_pidsqid_count_inter = {}
+        self.contig_pidsqid_count_intra = {}
         self.buildHitData(hitdata_file)
         
         
@@ -246,10 +284,14 @@ class HitData(object):
                     self.pidsqid_to_gid[HDP.pidsqid]                = [gid1, gid2]
                     self.contig_name[HDP.pidsqid]                   = [HDP.contig_1, HDP.contig_2]
                     self.status[HDP.pidsqid]                        = [HDP.status_1, HDP.status_2]
+                    self.gid_status[HDP.gid_1]                      = HDP.status_1
+                    self.gid_status[HDP.gid_2]                      = HDP.status_2
                     self.gid_to_genus[gid1]                         = HDP.genus_1
                     self.gid_to_genus[gid2]                         = HDP.genus_2
                     self.genus_to_phylum[HDP.genus_1]               = HDP.phylum_1
                     self.genus_to_phylum[HDP.genus_2]               = HDP.phylum_2
+                    self.contig_to_gid[HDP.contig_1]                = HDP.gid_1
+                    self.contig_to_gid[HDP.contig_2]                = HDP.gid_2
                     self.genomeCountPerGenus(HDP.genus_1, gid1)
                     self.genomeCountPerGenus(HDP.genus_2, gid2)
                     self.genome_status[HDP.pidsqid]                 = [HDP.status_1, HDP.status_2] 
@@ -257,6 +299,8 @@ class HitData(object):
                     self.contigsPerTransferGroup(HDP.transfer_group, HDP.contig_2)
                     self.addGenomeToTG(HDP.gid_1, HDP.transfer_group)
                     self.addGenomeToTG(HDP.gid_2, HDP.transfer_group)
+                    self.addToContigPidsqidCount(HDP.contig_1, HDP.pidsqid)
+                    self.addToContigPidsqidCount(HDP.contig_2, HDP.pidsqid)
                     # HDP.transfer_group,
     
                     self.hit_data[HDP.pidsqid]          = [HDP.transfer_group,
@@ -300,6 +344,19 @@ class HitData(object):
                                                            HDP.start_2
                                                            ]
                                                     
+    def addToContigPidsqidCount(self, contig, pidsqid):
+        
+        if self.intra_or_inter[pidsqid] == 'inter':
+            try:
+                self.contig_pidsqid_count_inter[contig][pidsqid] = 1
+            except KeyError:
+                self.contig_pidsqid_count_inter[contig] = {pidsqid:1}
+        else:
+            try:
+                self.contig_pidsqid_count_intra[contig][pidsqid] = 1
+            except KeyError:
+                self.contig_pidsqid_count_intra[contig] = {pidsqid:1}
+    
     def addGenomeToTG(self, gid, TG):
         try:
             self.tranfer_groups_per_genome[gid] += TG
@@ -425,9 +482,12 @@ class PathsFileData(object):
 
 class BlastFileParser(object):
     def __init__(self, blast_file):
-        self.blast_data = {}
-        self.topHits    = {}
-        self.contig_len = {}
+        self.blast_data     = {}
+        self.blast_data_tg  = {}
+        self.topHits        = {}
+        self.topHits2       = {}
+        self.isvector       = {}
+        self.contig_len     = {}
         self.parseBlastFile(blast_file)
     
     def parseBlastFile(self, blast_file):
@@ -435,6 +495,8 @@ class BlastFileParser(object):
             for l in fh:
                 if l[0:6] == "Query=":
                     query_id = l.rstrip().split("=")[-1].split()[0]
+                    # initialise dict for query
+                    self.isvector[query_id] = 0
                     
                     for l in fh:
                         if l[0:7] == "Length=":
@@ -442,28 +504,40 @@ class BlastFileParser(object):
 
                         #if re.search('[a-z]+"|"[a-z][1-9]+',l):
                         if re.search('^[a-z]+\|',l):
-                            whitespace      = l.rstrip().split()
-                            straightline    = whitespace[0].rstrip().split('|')
-                            subject_id      = straightline[1]
-                            score = float(whitespace[-2])
-                            evalue = float(whitespace[-1])
-                            description = " ".join(whitespace[1:-2])
-                            
-                            # collect data
-                            self.addToBLASTData(query_id, subject_id, score, evalue, description)
-                            
-                            # get topHit
-                            self.getTopHit(query_id, description, evalue)
+                            try:
+                                whitespace      = l.rstrip().split()
+                                straightline    = whitespace[0].rstrip().split('|')
+                                subject_id      = straightline[1]
+                                score = float(whitespace[-2])
+                                evalue = float(whitespace[-1])
+                                description = " ".join(whitespace[1:-2])
+                                
+                                # collect data
+                                self.addToBLASTData(query_id, subject_id, score, evalue, description)
+                                self.addToBLASTDataTG(query_id, subject_id, score, evalue, description)
+                                
+                                # get topHit
+                                self.getTopHit(query_id, description, evalue)
+                                self.getTopHit2(query_id, description, evalue)
+                                self.getVector(query_id, description)
+                            except (IndexError, ValueError):
+                                pass
                             
                         elif l[0:5] == '*****':
-                            self.topHits[query_id] = 'NH' # NH= No Hits
+                    
+                            self.topHits[query_id]  = 'NH' # NH= No Hits
+                            self.topHits2[query_id] = ['NH',0]
+                            
                             # no hits! 
                             break
                         elif l[0:6] == "Query_":
                             break
         
         # set longest contig query as default taxonomy
-        self.setContigQueryDefault()
+        try:
+            self.setContigQueryDefault()
+        except KeyError:
+            pass
         
     def setContigQueryDefault(self):
         longest_contig_len  = 0
@@ -485,6 +559,23 @@ class BlastFileParser(object):
             else:
                 self.topHits[contig] = 'xeno'
             
+    def getTopHit2(self, query_id, description, evalue):
+        try:
+            lenny = self.topHits2[query_id]
+            pass
+        except KeyError:
+            self.topHits2[query_id] = [description, evalue]
+    
+    def getVector(self, query_id, description):
+        vector_search = ['vector','homo sapien','human', 'mus musculus', 'medicago', 'xenopus', 'mouse']
+        for vector in vector_search:
+            if vector in description.lower():
+                try:
+                    self.isvector[query_id] +=1 
+                except KeyError:
+                    self.isvector[query_id] =1
+                break 
+    
     def getTopHit(self, query_id, description, evalue):
         try:
             lenny = self.topHits[query_id]
@@ -503,6 +594,18 @@ class BlastFileParser(object):
                 self.blast_data[query_id][subject_id] = [score, evalue, description]
             except KeyError:
                 self.blast_data[query_id] = {subject_id:[score, evalue, description]}
+    
+    def addToBLASTDataTG(self, query_id, subject_id, score, evalue, description):
+        if query_id > subject_id:
+            try:
+                self.blast_data_tg[query_id][subject_id] = [evalue, score, description]
+            except KeyError:
+                self.blast_data_tg[query_id] = {subject_id:[evalue, score, description]}
+        else:
+            try:
+                self.blast_data_tg[subject_id][query_id] = [evalue, score, description]
+            except KeyError:
+                self.blast_data_tg[subject_id] = {query_id:[evalue, score, description]}
 
 ###############################################################################                    
 ###############################################################################
@@ -933,6 +1036,134 @@ class CoverageData(object):
                     except KeyError:
                         self.coverage_data[CFP.gid] = {contig_id:[rel_cov, links_divide_total, contig_len]}
                     
-                
+###############################################################################                    
+###############################################################################
+###############################################################################
+
+class TransferGroupSummaryFileParser(object):
+    def __init__(self, l):
+        self.readTransferGroupSummaryFile(l)
+        
+    def readTransferGroupSummaryFile(self,l):
+        tabs = l.rstrip().split("\t")
+        self.transfer_group         = tabs[0]
+        self.transfer_size_mean     = tabs[1]    
+        self.transfer_size_std      = tabs[2]
+        self.contig_size_mean       = tabs[3]    
+        self.contig_size_std        = tabs[4]    
+        self.habitat_no             = tabs[5]    
+        self.phylum_no              = tabs[6]   
+        self.genus_no               = tabs[7]   
+        self.pidsqids_no            = tabs[8]   
+        self.most_connected_genus   = tabs[9]    
+        self.kmer_score_mean        = tabs[10]    
+        self.kmer_score_std         = tabs[11] 
+        try:  
+            self.kegg_ids               = tabs[12]
+        except IndexError:
+            pass
+        
+class TransferGroupSummaryData(object):
+    def __init__(self, transfer_group_summary_file):
+        self.transfer_group_data = {}
+        self.wrapper(transfer_group_summary_file)
+        
+    def wrapper(self, transfer_group_summary_file):
+        with open(transfer_group_summary_file) as fh:
+            for l in fh:
+                if l[0] != 't':
+                    TGSFP = TransferGroupSummaryFileParser(l)
+                    self.transfer_group_data[TGSFP.transfer_group] = [TGSFP.transfer_size_mean,
+                                                                      TGSFP.transfer_size_std,
+                                                                      TGSFP.contig_size_mean,
+                                                                      TGSFP.contig_size_std,
+                                                                      TGSFP.habitat_no,
+                                                                      TGSFP.phylum_no,
+                                                                      TGSFP.genus_no,
+                                                                      TGSFP.pidsqids_no,
+                                                                      TGSFP.most_connected_genus,
+                                                                      TGSFP.kmer_score_mean,
+                                                                      TGSFP.kmer_score_std
+                                                                      ]
+                    try:
+                        self.transfer_group_data[TGSFP.transfer_group].append(TGSFP.kegg_ids)
+                    except AttributeError:
+                        pass
+                                                            
+###############################################################################                    
+###############################################################################
+###############################################################################
+###############################################################################
+
+class PairsFileParser(object):
+    def __init__(self, l): 
+        self.readPairsFile(l)
+        
+    def readPairsFile(self, l):
+        commas = l.rstrip().split(',')
+        self.gid_1      = commas[0]
+        self.gid_2      = commas[1]
+        self.ani_comp   = float(commas[3])
+            
+class PairsFileData(object):
+    def __init__(self, pairs_data_file):
+        self.pairs_data = {}
+        self.wrapper(pairs_data_file)
     
- 
+    def wrapper(self, pairs_data_file):
+        with open(pairs_data_file) as fh:
+            for l in fh:
+                if l[0] != 'g':
+                    PFP = PairsFileParser(l)
+                    self.addPairsData(PFP.gid_1, PFP.gid_2, PFP.ani_comp)
+                    self.addPairsData(PFP.gid_2, PFP.gid_1, PFP.ani_comp)
+    
+    def addPairsData(self, gid1, gid2, ani_comp):
+        try:
+            self.pairs_data[gid1][gid2] = ani_comp
+        except KeyError:
+            self.pairs_data[gid1] = {gid2:ani_comp}
+            
+###############################################################################                    
+###############################################################################
+###############################################################################
+###############################################################################    
+    
+class NucMerParser:
+    """Wrapper class for parsing nucmer output"""
+    # constants to make the code more readable
+    _START_1  = 0
+    _END_1    = 1
+    _START_2  = 2
+    _END_2    = 3
+    _LEN_1    = 4
+    _LEN_2    = 5
+    _IDENTITY = 6
+    _ID_1     = 7
+    _ID_2     = 8
+
+    def __init__(self):
+        self.prepped = False
+
+    def readNuc(self, fp):
+        """Read through a nucmer coords file
+
+        this is a generator function
+        """
+        line = None # this is a buffer keeping the last unprocessed line
+        while True: # mimic closure; is it a bad idea?
+            if not self.prepped:
+                # we still need to strip out the header
+                    for l in fp: # search for the first record
+                        if l[0] == '=': # next line is good
+                            self.prepped = True
+                            break
+            # file should be prepped now
+            for l in fp:
+                fields = l.split('|')
+                yield ([int(i) for i in fields[0].split()] +
+                       [int(i) for i in fields[1].split()] +
+                       [int(i) for i in fields[2].split()] +
+                       [float(i) for i in fields[3].split()] +
+                       fields[4].split())
+            break # done! 

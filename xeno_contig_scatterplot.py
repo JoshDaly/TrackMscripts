@@ -37,17 +37,9 @@ import sys
 from multiprocessing import Pool
 from subprocess import Popen, PIPE
 import glob
-#import os
-#import errno
 import numpy as np
 np.seterr(all='raise')
-#import matplotlib as mpl
 import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import axes3d, Axes3D
-#from pylab import plot,subplot,axis,stem,show,figure
-#from Bio import SeqIO
-#from Bio.Seq import Seq
-#import matplotlib.pyplot as plt
 
 # local imports
 import trackm_file_parser as TFP
@@ -58,15 +50,13 @@ import trackm_file_parser as TFP
 ###############################################################################
 
 class ScatterPlot():
-    def __init__(self):
+    def __init__(self, hitdata):
         self.bamm_cov_links_files   = {}
         self.bamm_data              = {}
         self.blast_files            = {}
-        self.finished_genomes       = ['A00001638',
-                                       'A00003224',
-                                       'A00003790',
-                                       'A00004488',
-                                       'A00004498']
+        self.hitdata                = TFP.HitData(hitdata)
+        self.finished_genomes       = self.getFinishedGenomes()
+        self.ecoli                  = self.getEcoliOuttaHere()
         self.xeno_contigs           = ['NZ_AEPD01000056',
                                        'NZ_AEPD01000057',
                                        'NZ_AEPD01000058',
@@ -76,11 +66,34 @@ class ScatterPlot():
                                        'NZ_GG658178',
                                        'NZ_ACHE0100007']          
     
-    def wrapper(self, draft_cov_link_dir, finished_cov_link_dir, type, blast_dir):
+    def getEcoliOuttaHere(self):
+        ecoli_gids  =   []
+        for gid in self.hitdata.gid_to_genus.keys():
+            if self.hitdata.gid_to_genus[gid] == 'Escherichia':
+                ecoli_gids.append(gid)
+        return ecoli_gids
+                
+    def getFinishedGenomes(self):
+        finished_gids   = []
+        for gid in self.hitdata.gid_status.keys():
+            if self.hitdata.gid_status[gid] == 'Finished':
+                finished_gids.append(gid)
+        # append finished genomes not in hitdata
+        finished_gids.append('A00001638')
+        finished_gids.append('A00003224')
+        finished_gids.append('A00003790')
+        finished_gids.append('A00004488')
+        finished_gids.append('A00004498')
+                
+        return finished_gids
+    
+    def wrapper(self, draft_cov_link_dir, finished_cov_link_dir, type, blast_dir, coverage_threshold, contig_size_min, contig_size_max, linkage_threshold, data_outfile):
         # grab bamm stats files
         self.getCovLinkFiles(draft_cov_link_dir)
         self.getCovLinkFiles(finished_cov_link_dir)
         self.getCovLinkData()
+        
+        print len(self.bamm_cov_links_files)
         
         if blast_dir:
             self.getBLASTFiles(blast_dir)
@@ -96,6 +109,9 @@ class ScatterPlot():
             
         elif type.lower() == 'len_vs_cov':
             self.scatterPlotContigLenVsCoverage()
+            
+        elif type.lower() == 'data':
+            self.returnData(coverage_threshold, contig_size_min, contig_size_max, linkage_threshold, data_outfile)
         
     def getBLASTFiles(self, blast_dir):
         if blast_dir[-1] == '/':
@@ -152,30 +168,31 @@ class ScatterPlot():
     
     def getCovLinkData(self):
         for gid in self.bamm_cov_links_files.keys():
-            try:
-                cov_link_file = self.bamm_cov_links_files[gid]
-                CLD = TFP.CovLinksData(cov_link_file)
-                for contig in CLD.cov_link_data[gid]:
-                    contig_len                      = int(CLD.cov_link_data[gid][contig][0])
-                    coverage                        = float(CLD.cov_link_data[gid][contig][1])
-                    try:
-                        link_data                       = int(CLD.cov_link_data[gid][contig][2])
-                        links_relative_to_contig_length = link_data/float(contig_len)
-                        links_rel_to_largest_contig     = float(CLD.cov_link_data[gid][contig][3])
-                        self.bamm_data[gid][contig] = [contig_len, coverage, link_data, links_relative_to_contig_length, links_rel_to_largest_contig, ]
-                    except (IndexError, KeyError):
+            if gid not in self.ecoli:
+                try:
+                    cov_link_file = self.bamm_cov_links_files[gid]
+                    CLD = TFP.CovLinksData(cov_link_file)
+                    for contig in CLD.cov_link_data[gid]:
+                        contig_len                      = int(CLD.cov_link_data[gid][contig][0])
+                        coverage                        = float(CLD.cov_link_data[gid][contig][1])
                         try:
                             link_data                       = int(CLD.cov_link_data[gid][contig][2])
                             links_relative_to_contig_length = link_data/float(contig_len)
                             links_rel_to_largest_contig     = float(CLD.cov_link_data[gid][contig][3])
-                            self.bamm_data[gid] = {contig:[contig_len, coverage, link_data, links_relative_to_contig_length, links_rel_to_largest_contig]}
+                            self.bamm_data[gid][contig] = [contig_len, coverage, link_data, links_relative_to_contig_length, links_rel_to_largest_contig]
                         except (IndexError, KeyError):
                             try:
-                                self.bamm_data[gid][contig] = [contig_len, coverage]
-                            except KeyError:
-                                self.bamm_data[gid] = {contig:[contig_len, coverage]}
-            except KeyError:
-                pass
+                                link_data                       = int(CLD.cov_link_data[gid][contig][2])
+                                links_relative_to_contig_length = link_data/float(contig_len)
+                                links_rel_to_largest_contig     = float(CLD.cov_link_data[gid][contig][3])
+                                self.bamm_data[gid] = {contig:[contig_len, coverage, link_data, links_relative_to_contig_length, links_rel_to_largest_contig]}
+                            except (IndexError, KeyError):
+                                try:
+                                    self.bamm_data[gid][contig] = [contig_len, coverage]
+                                except KeyError:
+                                    self.bamm_data[gid] = {contig:[contig_len, coverage]}
+                except KeyError:
+                    pass
     
     def scatterPlotCoverageVsLinkage(self):
         # initialise figure
@@ -253,11 +270,6 @@ class ScatterPlot():
         # build plot data
         x, y, colours, xf, yf, coloursf, xx, yx, coloursx = self.buildPlotDataLenVsCov()
         
-        print xf
-        print yf
-        print coloursf
-        
-        
         plt.scatter(x,y, s=10, alpha=0.5, c=colours, lw=0)
         plt.scatter(xf,yf, s=50, alpha=1, c=coloursf, lw=0)
         plt.scatter(xx,yx, s=50, alpha=1, c=coloursx, lw=0)
@@ -293,7 +305,6 @@ class ScatterPlot():
                 coverage    = float(self.bamm_data[gid][contig][1])
                 
                 if gid in self.finished_genomes:
-                    print 'got here yooooooo yoyoyoyo'
                     xf.append(contig_len)
                     yf.append(coverage)
                     coloursf.append('#377eb8')
@@ -379,6 +390,51 @@ class ScatterPlot():
                     colours.append('#4daf4a')
         
         return x,y,colours, xf, yf, coloursf
+    
+    def returnData(self, coverage_threshold, contig_size_min, contig_size_max, linkage_threshold, data_outfile):
+        
+        # open outfile 
+        f = open(data_outfile, 'w')
+        
+        for gid in self.bamm_data.keys():
+            
+            for contig in self.bamm_data[gid]:
+                
+                contig_len  = self.bamm_data[gid][contig][0]
+                coverage    = self.bamm_data[gid][contig][1]
+                linkage     = self.getLinkageData(gid, contig)
+                
+                if self.checkThresholds(contig_len,
+                                        coverage,
+                                        linkage,
+                                        coverage_threshold,
+                                        contig_size_min,
+                                        contig_size_max,
+                                        linkage_threshold):
+                    output = "\t".join([gid,
+                                        contig,
+                                        str(coverage),
+                                        "%s\n" % str(linkage)])
+                    f.write(output)
+                
+    def getLinkageData(self, gid, contig):
+        try:
+            linkage = self.bamm_data[gid][contig][4]
+        except (KeyError, IndexError):
+            linkage = 'NA'
+        return linkage
+    
+    def checkThresholds(self, contig_len, coverage, linkage, coverage_threshold, contig_size_min, contig_size_max, linkage_threshold):
+        if linkage_threshold:
+            if contig_len >= contig_size_min and contig_len <= contig_size_max and coverage <= coverage_threshold and linkage <= linkage_threshold:
+                return True
+            else:
+                return False
+        else:
+            if contig_len >= contig_size_min and contig_len <= contig_size_max and coverage <= coverage_threshold:
+                return True
+            else: 
+                return False
 
 ###############################################################################
 ###############################################################################
@@ -401,11 +457,17 @@ returns (stdout, stderr)
 
 def doWork( args ):
     """ Main wrapper"""
-    SP = ScatterPlot()
+    SP = ScatterPlot(args.hitdata)
     SP.wrapper(args.draft_cov_link_dir,
                args.finished_cov_link_dir,
                args.type,
-               args.blast_dir)
+               args.blast_dir,
+               args.coverage_threshold,
+               args.contig_size_min,
+               args.contig_size_max,
+               args.linkage_threshold,
+               args.data_outfile
+               )
 
 ###############################################################################
 ###############################################################################
@@ -415,10 +477,16 @@ def doWork( args ):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
+    parser.add_argument('hitdata', help="")
     parser.add_argument('draft_cov_link_dir', help="")
     parser.add_argument('finished_cov_link_dir', help="")
     parser.add_argument('-t','--type', help="")
-    parser.add_argument('-b','--blast_dir', help="")
+    parser.add_argument('-b','--blast_dir', help="len_vs_linkage or cov_vs_linkage or len_vs_cov or data")
+    parser.add_argument('-ct','--coverage_threshold', type = float, default = 0.1, help="")
+    parser.add_argument('-lt','--linkage_threshold', type=float, default = False, help="")    
+    parser.add_argument('-cmin','--contig_size_min', type=int, default = 0, help="")
+    parser.add_argument('-cmax','--contig_size_max', type=int, default = 1000, help="")
+    parser.add_argument('-do','--data_outfile', help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 ###############################################################################
 #
-# __template__.py - description!
+# __trackm_plots__.py - description!
 #
 ###############################################################################
 # #
@@ -36,28 +36,94 @@ import argparse
 import sys
 from multiprocessing import Pool
 from subprocess import Popen, PIPE
-#import os
-#import errno
-#import glob
-#import numpy as np
-#np.seterr(all='raise')
-#import matplotlib as mpl
-#import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import axes3d, Axes3D
-#from pylab import plot,subplot,axis,stem,show,figure
-#from Bio import SeqIO
-#from Bio.Seq import Seq
-#import matplotlib.pyplot as plt
-#import networkx as nx
+import numpy as np
+np.seterr(all='raise')
+import matplotlib.pyplot as plt
 
 # local imports
+import trackm_file_parser as TFP
 
 ###############################################################################
 ###############################################################################
 ###############################################################################
 ###############################################################################
 
-  # classes here
+class Plot(object):
+    def __init__(self):
+        pass
+    
+    def wrapper(self, type, transfer_group_data, outfile, outfmt):
+        if type == 'transfer_group_bar':
+            # get data
+            data = self.getTransferGroupBarData(transfer_group_data)
+            
+            # plot data
+            self.barPlot(data, outfile, outfmt)
+            
+    def getTransferGroupBarData(self, transfer_group_data):
+        data = TFP.TransferGroupSummaryData(transfer_group_data)
+        return data
+    
+    def barPlot(self, data, outfile, outfmt):
+        # covert data to coords
+        x, y = self.makeCoordsBar(data.transfer_group_data)
+        
+        # sort arrays by y
+        x, y = self.sortArray(x,y)
+        
+        # initialise graph
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        
+        # necessary variables
+        width = 0.35
+        
+        # the bars
+        plt.bar(x,
+                y,
+                width,
+                color='blue',
+                linewidth = 0
+                )
+        
+        # label, title and axis ticks
+        ax.set_xlim(-width-3,len(x)+width)
+        ax.set_ylim(-1,max(y)+10)
+        ax.set_ylabel('Number of Pidsqids')
+        #ax.set_title('Pidsqid Distribution Amongst Transfer Groups')
+        plt.tight_layout()
+        
+        # output directory/file
+        print 'Writing to file %s' % (outfile)
+        plt.savefig(outfile,format=outfmt)
+        plt.close()
+
+    def sortArray(self, x, y):
+        x = np.array(x)
+        y = np.array(y)
+        sorted_x = []
+        sorted_y = []
+        
+        # get indices for sorted array
+        indices = np.argsort(y)
+        count = 0 
+        for index in indices:
+            sorted_x.append(count)
+            sorted_y.insert(0,y[index])
+            count+= 1 
+        
+        return sorted_x, sorted_y
+    
+    def makeCoordsBar(self, data):
+        x = []
+        y = []
+        
+        for tg in data.keys():
+            pidsqids = int(data[tg][7])
+            x.append(int(tg))
+            y.append(pidsqids)
+        
+        return x,y
 
 ###############################################################################
 ###############################################################################
@@ -80,74 +146,13 @@ returns (stdout, stderr)
 
 def doWork( args ):
     """ Main wrapper"""
-
+    P = Plot()
+    P.wrapper(args.type,
+              args.transfer_group_data,
+              args.outfile,
+              args.outfmt)
                 
-            
-            
-            
-            
-    """
-# parse fasta file using biopython
-for accession,sequence in SeqIO.to_dict(SeqIO.parse(args.fasta_file,"fasta")).items():
-if len(sequence.seq) > 1500:
-f.write(">%s\n" % (accession))
-f.write("%s\n" % (sequence.seq)) 
-"""
 
-    """
-# run somethign external in threads
-pool = Pool(6)
-cmds = ['ls -l', 'ls -alh', 'ps -ef']
-print pool.map(runCommand, cmds)
-"""
-
-    """
-# parse a file
-try:
-with open(filename, "r") as fh:
-for line in fh:
-print line
-except:
-print "Error opening file:", filename, exc_info()[0]
-raise
-"""
-
-    """
-fig = plt.figure()
-
-#-----
-# make a 3d plot
-ax = fig.add_subplot(111, projection='3d')
-ax.scatter(points[:,0],
-points[:,1],
-points[:,2],
-#edgecolors='none',
-#c=colors,
-#s=2,
-#marker='.'
-)
-
-#-----
-# make a 2d plot
-fig = plt.figure()
-ax = fig.add_subplot(111)
-ax.plot(points[:,0],
-points[:,1],
-'*g')
-
-#-----
-# show figure
-plt.show()
-# or save figure
-plt.savefig(filename,dpi=300,format='png')
-
-#-----
-# clean up!
-plt.close(fig)
-del fig
-"""
-
-    return 0
 
 ###############################################################################
 ###############################################################################
@@ -157,7 +162,10 @@ del fig
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('input_file1', help="")
+    parser.add_argument('-tgb','--transfer_group_data', help="")
+    parser.add_argument('-t','--type', help="transfer_group_bar")
+    parser.add_argument('-fmt','--outfmt', type=str, default = 'png',help="")
+    parser.add_argument('-o','--outfile', help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

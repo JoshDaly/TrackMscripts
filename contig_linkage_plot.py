@@ -76,11 +76,14 @@ class Plot(object):
             self.getBLASTFiles(blast_dir)
         if cov_file and links_file:
             self.getIndividualBammFiles(cov_file, links_file)    
-        
+
         # loop through files
         for gid in self.bamm_files.keys():
             
             if type.lower()=='scatter':
+                
+                # create directory if it doesn't already exist!
+                self.doesDirectoryExist(gid, outdir)
             
                 if self.doesXYFileExist(gid, outdir, force):
                     bamm_links_file = self.bamm_files[gid]['links']
@@ -356,6 +359,15 @@ class Plot(object):
     def returnAverage(self,array):
         a = np.array(array)
         return np.mean(a)
+    
+    def doesDirectoryExist(self, gid, out_dir):
+        outdir = os.path.join(out_dir, gid)
+        if os.path.exists(outdir):
+            # directory already exists
+            pass
+        else:
+            # create directory
+            os.mkdir(outdir)
     
     def barChart(self, contig, outdir):
         contig_len = int(self.BD.contig_len[contig])

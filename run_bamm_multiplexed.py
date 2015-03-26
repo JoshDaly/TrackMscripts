@@ -59,7 +59,7 @@ class BamMRunner(object):
         self.working_gids       = {}
         self.genomes_to_update  = {}
         
-    def wrapper(self, sra_master_list, genomes_dir, bamm_dir, process_to_run, genomes_to_update):
+    def wrapper(self, sra_master_list, genomes_dir, bamm_dir, process_to_run, genomes_to_update, num_threads, sra_dir, seed_length):
         
         # get list of genomes to run bamm make 
         self.readGenomesToUpdate(genomes_to_update)
@@ -67,11 +67,17 @@ class BamMRunner(object):
         # read inter phyla metadata file containing sras
         self.readSRAMasterList(sra_master_list)
         
+        # set threads
+        num_threads = self.setThreadLimit(num_threads)
+        pool = Pool(num_threads)
+        
         if process_to_run.lower() == 'all':
             # make bamm make commands
             self.bammMake(genomes_dir,
                           bamm_dir,
-                          genomes_to_update)
+                          genomes_to_update,
+                          sra_dir,
+                          seed_length)
         
             # run bamm make 
             for cmd in self.bamm_make_cmds:
@@ -88,8 +94,10 @@ class BamMRunner(object):
             # make bamm make commands
             self.bammMake(genomes_dir,
                           bamm_dir,
-                          genomes_to_update)
-        
+                          genomes_to_update,
+                          sra_dir,
+                          seed_length)
+            
             # run bamm make 
             for cmd in self.bamm_make_cmds:
                 runCommand(cmd)
@@ -98,10 +106,16 @@ class BamMRunner(object):
             # make bamm parse commands
             self.bammParse(bamm_dir)
     
-            # run bamm parse
-            for cmd in self.bamm_parse_cmds:
-                runCommand(cmd)
+            print pool.map(runCommand, self.bamm_parse_cmds)
+    
+            #for cmd in self.bamm_parse_cmds:
+            #    runCommand(cmd)
 
+    def setThreadLimit(self, num_threads):
+        if num_threads > 5:
+            num_threads = 5 
+        return num_threads
+    
     def readGenomesToUpdate(self, genomes_to_update):
         try:
             with open(genomes_to_update) as fh:
@@ -127,7 +141,7 @@ class BamMRunner(object):
                         self.genome_sras[gid] = {sra:1}
 
     
-    def bammMake(self, genomes_dir, bamm_dir, genomes_to_update):
+    def bammMake(self, genomes_dir, bamm_dir, genomes_to_update, sra_dir, seed_length):
         # bamm make -d genomes/6 -c  -t 20 -o ./bamm/A00001904/ #
         for gid in self.genome_sras.keys():
             if self.checkGenomesToUpdate(gid, genomes_to_update):
@@ -138,7 +152,7 @@ class BamMRunner(object):
                     bamm_dir = bamm_dir[:-1]
     
                 img_id      = self.Path.gid_to_img[gid]
-                sra_paired, sra_single = self.matchSRAwithGID(gid)
+                sra_paired, sra_single = self.matchSRAwithGID(gid, sra_dir)
                 
                 # check if directory exists
                 self.doesDirectoryExist(gid, bamm_dir)
@@ -147,7 +161,7 @@ class BamMRunner(object):
                 self.doesGenomeFastaExist(gid, genomes_dir)
                 
                 # create BamM make commands
-                self.makeBammCmds(genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid) 
+                self.makeBammCmds(genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid, seed_length) 
 
     def doesDirectoryExist(self, gid, bamm_dir):
         outdir = os.path.join(bamm_dir, gid)
@@ -181,36 +195,43 @@ class BamMRunner(object):
         else:
             return True
         
-    def makeBammCmds(self, genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid):
+    def makeBammCmds(self, genomes_dir, img_id, sra_paired, sra_single, bamm_dir, gid, seed_length):
+        seed_length = "'mem:-k %d'" % seed_length # --extras "mem:-k 25"
+        
         if len(sra_paired) > 0 and len(sra_single) > 0:
-            self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -c %s -s %s -t 20 -o %s/%s" % (genomes_dir,
-                                                                                                 img_id,
-                                                                                                 sra_paired,
-                                                                                                 sra_single,
-                                                                                                 bamm_dir,
-                                                                                                 gid))
+            self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -c %s -s %s -t 20 -o %s/%s --extras %s" % (genomes_dir,
+                                                                                                             img_id,
+                                                                                                             sra_paired,
+                                                                                                             sra_single,
+                                                                                                             bamm_dir,
+                                                                                                             gid,
+                                                                                                             seed_length))
         elif len(sra_paired) > 0 and len(sra_single) == 0:
-            self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -c %s -t 20 -o %s/%s" % (genomes_dir,
-                                                                                           img_id,
-                                                                                           sra_paired,
-                                                                                           bamm_dir,
-                                                                                           gid))
+            self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -c %s -t 20 -o %s/%s --extras %s" % (genomes_dir,
+                                                                                                       img_id,
+                                                                                                       sra_paired,
+                                                                                                       bamm_dir,
+                                                                                                       gid,
+                                                                                                       seed_length))
         elif len(sra_paired) == 0 and len(sra_single) >0:
-            self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -s %s -t 20 -o %s/%s" % (genomes_dir,
-                                                                                           img_id,
-                                                                                           sra_single,
-                                                                                           bamm_dir,
-                                                                                           gid))
+            self.bamm_make_cmds.append("bamm make -f -d %s/%s.fna -s %s -t 20 -o %s/%s --extras %s" % (genomes_dir,
+                                                                                                       img_id,
+                                                                                                       sra_single,
+                                                                                                       bamm_dir,
+                                                                                                       gid,
+                                                                                                       seed_length))
         else:
             pass
         
-    def matchSRAwithGID(self, gid):
+    
+    def matchSRAwithGID(self, gid, sra_dir):
         sra_paired = ''
         sra_single = ''
         sra1 = ''
         sra2 = ''
         count = 1
-        sra_files = glob.glob('/srv/projects/trackm/batch7/inter_phyla_analysis/improved_Taxonomy/transfer_groups/sra/*.fastq.gz')
+        sra_dir_search = os.path.join(sra_dir, '*.fastq.gz')
+        sra_files = glob.glob(sra_dir_search)
         
         for sra_file in sra_files:
             for sra in self.genome_sras[gid]:
@@ -227,33 +248,44 @@ class BamMRunner(object):
             # check if directory exists
             self.doesDirectoryExist(gid, bamm_dir)
             
-            bamm_dir    = os.path.join(bamm_dir, gid)
+            bamm_dir_gid    = os.path.join(bamm_dir, gid)
             
-            try:
-                bamm_files = glob.glob('%s/*.bam' % bamm_dir)
-                #bamm_file  = glob.glob('%s/*.bam' % bamm_dir)[0]
-                bamm_output, threads = self.getBamMOutputFiles(bamm_files)
-                if threads >0:
-                    self.bamm_parse_cmds.append('bamm parse -l %s/%s.links.tsv -c %s/%s.coverages.tsv -i %s/%s.inserts.tsv -m pmean -b %s -t %d' % (bamm_dir,
-                                                                                                                                                    gid,
-                                                                                                                                                    bamm_dir,
-                                                                                                                                                    gid,
-                                                                                                                                                    bamm_dir,
-                                                                                                                                                    gid,
-                                                                                                                                                    bamm_output,
-                                                                                                                                                    threads
-                                                                                                                                                    ))   
-            except IndexError:
-                pass
+            if self.doBamMFilesExist(gid, bamm_dir_gid):
+                try:
+                    bamm_files = glob.glob('%s/*.bam' % bamm_dir_gid)
+                    #bamm_file  = glob.glob('%s/*.bam' % bamm_dir)[0]
+                    bamm_parse_input, threads = self.getBamMOutputFiles(bamm_files)
+                    if threads >0:
+                        self.bamm_parse_cmds.append('bamm parse -l %s/%s.links.tsv -c %s/%s.coverages.tsv -i %s/%s.inserts.tsv -m pmean -b %s -t %d' % (bamm_dir_gid,
+                                                                                                                                                        gid,
+                                                                                                                                                        bamm_dir_gid,
+                                                                                                                                                        gid,
+                                                                                                                                                        bamm_dir_gid,
+                                                                                                                                                        gid,
+                                                                                                                                                        bamm_parse_input,
+                                                                                                                                                        threads
+                                                                                                                                                        ))   
+                except IndexError:
+                    pass
+    
+    def doBamMFilesExist(self, gid, bamm_dir_gid):
+        bamm_file       = "%s/%s.coverages.tsv" % (bamm_dir_gid,gid)
+        # check if file exists
+        if os.path.exists(bamm_file):
+            return False
+        else:
+            return True
             
     def getBamMOutputFiles(self, bamm_files):
         threads = 0
-        bamm_output = ''
+        bamm_parse_input = ''
         try:
             for bamm_file in bamm_files:
                 threads += 1
-                bamm_output += '%s ' % bamm_file
-            return bamm_output, threads
+                bamm_parse_input += '%s ' % bamm_file
+            if threads >5:
+                threads = 5
+            return bamm_parse_input, threads
         except IndexError:
             pass
         
@@ -287,7 +319,10 @@ def doWork( args ):
                args.genomes_dir,
                args.bamm_dir,
                args.process_to_run,
-               args.genomes_to_update
+               args.genomes_to_update,
+               args.num_threads,
+               args.sra_dir,
+               args.seed_length
                )
                 
 
@@ -303,8 +338,11 @@ if __name__ == '__main__':
     parser.add_argument('sra_master_list', help="")
     parser.add_argument('genomes_dir', help="")
     parser.add_argument('bamm_dir', help="")
+    parser.add_argument('sra_dir', help="")
     parser.add_argument('-ptr','--process_to_run', default='all',help="Parse, make or all")
     parser.add_argument('-gtu','--genomes_to_update', help="")
+    parser.add_argument('-t','--num_threads', default=1, type=int, help="Set the number of threads to use. Max threads=5")
+    parser.add_argument('-k','--seed_length', type=int, default=19, help="Set the BWA seed length. Default=19")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
