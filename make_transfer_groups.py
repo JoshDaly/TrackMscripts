@@ -36,19 +36,8 @@ import argparse
 import sys
 from multiprocessing import Pool
 from subprocess import Popen, PIPE
-#import os
-#import errno
-#import glob
-#import numpy as np
-#np.seterr(all='raise')
-#import matplotlib as mpl
-#import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import axes3d, Axes3D
-#from pylab import plot,subplot,axis,stem,show,figure
 from Bio import SeqIO
 from Bio.Seq import Seq
-#import matplotlib.pyplot as plt
-#import networkx as nx
 
 # local imports
 import trackm_file_parser as TFP 
@@ -82,7 +71,7 @@ class TransferGroupsNucmer(object):
         self.nucmer_data    = {}
         self.transfer_len   = {}
         
-    def wrapper(self, nucmer_file, identity_thresh, len_overlap, fasta_file):
+    def wrapper(self, nucmer_file, identity_thresh, len_overlap, fasta_file, outfile):
         # grab transfer length information from multifasta file
         self.parseFastaFile(fasta_file)
         
@@ -90,7 +79,7 @@ class TransferGroupsNucmer(object):
         self.parseNucmerFile(nucmer_file, identity_thresh, len_overlap)
         
         # use nucmer data to form transfer groups
-        self.makeTransferGroups()
+        self.makeTransferGroups(outfile)
         
         
     def parseFastaFile(self, fasta_file):
@@ -123,7 +112,7 @@ class TransferGroupsNucmer(object):
             len_overlap_1 = len1/float(self.transfer_len[id1])
             len_overlap_2 = len2/float(self.transfer_len[id2])
             
-            # overlap must exceed threshold for at least one of the sequences
+            # overlap must exceed threshold for at least one of the two sequences
             if len_overlap_1 >= len_overlap or len_overlap_2 >= len_overlap:
                 
                 self.addConnection(id1, id2)
@@ -141,7 +130,7 @@ class TransferGroupsNucmer(object):
         except KeyError:
             self.nucmer_data[id2] = {id1:1}
     
-    def makeTransferGroups(self):
+    def makeTransferGroups(self, outfile):
         node_dict = {}
 
         nodes = set()
@@ -169,14 +158,15 @@ class TransferGroupsNucmer(object):
         number = 1
 
         # initialise outfile
-        #outfile = open(outfile, 'w')
+        outfile = open(outfile, 'w')
         
         for components in self.connected_components(nodes):
             names = sorted(node.name for node in components)
             names_count= len(names)
             names = ",".join(names)
             #outfile.write("Group %i:\t%d\t%s\n" % (number,names_count, names))
-            print "Group %i:\t%d\t%s" % (number,names_count, names)
+            outfile.write("Group %i:\t%d\t%s\n" % (number,names_count, names))
+            #print "Group %i:\t%d\t%s" % (number,names_count, names)
             number += 1
 
     def connected_components(self,nodes):
@@ -391,7 +381,8 @@ def doWork( args ):
         TGN.wrapper(args.nucmer_file,
                     args.identity,
                     args.length_overlap,
-                    args.contigs_file)
+                    args.contigs_file,
+                    args.outfile)
     else:
         print 'Please provide either a blast or nucmer file.'
 
