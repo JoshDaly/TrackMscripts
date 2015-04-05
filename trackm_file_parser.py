@@ -176,7 +176,7 @@ class GroupData(object):
                 GFP = GroupFileParser(l)
                 for pid_sqid in GFP.pid_sqids:
                     try:
-                        self.group_data[GFP.group_num] += [pid_sqid]
+                        self.group_data[GFP.group_num].append(pid_sqid)
                     except KeyError:
                         self.group_data[GFP.group_num] = [pid_sqid]
                     
@@ -258,6 +258,7 @@ class HitData(object):
         self.contig_to_gid              = {}
         self.contig_pidsqid_count_inter = {}
         self.contig_pidsqid_count_intra = {}
+        self.contig_pidsqid_count_all   = {}
         self.buildHitData(hitdata_file)
         
         
@@ -351,11 +352,17 @@ class HitData(object):
                 self.contig_pidsqid_count_inter[contig][pidsqid] = 1
             except KeyError:
                 self.contig_pidsqid_count_inter[contig] = {pidsqid:1}
-        else:
+        elif self.intra_or_inter[pidsqid] == 'intra':
             try:
                 self.contig_pidsqid_count_intra[contig][pidsqid] = 1
             except KeyError:
                 self.contig_pidsqid_count_intra[contig] = {pidsqid:1}
+        
+        # add to total
+        try:
+            self.contig_pidsqid_count_all[contig][pidsqid] = 1
+        except KeyError:
+            self.contig_pidsqid_count_all[contig] = {pidsqid:1}
     
     def addGenomeToTG(self, gid, TG):
         try:
@@ -1167,3 +1174,36 @@ class NucMerParser:
                        [float(i) for i in fields[3].split()] +
                        fields[4].split())
             break # done! 
+        
+###############################################################################                    
+###############################################################################
+###############################################################################
+###############################################################################
+
+class ContaminatedPidsqidsFileParser(object):
+    def __init__(self, l):
+        self.readContaminatedPidsqidsFile(l)
+        
+    def readContaminatedPidsqidsFile(self, l):
+        tabs = l.rstrip().split("\t")
+        self.category   = tabs[0]
+        self.pidsqids   = tabs[1].split(",")
+
+class ContaminatedPidsqids(object):
+    def __init__(self, contam_pidsqids_file):
+        self.wrapper(contam_pidsqids_file)
+        self.contam_pidsqids  = {}
+        
+    def wrapper(self, contam_pidsqids_file): 
+        with open(contam_pidsqids_file) as fh:
+            for l in fh:
+                CPFP = ContaminatedPidsqidsFileParser(l)
+                if CPFP.category == 'Inter Phyla' or CPFP.category == 'Vector': 
+                    for pidsqid in CPFP.pidsqids:
+                        self.contam_pidsqids[pidsqid] = 1
+        
+###############################################################################                    
+###############################################################################
+###############################################################################
+###############################################################################        
+        

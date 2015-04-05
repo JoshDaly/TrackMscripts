@@ -985,7 +985,7 @@ if __name__ == '__main__':
     parser.add_argument('hitdata_file', help="File containing hitdata")
     parser.add_argument('kmer_file', help="File containing Kmer directionality data")
     parser.add_argument('kegg_file', help="File containing KEGG data")
-    parser.add_argument('-t','--type',default='transfer_group', help="File containing Kmer directionality data. Please select either genus or transfer_group. Default: transfer_group")
+    parser.add_argument('-t','--type',default='transfer_group', help="Please select either genus or transfer_group. Default: transfer_group")
     parser.add_argument('-gs','--genome_status',default='all', help="Set the status of genome to use: Finished, Draft or all")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")

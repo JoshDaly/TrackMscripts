@@ -68,6 +68,7 @@ class Contigs(object):
         self.bamm_data              = {}
         self.bamm_cov_links_files   = {}
         self.pidsqid_count          = {}
+        self.pidsqid_list           = {}
         self.ecoli                  = self.getEcoliOuttaHere()
     
     def getEcoliOuttaHere(self):
@@ -77,7 +78,7 @@ class Contigs(object):
                 ecoli_gids.append(gid)
         return ecoli_gids
     
-    def wrapper(self, blastdir, cov_links_dir, type, tg_status_outfile, contaminated_contigs_file, length_min, length_max, coverage_min, coverage_max, show_plot, pie_graph_outfile, pie_graph_outfmt):
+    def wrapper(self, blastdir, cov_links_dir, type, tg_status_outfile, contaminated_contigs_file, length_min, length_max, coverage_min, coverage_max, show_plot, pie_graph_outfile, pie_graph_outfmt, pidsqid_outfile):
         # get contaminated contigs
         self.getContaminatedContigs(contaminated_contigs_file)
         
@@ -90,10 +91,13 @@ class Contigs(object):
         
         if type.lower() == 'pie_chart':
             # create pie chart
-            self.plotPieChart(length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot)
+            self.plotPieChart(length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot, pidsqid_outfile)
         
         elif type.lower() == 'tg_status':
             self.returnTGStatus(tg_status_outfile)
+            
+        elif type.lower() == 'list':
+            self.returnListOfPidsqids()
         
     def getCovLinkFiles(self, cov_link_dir):
         if cov_link_dir[-1] == '/':
@@ -163,23 +167,23 @@ class Contigs(object):
             if gid in self.contam_contigs:
             
                 # remove E.coli from analysis
-                if self.TD.taxon_genus[gid] != 'Escherichia':
-                    BFP = TFP.BlastFileParser(blast_file)
+                #if self.TD.taxon_genus[gid] != 'Escherichia':
+                BFP = TFP.BlastFileParser(blast_file)
+                
+                for query_id in BFP.isvector.keys():
+                    contig_id = self.getContigID(query_id)
+                    if contig_id in self.contam_contigs[gid]:
+                        self.isVector[contig_id]     = BFP.isvector[query_id]
+                
+                for query_id in BFP.topHits2.keys():
+                    contig_id = self.getContigID(query_id)
+                    if contig_id in self.contam_contigs[gid]:
+                        self.blast_data[contig_id]   = BFP.topHits2[query_id]
                     
-                    for query_id in BFP.isvector.keys():
-                        contig_id = self.getContigID(query_id)
-                        if contig_id in self.contam_contigs[gid]:
-                            self.isVector[contig_id]     = BFP.isvector[query_id]
-                    
-                    for query_id in BFP.topHits2.keys():
-                        contig_id = self.getContigID(query_id)
-                        if contig_id in self.contam_contigs[gid]:
-                            self.blast_data[contig_id]   = BFP.topHits2[query_id]
-                        
-                    for query_id in BFP.contig_len.keys():
-                        contig_id = self.getContigID(query_id)
-                        if contig_id in self.contam_contigs[gid]:
-                            self.contig_len[contig_id]   = BFP.contig_len[query_id]
+                for query_id in BFP.contig_len.keys():
+                    contig_id = self.getContigID(query_id)
+                    if contig_id in self.contam_contigs[gid]:
+                        self.contig_len[contig_id]   = BFP.contig_len[query_id]
     
             if count > 2000:
                 break
@@ -189,12 +193,15 @@ class Contigs(object):
         contigid   = "_".join(underscore[1:])
         return contigid
                     
-    def plotPieChart(self, length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot):
+    def plotPieChart(self, length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot, pidsqid_outfile):
         # get pie chart data
         labels,sizes = self.getPieChartData(length_min, length_max, coverage_min, coverage_max)
         
         col_set = "qualSet3"
         ColBrewColours = self.cb2.maps[col_set].values()[0:len(labels)+1]
+        
+        # initialise outfile
+        pidsqid_outfile = open(pidsqid_outfile, 'w')
         
         # print pidsqid counts data
         pos1 = -1.7
@@ -202,7 +209,10 @@ class Contigs(object):
         for category in self.pidsqid_count.keys():
             pos2 = pos2 + 0.1
             plt.text(pos1, pos2, "%s: %d" % (category, self.pidsqid_count[category]))
-            print "%s\t%d" % (category, self.pidsqid_count[category])
+            try:
+                pidsqid_outfile.write("%s\t%s\n" % (category, self.pidsqid_list[category]))
+            except KeyError:
+                pass
         # print header
         pos2 = pos2 + 0.1
         plt.text(pos1, pos2, "Pidsqids")
@@ -235,6 +245,9 @@ class Contigs(object):
         labels                  = []
         sizes                   = []
         
+        # create temp file for inter phyla output
+        temp_output = open('temp_output_file','w')
+        
         for contig in self.blast_data.keys():
             
             # check contig satisfies length minimum
@@ -258,7 +271,7 @@ class Contigs(object):
                         self.addContigPidsqidCount(contig, description)
                     else:
                         # check top blast hit
-                        description = self.checkBLAST(contig_gid, description)
+                        description = self.checkBLAST(temp_output, contig, contig_gid, description)
                         self.addData(description, piechartdata)
                         self.addContigPidsqidCount(contig, description)
         
@@ -271,69 +284,15 @@ class Contigs(object):
             sizes.append(count)
         
         return labels, sizes       
-                
-                
-                #if  self.isVector[contig] > 0:
-                #    description = 'Vector'
-                #    self.addData(description, piechartdata)
-                    
-                
-            
-            
-        """
-        for contig in self.blast_data.keys():
-            if self.contig_len[contig] >= 500:
-                total += 1 
-                description = self.blast_data[contig][0]
-                evalue      = self.blast_data[contig][1]
-                if  self.isVector[contig] > 0:
-                    description = 'Vector'
-                    self.addData(description, piechartdata)
-                elif 'escherichia' in description.lower() or 'e. coli' in description.lower():
-                    description = 'Escherichia'
-                    self.addData(description, piechartdata)
-                elif 'uncultured' in description.lower():
-                    description = 'Uncultured'
-                    self.addData(description, piechartdata)
-                elif 'streptomyces' in description.lower():
-                    description = 'Streptomyces'
-                    self.addData(description, piechartdata)
-                elif 'staphylococcus' in description.lower():
-                    description = 'Staphylococcus'
-                    self.addData(description, piechartdata)
-                elif 'mycobacterium' in description.lower():
-                    description = 'Mycobacterium'
-                    self.addData(description, piechartdata)
-                elif 'bacteroides' in description.lower():
-                    description = 'Bacteroides'
-                    self.addData(description, piechartdata)
-                for contam in common_contams:
-                    if contam.lower() in description.lower():
-                        description = 'Common contaminants'
-                        self.addData(description, piechartdata)
-                else:
-                    self.addData(description, piechartdata)
-        
-        for description in  piechartdata.keys():
-            count = piechartdata[description]
-            percentage = count/float(total)
-            if percentage > 0.01: 
-                self.addCorrectedData(description, count, piechartdataCorrected)
-            else:
-                description = 'other'
-                self.addCorrectedData(description, count, piechartdataCorrected)
-                
-        for description in  piechartdataCorrected.keys():
-            count = piechartdataCorrected[description]
-            labels.append(description)
-            sizes.append(count)
-        
-        return labels, sizes
-        """
     
     def addContigPidsqidCount(self, contig, category):
         try:
-            pidsqid_count = len(self.HD.contig_pidsqid_count_inter[contig])
+            pidsqid_count   = len(self.HD.contig_pidsqid_count_all[contig])
+            pidsqid_list = ",".join(self.HD.contig_pidsqid_count_all[contig].keys())
+            try:
+                self.pidsqid_list[category] += pidsqid_list
+            except KeyError:
+                self.pidsqid_list[category] = pidsqid_list
         except KeyError:
             pidsqid_count = 0 
         
@@ -341,6 +300,8 @@ class Contigs(object):
             self.pidsqid_count[category] += pidsqid_count
         except KeyError:
             self.pidsqid_count[category] = pidsqid_count
+            
+        
     
     def doesContigSatisfyConstraints(self, gid, contig, len_min, len_max, cov_min, cov_max):
         # get contig attributes
@@ -355,9 +316,11 @@ class Contigs(object):
             return False
              
     
-    def checkBLAST(self, contig_gid, description):
+    def checkBLAST(self, temp_output, contig, contig_gid, description):
         # split description on whitespace
         description_split = description.split()
+        
+        original_description = description
         
         # get contig taxon information
         _organism   = self.TD.taxon_organism[contig_gid]
@@ -372,7 +335,13 @@ class Contigs(object):
         
         # check contig taxa against blast taxa
         description = self.checkContigVsBlastTaxa(_phylum, blast_phylum, _class, blast_class, _order, blast_order, _family, blast_family, _genus, blast_genus, blast_other)
-    
+        
+        ###########################################
+        if description == "Inter Phyla":
+            temp_output.write("%s\t%s\t%s\t%d\n" % (contig_gid, contig, original_description, self.contig_len[contig]))
+        
+        ###########################################
+        
         return description
     
     def checkContigVsBlastTaxa(self, _phylum, blast_phylum, _class, blast_class, _order, blast_order, _family, blast_family, _genus, blast_genus, blast_other):
@@ -469,6 +438,9 @@ class Contigs(object):
         else:
             return True
         
+    def returnListOfPidsqids(self):
+        pass
+        
 ###############################################################################
 ###############################################################################
 ###############################################################################
@@ -505,7 +477,8 @@ def doWork( args ):
               args.coverage_max,
               args.show_plot,
               args.pie_graph_outfile,
-              args.pie_graph_outfmt
+              args.pie_graph_outfmt,
+              args.pidsqid_outfile
               )
     
 
@@ -524,7 +497,7 @@ if __name__ == '__main__':
     parser.add_argument('hitdata', help="")
     parser.add_argument('gg_tax_file', help="")
     parser.add_argument('cov_links_dir', help="")
-    parser.add_argument('-t','--type', default = 'Pie_chart',help="Set the type of analysis to be completed. (default)Pie_chart: pie chart of specified contigs. tg_status: returns percentage of TGs contaminated.")
+    parser.add_argument('-t','--type', default = 'Pie_chart',help="Set the type of analysis to be completed. (default)Pie_chart: pie chart of specified contigs. tg_status: returns percentage of TGs contaminated. list: returns list of contaminated pidsqids.")
     parser.add_argument('-tgso','--tg_status_outfile', help="")
     parser.add_argument('-lmn','--length_min', type=int, default=0, help="")
     parser.add_argument('-lmx','--length_max', type=int, default=999999999, help="")
@@ -532,6 +505,7 @@ if __name__ == '__main__':
     parser.add_argument('-cmx','--coverage_max', type=float, default=1000, help="")
     parser.add_argument('-sp','--show_plot', default=False, help="")
     parser.add_argument('-po','--pie_graph_outfile', default = 'piegraph', help="")
+    parser.add_argument('-pidsqid_outfile','--pidsqid_outfile', default = 'pidsqid.csv', help="")
     parser.add_argument('-pofmt','--pie_graph_outfmt', default='png',help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
