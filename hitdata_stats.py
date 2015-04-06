@@ -70,7 +70,7 @@ class HitDataStats(object):
         matrix = []
         
         for pidsqid in self.HD.hit_data.keys():
-            if self.checkPidsqid():
+            if self.checkPidsqid(pidsqid):
                 phylum1 = self.HD.phylum[pidsqid][0]
                 phylum2 = self.HD.phylum[pidsqid][1]
                 # add phylum
