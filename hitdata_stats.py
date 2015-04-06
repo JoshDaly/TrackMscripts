@@ -62,7 +62,7 @@ class HitDataStats(object):
         col_set                             = "qualSet1"
         col_set_gradient                    = "seqReds"
         self.ColBrewColours                 = cb2.maps[col_set].values()[0:10]
-        self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:10]
+        self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:8]
         
     def wrapper(self, type):
         if type == 'phylum_interactions':
@@ -173,10 +173,8 @@ class HitDataStats(object):
             colours.append(self.colBrewColoursGradient[6])
         elif hits >600 and hits <= 700:
             colours.append(self.colBrewColoursGradient[7])
-        elif hits >700 and hits <= 800:
+        elif hits >700:
             colours.append(self.colBrewColoursGradient[8])
-        elif hits >800:
-            colours.append(self.colBrewColoursGradient[9])
     
     def checkPidsqid(self, pidsqid):
         try: 
