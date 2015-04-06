@@ -85,8 +85,7 @@ class HitDataStats(object):
             phylum1 = self.HD.phylum[pidsqid][0]
             phylum2 = self.HD.phylum[pidsqid][1]
             try:
-                transfer_group = self.TG.group_membership[pidsqid]
-                print transfer_group
+                transfer_group = int(self.TG.group_membership[pidsqid])
                 if self.checkTransferGroup(transfer_group):
                     print 'im getting to here'
                     # add phylum
@@ -177,7 +176,7 @@ class HitDataStats(object):
     def evaluateTransferGroups(self):
         for pidsqid in self.CP.contam_pidsqids.keys():
             try:
-                transfer_group = self.TG.group_membership[pidsqid]
+                transfer_group = int(self.TG.group_membership[pidsqid])
                 self.contaminated_TGs[transfer_group] = 1
             except KeyError:
                 pass
