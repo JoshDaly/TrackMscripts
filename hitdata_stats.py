@@ -134,7 +134,7 @@ class HitDataStats(object):
         ax.set_yticklabels(labels, fontsize = 'medium')
         
         # rotate x labels 90 degrees
-        plt.xticks(rotation=90)
+        plt.xticks(rotation=45)
         
         plt.tight_layout()
         
