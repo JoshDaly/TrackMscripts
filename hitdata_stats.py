@@ -138,7 +138,7 @@ class HitDataStats(object):
         
         plt.tight_layout()
         
-        plt.scatter(xs, ys, c = colours, s=1200, marker='s')
+        plt.scatter(xs, ys, c = colours, s=4000, marker='s')
         
         plt.savefig("temp.png", dpi = 300)
         
