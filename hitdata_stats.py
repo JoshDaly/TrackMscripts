@@ -44,6 +44,7 @@ import matplotlib.pyplot as plt
 
 # local imports
 import trackm_file_parser as TFP
+from cb2cols import Cb2Cols as CB2
 
 ###############################################################################
 ###############################################################################
@@ -56,6 +57,12 @@ class HitDataStats(object):
         self.TG         = TFP.GroupData(transfer_groups)
         if contam_pidsqids:
             self.CP         = TFP.ContaminatedPidsqids(contam_pidsqids) 
+        # ColorBrewer colours
+        cb2                                 = CB2()
+        col_set                             = "qualSet1"
+        col_set_gradient                    = "seqReds"
+        self.ColBrewColours                 = cb2.maps[col_set].values()[0:10]
+        self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:10]
         
     def wrapper(self, type):
         if type == 'phylum_interactions':
@@ -98,18 +105,18 @@ class HitDataStats(object):
                 matrix[i][v] = hits
         
         # make scatter plot
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
-        xs = []
-        ys = []
-        size = []
+        fig     = plt.figure()
+        ax      = fig.add_subplot(111)
+        xs      = []
+        ys      = []
+        colours = []
         
         for i in range(len(matrix)):
             for v in range(len(matrix)):
                 hits = matrix[i][v]
                 xs.append(i)
                 ys.append(v)
-                size.append(hits)
+                self.colourByHits(hits, colours)
                 
         #set the number of tick labels
         ticks = []
@@ -131,7 +138,7 @@ class HitDataStats(object):
         
         plt.tight_layout()
         
-        plt.scatter(xs, ys, s=size, alpha=0.5)
+        plt.scatter(xs, ys, c = colours, s=3, alpha=0.5)
         
         plt.show()
         
@@ -149,6 +156,30 @@ class HitDataStats(object):
             print string_to_print
         """
         
+    def colourByHits(self, hits, colours):
+        if hits == 0:
+            colours.append(self.colBrewColoursGradient[0])
+        elif hits >0 and hit <= 100:
+            colours.append(self.colBrewColoursGradient[1])
+        elif hits >100 and hit <= 200:
+            colours.append(self.colBrewColoursGradient[2])
+        elif hits >200 and hit <= 300:
+            colours.append(self.colBrewColoursGradient[3])
+        elif hits >300 and hit <= 400:
+            colours.append(self.colBrewColoursGradient[4])
+        elif hits >400 and hit <= 500:
+            colours.append(self.colBrewColoursGradient[5])
+        elif hits >500 and hit <= 600:
+            colours.append(self.colBrewColoursGradient[6])
+        elif hits >600 and hit <= 700:
+            colours.append(self.colBrewColoursGradient[7])
+        elif hits >700 and hit <= 800:
+            colours.append(self.colBrewColoursGradient[8])
+        elif hits >800 and hit <= 900:
+            colours.append(self.colBrewColoursGradient[9])
+        elif hits >900:
+            colours.append(self.colBrewColoursGradient[10])
+    
     def checkPidsqid(self, pidsqid):
         try: 
             if pidsqid in self.CP.contam_pidsqids:
