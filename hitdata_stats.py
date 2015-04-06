@@ -138,7 +138,7 @@ class HitDataStats(object):
         
         plt.tight_layout()
         
-        plt.scatter(xs, ys, c = colours, s=100)
+        plt.scatter(xs, ys, c = colours, s=300, marker='s')
         
         plt.show()
         
