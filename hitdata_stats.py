@@ -65,17 +65,18 @@ class HitDataStats(object):
         self.ColBrewColours                 = cb2.maps[col_set].values()[0:10]
         self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:9]
         
-    def wrapper(self, type, outfile, outfmt):
+    def wrapper(self, type, outfile, outfmt, contam_pidsqids):
         if type == 'phylum_interactions':
-            self.createPhylumInteractionMatrix(outfile, outfmt)
+            self.createPhylumInteractionMatrix(outfile, outfmt, contam_pidsqids)
         elif type == 'genus_interactions':
             pass
         elif type == 'hitdata_fix':
             self.fixTransferGroupsHitData()
     
-    def createPhylumInteractionMatrix(self, outfile, outfmt):
+    def createPhylumInteractionMatrix(self, outfile, outfmt, contam_pidsqids):
         # determine contaminated transfer groups
-        self.evaluateTransferGroups()
+        if contam_pidsqids:
+            self.evaluateTransferGroups()
         
         phylum_interactions = {}
         phylums = {}
