@@ -158,7 +158,7 @@ class HitDataStats(object):
         
     def colourByHits(self, hits, colours):
         if hits == 0:
-            colours.append(self.colBrewColoursGradient[0])
+            colours.append('white')
         elif hits >0 and hits <= 100:
             colours.append(self.colBrewColoursGradient[1])
         elif hits >100 and hits <= 200:
