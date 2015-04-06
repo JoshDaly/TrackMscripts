@@ -120,6 +120,9 @@ class HitDataStats(object):
         
         # set labels as phyla
         labels = [item.get_text() for item in ax.get_xticklabels()]
+        ax.set_xticklabels(labels)
+        ax.set_yticklabels(labels)
+        
         # rotate x labels 90 degrees
         plt.xticks(rotation=90)
         
