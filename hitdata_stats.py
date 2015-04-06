@@ -169,8 +169,11 @@ class HitDataStats(object):
         
     def evaluateTransferGroups(self):
         for pidsqid in self.CP.contam_pidsqids.keys():
-            transfer_group = self.TG.group_membership[pidsqid]
-            self.contaminated_TGs[transfer_group] = 1
+            try:
+                transfer_group = self.TG.group_membership[pidsqid]
+                self.contaminated_TGs[transfer_group] = 1
+            except KeyError:
+                pass
     
     def colourByHits(self, hits, colours):
         if hits == 0:
