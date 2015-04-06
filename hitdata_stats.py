@@ -100,7 +100,7 @@ class HitDataStats(object):
         print header
             
         for i in range(len(phylum_array)):
-            string_to_print = "%s" % i
+            string_to_print = "%s" % phylum_array[i]
             for v in range(len(phylum_array)):
                 string_to_print += "\t%d" % matrix[i][v]
             print string_to_print
