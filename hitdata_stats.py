@@ -74,8 +74,8 @@ class HitDataStats(object):
             phylums[phylum1] = 1
             phylums[phylum2] = 1
             # add phylum interaction data
-            self.addPhylum(phylum1, phylum2, phylum_interactions)
-            self.addPhylum(phylum2, phylum1, phylum_interactions)
+            self.addPhylum(phylum1, phylum2, pidsqid, phylum_interactions)
+            self.addPhylum(phylum2, phylum1, pidsqid, phylum_interactions)
         
         phylum_array = phylums.keys()
         
@@ -88,7 +88,7 @@ class HitDataStats(object):
                 phylum1 = phylum_array[i]
                 phylum2 = phylum_array[v]
                 try:
-                    hits = phylum_interactions[phylum1][phylum2]
+                    hits = len(phylum_interactions[phylum1][phylum2])
                 except KeyError:
                     hits = 0
                 matrix[i][v] = hits
@@ -114,12 +114,12 @@ class HitDataStats(object):
             
     def addPhylum(self, phylum1, phylum2, dict):
         try:
-            dict[phylum1][phylum2] +=1 
+            dict[phylum1][phylum2][pidsqid] =1 
         except KeyError:
             try:
-                dict[phylum1][phylum2] =1 
+                dict[phylum1][phylum2] = {pidsqid:1} 
             except KeyError:
-                dict[phylum1] = {phylum2:1}
+                dict[phylum1] = {phylum2:{pidsqid:1}}
             
     def fixTransferGroupsHitData(self):
         # print header 
