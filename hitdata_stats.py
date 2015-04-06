@@ -109,12 +109,12 @@ class HitDataStats(object):
             print string_to_print
     
     def checkPidsqid(self, pidsqid):
-        if self.CP:
+        try: 
             if pidsqid in self.CP.contam_pidsqids:
                 return False
             else: 
                 return True
-        else:
+        except AttributeError:
             return True
     
     def zeroArray(self, array, phylum_array):
