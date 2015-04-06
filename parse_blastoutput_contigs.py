@@ -290,7 +290,7 @@ class Contigs(object):
             pidsqid_count   = len(self.HD.contig_pidsqid_count_all[contig])
             pidsqid_list = ",".join(self.HD.contig_pidsqid_count_all[contig].keys())
             try:
-                self.pidsqid_list[category] += pidsqid_list
+                self.pidsqid_list[category] += ",%s" % pidsqid_list
             except KeyError:
                 self.pidsqid_list[category] = pidsqid_list
         except KeyError:
