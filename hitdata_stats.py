@@ -120,8 +120,8 @@ class HitDataStats(object):
         
         # set labels as phyla
         labels = [item.get_text() for item in ax.get_xticklabels()]
-        print labels
-        os.sys.exit()
+        for i,v in enumerate(labels):
+            labels[i] = phylum_array[i]
         
         ax.set_xticklabels(labels)
         ax.set_yticklabels(labels)
