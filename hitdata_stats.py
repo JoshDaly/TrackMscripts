@@ -76,6 +76,7 @@ class HitDataStats(object):
     def createPhylumInteractionMatrix(self, outfile, outfmt):
         # determine contaminated transfer groups
         self.evaluateTransferGroups()
+        print self.contaminated_TGs
         
         phylum_interactions = {}
         phylums = {}
