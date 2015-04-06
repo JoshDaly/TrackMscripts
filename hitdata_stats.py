@@ -56,7 +56,7 @@ class HitDataStats(object):
         if contam_pidsqids:
             self.CP         = TFP.ContaminatedPidsqids(contam_pidsqids) 
         
-    def wrapper(self, type, remove_contamination):
+    def wrapper(self, type):
         if type == 'phylum_interactions':
             self.createPhylumInteractionMatrix(remove_contamination)
         elif type == 'genus_interactions':
@@ -108,8 +108,8 @@ class HitDataStats(object):
                 string_to_print += "\t%d" % matrix[i][v]
             print string_to_print
     
-    def checkPidsqid(self, pidsqid, remove_contamination):
-        if remove_contamination:
+    def checkPidsqid(self, pidsqid):
+        if self.CP:
             if pidsqid in self.CP.contam_pidsqids:
                 return False
             else: 
