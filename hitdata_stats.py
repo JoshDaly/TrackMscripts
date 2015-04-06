@@ -182,21 +182,21 @@ class HitDataStats(object):
     def colourByHits(self, hits, colours):
         if hits == 0:
             colours.append('white')
-        elif hits >0 and hits <= 100:
+        elif hits >0 and hits <= 10:
             colours.append(self.colBrewColoursGradient[1])
-        elif hits >100 and hits <= 200:
+        elif hits >10 and hits <= 20:
             colours.append(self.colBrewColoursGradient[2])
-        elif hits >200 and hits <= 300:
+        elif hits >20 and hits <= 30:
             colours.append(self.colBrewColoursGradient[3])
-        elif hits >300 and hits <= 400:
+        elif hits >30 and hits <= 40:
             colours.append(self.colBrewColoursGradient[4])
-        elif hits >400 and hits <= 500:
+        elif hits >40 and hits <= 50:
             colours.append(self.colBrewColoursGradient[5])
-        elif hits >500 and hits <= 600:
+        elif hits >50 and hits <= 60:
             colours.append(self.colBrewColoursGradient[6])
-        elif hits >600 and hits <= 700:
+        elif hits >60 and hits <= 70:
             colours.append(self.colBrewColoursGradient[7])
-        elif hits >700:
+        elif hits >70:
             colours.append(self.colBrewColoursGradient[8])
     
     def checkPidsqid(self, pidsqid):
