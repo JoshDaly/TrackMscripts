@@ -173,9 +173,9 @@ returns (stdout, stderr)
 def doWork( args ):
     """ Main wrapper"""
     HDS = HitDataStats(args.hitdata,
-                       args.transfer_groups_file)
-    HDS.wrapper(args.type,
-                args.remove_contamination)
+                       args.transfer_groups_file,
+                       args.contaminted_pidsqids)
+    HDS.wrapper(args.type)
 
 
 ###############################################################################
@@ -189,7 +189,7 @@ if __name__ == '__main__':
     parser.add_argument('hitdata', help="")
     parser.add_argument('-tg','--transfer_groups_file', help="")
     parser.add_argument('-t','--type', help="Type of summary table to create. Phylum_interactions, genus_interactions.")
-    parser.add_argument('-rc','--remove_contamination', default=False, help="Remove contaminated pidsqids. Default=False")
+    parser.add_argument('-cp','--contaminted_pidsqids', default=False, help="Remove contaminated pidsqids file. Default=False")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
