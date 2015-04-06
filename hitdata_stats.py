@@ -89,7 +89,7 @@ class HitDataStats(object):
                     hits = phylum_interactions[phylum1][phylum2]
                 except KeyError:
                     hits = 0
-            hits_to_append.append(hits)
+                hits_to_append.append(hits)
             matrix.append(hits_to_append)
         
         for i in matrix:
