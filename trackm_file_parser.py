@@ -1191,13 +1191,14 @@ class ContaminatedPidsqidsFileParser(object):
 
 class ContaminatedPidsqids(object):
     def __init__(self, contam_pidsqids_file):
-        self.wrapper(contam_pidsqids_file)
         self.contam_pidsqids  = {}
+        self.wrapper(contam_pidsqids_file)
         
     def wrapper(self, contam_pidsqids_file): 
         with open(contam_pidsqids_file) as fh:
             for l in fh:
                 CPFP = ContaminatedPidsqidsFileParser(l)
+                # conservative threshold 
                 if CPFP.category == 'Inter Phyla' or CPFP.category == 'Vector': 
                     for pidsqid in CPFP.pidsqids:
                         self.contam_pidsqids[pidsqid] = 1
