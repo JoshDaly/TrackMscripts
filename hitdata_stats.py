@@ -67,9 +67,23 @@ class HitDataStats(object):
             pass
             
     def fixTransferGroupsHitData(self):
+        # print header 
+        print '\t'.join(['pidsqid','transfer_group','hid','pid','ani_comp','ident','gid_1','habitat_1','phylum_1','genus_1','status_1','sequencingMethod_1','sequencingCentre_1','horizontalTransferred_1','genomeSize_1','scaffoldCount_1','len_1','strand_1','cid_1','contig_1','contigLength_1','sqid_1','start_1','gid_2','habitat_2','phylum_2','genus_2','status_2','sequencingMethod_2','sequencingCentre_2','horizontalTransferred_2','genomeSize_2','scaffoldCount_2','len_2','strand_2','cid_2','contig_2','contigLength_2','sqid_2','start_2'])
+        
         for pidsqid in self.HD.hit_data.keys():
-            transfer_group = self.TG.group_membership[pidsqid]
-            print transfer_group
+            string_to_print = ''
+            string_to_print += '%s' % pidsqid
+            try:
+                transfer_group = self.TG.group_membership[pidsqid]
+            except KeyError:
+                transfer_group = 'NA'
+            for i,v in enumerate(self.HD.hit_data[pidsqid]):
+                if i == 0:
+                    string_to_print += '\t%s' % transfer_group
+                else:
+                    string_to_print += '\t%s' % v
+            print string_to_print
+                
         
 ###############################################################################
 ###############################################################################
