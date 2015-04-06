@@ -101,9 +101,9 @@ class HitDataStats(object):
         xs = []
         ys = []
         
-        for i in matrix:
-            for v in matrix[i]:
-                print i,v
+        for i,v in enumerate(matrix):
+            for x in matrix[i]:
+                print i,x
                 #xs.append(i)
                 #ys.append(v)
                 
