@@ -130,8 +130,8 @@ class HitDataStats(object):
         for i,v in enumerate(labels):
             labels[i] = phylum_array[i]
         
-        ax.set_xticklabels(labels, fontsize = 'medium')
-        ax.set_yticklabels(labels, fontsize = 'medium')
+        ax.set_xticklabels(labels, fontsize = '‘x-large')
+        ax.set_yticklabels(labels, fontsize = '‘x-large')
         
         # rotate x labels 90 degrees
         plt.xticks(rotation=45)
