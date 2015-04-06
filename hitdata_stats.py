@@ -64,15 +64,15 @@ class HitDataStats(object):
         self.ColBrewColours                 = cb2.maps[col_set].values()[0:10]
         self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:9]
         
-    def wrapper(self, type):
+    def wrapper(self, type, outfile, outfmt):
         if type == 'phylum_interactions':
-            self.createPhylumInteractionMatrix()
+            self.createPhylumInteractionMatrix(outfile, outfmt)
         elif type == 'genus_interactions':
             pass
         elif type == 'hitdata_fix':
             self.fixTransferGroupsHitData()
     
-    def createPhylumInteractionMatrix(self):
+    def createPhylumInteractionMatrix(self, outfile, outfmt):
         phylum_interactions = {}
         phylums = {}
         matrix = []
@@ -140,7 +140,7 @@ class HitDataStats(object):
         
         plt.scatter(xs, ys, c = colours, s=7000, marker='s',linewidths=0)
         
-        plt.savefig("temp.png", dpi = 300)
+        plt.savefig("%s" % (outfile),format="%s" % (outfmt), dpi = 300)
         
         """
         # print header
@@ -244,7 +244,9 @@ def doWork( args ):
     HDS = HitDataStats(args.hitdata,
                        args.transfer_groups_file,
                        args.contaminted_pidsqids)
-    HDS.wrapper(args.type)
+    HDS.wrapper(args.type,
+                args.outfile,
+                args.outfmt)
 
 
 ###############################################################################
@@ -259,6 +261,8 @@ if __name__ == '__main__':
     parser.add_argument('-tg','--transfer_groups_file', help="")
     parser.add_argument('-t','--type', help="Type of summary table to create. Phylum_interactions, genus_interactions.")
     parser.add_argument('-cp','--contaminted_pidsqids', default=False, help="Remove contaminated pidsqids file. Default=False")
+    parser.add_argument('-o','--outfile', default='hitdata_plot', help="Output file name prefix.")
+    parser.add_argument('-of','--outfmt', default='png', help="format of network plot. Default = png.")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
