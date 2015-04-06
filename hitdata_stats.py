@@ -176,6 +176,7 @@ class HitDataStats(object):
         
     def evaluateTransferGroups(self):
         for pidsqid in self.CP.contam_pidsqids.keys():
+            print pidsqid
             try:
                 transfer_group = self.TG.group_membership[pidsqid]
                 self.contaminated_TGs[transfer_group] = 1
