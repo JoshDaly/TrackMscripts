@@ -144,7 +144,7 @@ class HitDataStats(object):
         for i in range(len(matrix)):
             for v in range(len(matrix)):
                 hits = matrix[i][v]
-                plt.text(i,v,"%d" % hits, color="#D0D0D0", ha='center', va='center')
+                plt.text(i,v,"%d" % hits, color="black", ha='center', va='center', backgroundcolor='white')
         
         plt.savefig("%s" % (outfile),format="%s" % (outfmt), dpi = 300)
         
