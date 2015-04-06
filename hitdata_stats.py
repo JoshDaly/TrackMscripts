@@ -58,7 +58,7 @@ class HitDataStats(object):
         
     def wrapper(self, type):
         if type == 'phylum_interactions':
-            self.createPhylumInteractionMatrix(remove_contamination)
+            self.createPhylumInteractionMatrix()
         elif type == 'genus_interactions':
             pass
         elif type == 'hitdata_fix':
@@ -70,7 +70,7 @@ class HitDataStats(object):
         matrix = []
         
         for pidsqid in self.HD.hit_data.keys():
-            if self.checkPidsqid(remove_contamination):
+            if self.checkPidsqid():
                 phylum1 = self.HD.phylum[pidsqid][0]
                 phylum2 = self.HD.phylum[pidsqid][1]
                 # add phylum
