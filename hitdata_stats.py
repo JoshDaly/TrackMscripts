@@ -92,7 +92,7 @@ returns (stdout, stderr)
 
 def doWork( args ):
     """ Main wrapper"""
-    HDS = HitDataStats(args.hitdatam
+    HDS = HitDataStats(args.hitdata,
                        args.transfer_groups_file)
     HDS.wrapper(args.type)
 
