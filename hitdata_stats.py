@@ -57,6 +57,7 @@ class HitDataStats(object):
         self.TG         = TFP.GroupData(transfer_groups)
         if contam_pidsqids:
             self.CP         = TFP.ContaminatedPidsqids(contam_pidsqids) 
+        self.contaminated_TGs = {}
         # ColorBrewer colours
         cb2                                 = CB2()
         col_set                             = "qualSet1"
@@ -73,20 +74,24 @@ class HitDataStats(object):
             self.fixTransferGroupsHitData()
     
     def createPhylumInteractionMatrix(self, outfile, outfmt):
+        # determine contaminated transfer groups
+        self.evaluateTransferGroups()
+        
         phylum_interactions = {}
         phylums = {}
         matrix = []
         
         for pidsqid in self.HD.hit_data.keys():
-            if self.checkPidsqid(pidsqid):
-                phylum1 = self.HD.phylum[pidsqid][0]
-                phylum2 = self.HD.phylum[pidsqid][1]
+            phylum1 = self.HD.phylum[pidsqid][0]
+            phylum2 = self.HD.phylum[pidsqid][1]
+            transfer_group = self.TG.group_membership[pidsqid]
+            if self.checkTransferGroup(transfer_group):
                 # add phylum
                 phylums[phylum1] = 1
                 phylums[phylum2] = 1
                 # add phylum interaction data
-                self.addPhylum(phylum1, phylum2, pidsqid, phylum_interactions)
-                self.addPhylum(phylum2, phylum1, pidsqid, phylum_interactions)
+                self.addPhylum(phylum1, phylum2, transfer_group, phylum_interactions)
+                self.addPhylum(phylum2, phylum1, transfer_group, phylum_interactions)
         
         phylum_array = phylums.keys()
         
@@ -162,6 +167,11 @@ class HitDataStats(object):
             print string_to_print
         """
         
+    def evaluateTransferGroups(self):
+        for pidsqid in self.CP.contam_pidsqids.keys():
+            transfer_group = self.TG.group_membership[pidsqid]
+            self.contaminated_TGs[transfer_group] = 1
+    
     def colourByHits(self, hits, colours):
         if hits == 0:
             colours.append('white')
@@ -191,6 +201,13 @@ class HitDataStats(object):
         except AttributeError:
             return True
     
+    def checkTransferGroup(self, transfer_group):
+        try: 
+            if transfer_group in self.contaminated_TGs:
+                return False
+        except AttributeError:
+            return True
+    
     def zeroArray(self, array, phylum_array):
         for i in range(len(phylum_array)):
             zeros = []
@@ -198,14 +215,14 @@ class HitDataStats(object):
                 zeros.append(0)
             array.append(zeros)
             
-    def addPhylum(self, phylum1, phylum2, pidsqid, dict):
+    def addPhylum(self, phylum1, phylum2, TG, dict):
         try:
-            dict[phylum1][phylum2][pidsqid] =1 
+            dict[phylum1][phylum2][TG] =1 
         except KeyError:
             try:
-                dict[phylum1][phylum2] = {pidsqid:1} 
+                dict[phylum1][phylum2] = {TG:1} 
             except KeyError:
-                dict[phylum1] = {phylum2:{pidsqid:1}}
+                dict[phylum1] = {phylum2:{TG:1}}
             
     def fixTransferGroupsHitData(self):
         # print header 
