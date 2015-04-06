@@ -98,6 +98,8 @@ class HitDataStats(object):
                 matrix[i][v] = hits
         
         # make scatter plot
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
         xs = []
         ys = []
         
