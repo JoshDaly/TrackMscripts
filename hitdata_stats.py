@@ -120,6 +120,9 @@ class HitDataStats(object):
         
         # set labels as phyla
         labels = [item.get_text() for item in ax.get_xticklabels()]
+        print labels
+        os.sys.exit()
+        
         ax.set_xticklabels(labels)
         ax.set_yticklabels(labels)
         
