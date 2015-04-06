@@ -105,7 +105,7 @@ class HitDataStats(object):
                 matrix[i][v] = hits
         
         # make scatter plot
-        fig = plt.figure(figsize=(30,15),dpi=1200)
+        fig = plt.figure(figsize=(30,15),dpi=300)
         ax = plt.subplot(1,1,1,axisbg='white',autoscale_on=True, aspect='equal')#, xlim=[-0.2,1.2], ylim=[-0.2,1.2])
         xs      = []
         ys      = []
@@ -138,7 +138,7 @@ class HitDataStats(object):
         
         plt.tight_layout()
         
-        plt.scatter(xs, ys, c = colours, s=300, marker='s')
+        plt.scatter(xs, ys, c = colours, s=1200, marker='s')
         
         plt.savefig("temp.png", dpi = 300)
         
