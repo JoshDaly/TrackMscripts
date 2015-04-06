@@ -175,10 +175,8 @@ class HitDataStats(object):
             colours.append(self.colBrewColoursGradient[7])
         elif hits >700 and hits <= 800:
             colours.append(self.colBrewColoursGradient[8])
-        elif hits >800 and hits <= 900:
+        elif hits >800:
             colours.append(self.colBrewColoursGradient[9])
-        elif hits >900:
-            colours.append(self.colBrewColoursGradient[10])
     
     def checkPidsqid(self, pidsqid):
         try: 
