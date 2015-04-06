@@ -84,14 +84,17 @@ class HitDataStats(object):
         for pidsqid in self.HD.hit_data.keys():
             phylum1 = self.HD.phylum[pidsqid][0]
             phylum2 = self.HD.phylum[pidsqid][1]
-            transfer_group = self.TG.group_membership[pidsqid]
-            if self.checkTransferGroup(transfer_group):
-                # add phylum
-                phylums[phylum1] = 1
-                phylums[phylum2] = 1
-                # add phylum interaction data
-                self.addPhylum(phylum1, phylum2, transfer_group, phylum_interactions)
-                self.addPhylum(phylum2, phylum1, transfer_group, phylum_interactions)
+            try:
+                transfer_group = self.TG.group_membership[pidsqid]
+                if self.checkTransferGroup(transfer_group):
+                    # add phylum
+                    phylums[phylum1] = 1
+                    phylums[phylum2] = 1
+                    # add phylum interaction data
+                    self.addPhylum(phylum1, phylum2, transfer_group, phylum_interactions)
+                    self.addPhylum(phylum2, phylum1, transfer_group, phylum_interactions)
+            except KeyError:
+                pass
         
         phylum_array = phylums.keys()
         
