@@ -214,6 +214,8 @@ class HitDataStats(object):
         try: 
             if transfer_group in self.contaminated_TGs:
                 return False
+            else:
+                return True
         except AttributeError:
             return True
     
