@@ -159,23 +159,23 @@ class HitDataStats(object):
     def colourByHits(self, hits, colours):
         if hits == 0:
             colours.append(self.colBrewColoursGradient[0])
-        elif hits >0 and hit <= 100:
+        elif hits >0 and hits <= 100:
             colours.append(self.colBrewColoursGradient[1])
-        elif hits >100 and hit <= 200:
+        elif hits >100 and hits <= 200:
             colours.append(self.colBrewColoursGradient[2])
-        elif hits >200 and hit <= 300:
+        elif hits >200 and hits <= 300:
             colours.append(self.colBrewColoursGradient[3])
-        elif hits >300 and hit <= 400:
+        elif hits >300 and hits <= 400:
             colours.append(self.colBrewColoursGradient[4])
-        elif hits >400 and hit <= 500:
+        elif hits >400 and hits <= 500:
             colours.append(self.colBrewColoursGradient[5])
-        elif hits >500 and hit <= 600:
+        elif hits >500 and hits <= 600:
             colours.append(self.colBrewColoursGradient[6])
-        elif hits >600 and hit <= 700:
+        elif hits >600 and hits <= 700:
             colours.append(self.colBrewColoursGradient[7])
-        elif hits >700 and hit <= 800:
+        elif hits >700 and hits <= 800:
             colours.append(self.colBrewColoursGradient[8])
-        elif hits >800 and hit <= 900:
+        elif hits >800 and hits <= 900:
             colours.append(self.colBrewColoursGradient[9])
         elif hits >900:
             colours.append(self.colBrewColoursGradient[10])
