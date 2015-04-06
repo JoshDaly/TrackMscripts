@@ -79,6 +79,8 @@ class HitDataStats(object):
         
         phylum_array = phylums.keys()
         
+        # add zeros to matrix
+        self.zeroArray(matrix, phylum_array)
         
         for i in range(len(phylum_array)):
             hits_to_append = []
@@ -89,12 +91,17 @@ class HitDataStats(object):
                     hits = phylum_interactions[phylum1][phylum2]
                 except KeyError:
                     hits = 0
-                hits_to_append.append(hits)
-            matrix.append(hits_to_append)
+                matrix[i][v] = hits
         
         for i in matrix:
             print i
-          
+    
+    def zeroArray(self, array, phylum_array):
+        for i in range(len(phylum_array)):
+            zeros = []
+            for v in range(i, len(phylum_array)):
+                zeros.append(0)
+            array.append(zeros)
             
     def addPhylum(self, phylum1, phylum2, dict):
         try:
