@@ -42,7 +42,7 @@ import errno
 #np.seterr(all='raise')
 
 # local imports
-import trackm.fileparser as TFP
+import trackm_file_parser as TFP
 
 ###############################################################################
 ###############################################################################
