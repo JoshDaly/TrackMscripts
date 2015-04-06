@@ -87,6 +87,7 @@ class HitDataStats(object):
             try:
                 transfer_group = self.TG.group_membership[pidsqid]
                 if self.checkTransferGroup(transfer_group):
+                    print 'im getting to here'
                     # add phylum
                     phylums[phylum1] = 1
                     phylums[phylum2] = 1
