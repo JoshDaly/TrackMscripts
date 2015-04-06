@@ -55,7 +55,7 @@ class HitDataStats(object):
         self.TG         = TFP.GroupData(transfer_groups)
         
     def wrapper(self, type):
-        if type == 'Phylum_interactions':
+        if type == 'phylum_interactions':
             self.createPhylumInteractionMatrix()
         elif type == 'genus_interactions':
             pass
