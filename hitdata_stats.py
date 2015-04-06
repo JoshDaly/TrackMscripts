@@ -65,7 +65,7 @@ class HitDataStats(object):
     def createPhylumInteractionMatrix(self):
         phylum_interactions = {}
         phylums = {}
-        matrix = [[]]
+        matrix = []
         
         for pidsqid in self.HD.hit_data.keys():
             phylum1 = self.HD.phylum[pidsqid][0]
@@ -81,6 +81,7 @@ class HitDataStats(object):
         
         
         for i in range(len(phylum_array)):
+            hits_to_append = []
             for v in range(i, len(phylum_array)):
                 phylum1 = phylum_array[i]
                 phylum2 = phylum_array[v]
@@ -88,7 +89,8 @@ class HitDataStats(object):
                     hits = phylum_interactions[phylum1][phylum2]
                 except KeyError:
                     hits = 0
-                matrix[i].append(hits)
+            hits_to_append.append(hits)
+            matrix.append(hits_to_append)
         
         for i in matrix:
             print matrix[i]
