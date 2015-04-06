@@ -50,32 +50,34 @@ import trackm_file_parser as TFP
 ###############################################################################
 
 class HitDataStats(object):
-    def __init__(self, hitdata, transfer_groups):
+    def __init__(self, hitdata, transfer_groups, contam_pidsqids):
         self.HD         = TFP.HitData(hitdata)
         self.TG         = TFP.GroupData(transfer_groups)
+        self.CP         = TFP.ContaminatedPidsqids(contam_pidsqids)
         
-    def wrapper(self, type):
+    def wrapper(self, type, remove_contamination):
         if type == 'phylum_interactions':
-            self.createPhylumInteractionMatrix()
+            self.createPhylumInteractionMatrix(remove_contamination)
         elif type == 'genus_interactions':
             pass
         elif type == 'hitdata_fix':
             self.fixTransferGroupsHitData()
     
-    def createPhylumInteractionMatrix(self):
+    def createPhylumInteractionMatrix(self, remove_contamination):
         phylum_interactions = {}
         phylums = {}
         matrix = []
         
         for pidsqid in self.HD.hit_data.keys():
-            phylum1 = self.HD.phylum[pidsqid][0]
-            phylum2 = self.HD.phylum[pidsqid][1]
-            # add phylum
-            phylums[phylum1] = 1
-            phylums[phylum2] = 1
-            # add phylum interaction data
-            self.addPhylum(phylum1, phylum2, pidsqid, phylum_interactions)
-            self.addPhylum(phylum2, phylum1, pidsqid, phylum_interactions)
+            if self.checkPidsqid(remove_contamination):
+                phylum1 = self.HD.phylum[pidsqid][0]
+                phylum2 = self.HD.phylum[pidsqid][1]
+                # add phylum
+                phylums[phylum1] = 1
+                phylums[phylum2] = 1
+                # add phylum interaction data
+                self.addPhylum(phylum1, phylum2, pidsqid, phylum_interactions)
+                self.addPhylum(phylum2, phylum1, pidsqid, phylum_interactions)
         
         phylum_array = phylums.keys()
         
@@ -104,6 +106,15 @@ class HitDataStats(object):
             for v in range(len(phylum_array)):
                 string_to_print += "\t%d" % matrix[i][v]
             print string_to_print
+    
+    def checkPidsqid(self, pidsqid, remove_contamination):
+        if remove_contamination:
+            if pidsqid in self.CP.contam_pidsqids:
+                return False
+            else: 
+                return True
+        else:
+            return True
     
     def zeroArray(self, array, phylum_array):
         for i in range(len(phylum_array)):
@@ -163,7 +174,8 @@ def doWork( args ):
     """ Main wrapper"""
     HDS = HitDataStats(args.hitdata,
                        args.transfer_groups_file)
-    HDS.wrapper(args.type)
+    HDS.wrapper(args.type,
+                args.remove_contamination)
 
 
 ###############################################################################
@@ -177,6 +189,7 @@ if __name__ == '__main__':
     parser.add_argument('hitdata', help="")
     parser.add_argument('-tg','--transfer_groups_file', help="")
     parser.add_argument('-t','--type', help="Type of summary table to create. Phylum_interactions, genus_interactions.")
+    parser.add_argument('-rc','--remove_contamination', default=False, help="Remove contaminated pidsqids. Default=False")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")
