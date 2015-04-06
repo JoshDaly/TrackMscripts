@@ -76,7 +76,6 @@ class HitDataStats(object):
     def createPhylumInteractionMatrix(self, outfile, outfmt):
         # determine contaminated transfer groups
         self.evaluateTransferGroups()
-        print self.contaminated_TGs
         
         phylum_interactions = {}
         phylums = {}
@@ -87,6 +86,7 @@ class HitDataStats(object):
             phylum2 = self.HD.phylum[pidsqid][1]
             try:
                 transfer_group = self.TG.group_membership[pidsqid]
+                print transfer_group
                 if self.checkTransferGroup(transfer_group):
                     print 'im getting to here'
                     # add phylum
@@ -176,7 +176,6 @@ class HitDataStats(object):
         
     def evaluateTransferGroups(self):
         for pidsqid in self.CP.contam_pidsqids.keys():
-            print pidsqid
             try:
                 transfer_group = self.TG.group_membership[pidsqid]
                 self.contaminated_TGs[transfer_group] = 1
