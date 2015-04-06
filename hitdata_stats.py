@@ -96,6 +96,8 @@ class HitDataStats(object):
             except KeyError:
                 pass
         
+        print phylum_interactions
+        
         phylum_array = phylums.keys()
         
         # add zeros to matrix
