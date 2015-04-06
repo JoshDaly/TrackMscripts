@@ -278,7 +278,8 @@ def doWork( args ):
                        args.contaminted_pidsqids)
     HDS.wrapper(args.type,
                 args.outfile,
-                args.outfmt)
+                args.outfmt,
+                args.contaminted_pidsqids)
 
 
 ###############################################################################
