@@ -103,8 +103,9 @@ class HitDataStats(object):
         
         for i in matrix:
             for v in matrix[i]:
-                xs.append(i)
-                ys.append(v)
+                print i,v
+                #xs.append(i)
+                #ys.append(v)
                 
         #set the number of tick labels
         for i in range(len(phylum_array)):
