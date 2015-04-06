@@ -53,7 +53,8 @@ class HitDataStats(object):
     def __init__(self, hitdata, transfer_groups, contam_pidsqids):
         self.HD         = TFP.HitData(hitdata)
         self.TG         = TFP.GroupData(transfer_groups)
-        self.CP         = TFP.ContaminatedPidsqids(contam_pidsqids)
+        if contam_pidsqids:
+            self.CP         = TFP.ContaminatedPidsqids(contam_pidsqids) 
         
     def wrapper(self, type, remove_contamination):
         if type == 'phylum_interactions':
