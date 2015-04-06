@@ -65,6 +65,8 @@ class HitDataStats(object):
         self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:9]
         
     def wrapper(self, type, outfile, outfmt):
+        print outfile, outfmt
+        os.sys.exit()
         if type == 'phylum_interactions':
             self.createPhylumInteractionMatrix(outfile, outfmt)
         elif type == 'genus_interactions':
