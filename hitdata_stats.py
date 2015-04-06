@@ -102,11 +102,14 @@ class HitDataStats(object):
         ax = fig.add_subplot(111)
         xs = []
         ys = []
+        size = []
         
-        for i,v in enumerate(matrix):
-            for x in matrix[i]:
+        for i in range(len(matrix)):
+            for v in range(len(matrix)):
+                hits = matrix[i][v]
                 xs.append(i)
-                ys.append(x)
+                ys.append(v)
+                size.append(hits)
                 
         #set the number of tick labels
         ticks = []
@@ -122,7 +125,7 @@ class HitDataStats(object):
         
         plt.tight_layout()
         
-        plt.scatter(xs, ys)
+        plt.scatter(xs, ys, s=size, alpha=0.5)
         
         plt.show()
         
