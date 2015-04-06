@@ -93,7 +93,7 @@ class HitDataStats(object):
             matrix.append(hits_to_append)
         
         for i in matrix:
-            print matrix[i]
+            print i
           
             
     def addPhylum(self, phylum1, phylum2, dict):
