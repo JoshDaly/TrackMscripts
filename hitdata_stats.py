@@ -93,8 +93,17 @@ class HitDataStats(object):
                     hits = 0
                 matrix[i][v] = hits
         
-        for i in matrix:
-            print i
+        # print header
+        header = " " # empty top left corner
+        for i in phylum_array:
+            header += "\t%s" % i
+        print header
+            
+        for i in range(len(phylum_array)):
+            string_to_print = "%s" % i
+            for v in range(len(phylum_array)):
+                string_to_print = "\t%d" % matrix[i][v]
+            print string_to_print
     
     def zeroArray(self, array, phylum_array):
         for i in range(len(phylum_array)):
