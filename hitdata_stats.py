@@ -140,7 +140,7 @@ class HitDataStats(object):
         
         plt.scatter(xs, ys, c = colours, s=300, marker='s')
         
-        plt.show()
+        plt.savefig("temp.png", dpi = 300)
         
         """
         # print header
