@@ -102,7 +102,7 @@ class HitDataStats(object):
         for i in range(len(phylum_array)):
             string_to_print = "%s" % i
             for v in range(len(phylum_array)):
-                string_to_print = "\t%d" % matrix[i][v]
+                string_to_print += "\t%d" % matrix[i][v]
             print string_to_print
     
     def zeroArray(self, array, phylum_array):
