@@ -99,7 +99,7 @@ class HitDataStats(object):
     def zeroArray(self, array, phylum_array):
         for i in range(len(phylum_array)):
             zeros = []
-            for v in range(i, len(phylum_array)):
+            for v in range(len(phylum_array)):
                 zeros.append(0)
             array.append(zeros)
             
