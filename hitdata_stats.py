@@ -62,7 +62,7 @@ class HitDataStats(object):
         col_set                             = "qualSet1"
         col_set_gradient                    = "seqReds"
         self.ColBrewColours                 = cb2.maps[col_set].values()[0:10]
-        self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:8]
+        self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:9]
         print self.colBrewColoursGradient
         os.sys.exit()
         
