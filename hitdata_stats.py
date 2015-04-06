@@ -112,7 +112,7 @@ class HitDataStats(object):
                 zeros.append(0)
             array.append(zeros)
             
-    def addPhylum(self, phylum1, phylum2, dict):
+    def addPhylum(self, phylum1, phylum2, pidsqid, dict):
         try:
             dict[phylum1][phylum2][pidsqid] =1 
         except KeyError:
