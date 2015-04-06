@@ -38,6 +38,7 @@ from multiprocessing import Pool
 from subprocess import Popen, PIPE
 import os
 import errno
+import matplotlib.pyplot as plt
 #import numpy as np
 #np.seterr(all='raise')
 
@@ -96,6 +97,33 @@ class HitDataStats(object):
                     hits = 0
                 matrix[i][v] = hits
         
+        # make scatter plot
+        xs = []
+        ys = []
+        
+        for i in matrix:
+            for v in matrix[i]:
+                xs.append(i)
+                ys.append(v)
+                
+        #set the number of tick labels
+        for i in range(len(phylum_array)):
+            ticks.append(i)
+        ax.set_xticks(ticks)
+        ax.set_yticks(ticks)
+        
+        # set labels as phyla
+        labels = [item.get_text() for item in ax.get_xticklabels()]
+        # rotate x labels 90 degrees
+        plt.xticks(rotation=90)
+        
+        plt.tight_layout()
+        
+        plt.scatter(xs, ys)
+        
+        plt.show()
+        
+        """
         # print header
         header = " " # empty top left corner
         for i in phylum_array:
@@ -107,7 +135,8 @@ class HitDataStats(object):
             for v in range(len(phylum_array)):
                 string_to_print += "\t%d" % matrix[i][v]
             print string_to_print
-    
+        """
+        
     def checkPidsqid(self, pidsqid):
         try: 
             if pidsqid in self.CP.contam_pidsqids:
