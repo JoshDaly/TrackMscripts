@@ -84,7 +84,10 @@ class HitDataStats(object):
             for v in range(i, len(phylum_array)):
                 phylum1 = phylum_array[i]
                 phylum2 = phylum_array[v]
-                hits = phylum_interactions[phylum1][phylum2]
+                try:
+                    hits = phylum_interactions[phylum1][phylum2]
+                except KeyError:
+                    hits = 0
                 matrix[i].append(hits)
         
         for i in matrix:
