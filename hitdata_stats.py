@@ -64,7 +64,7 @@ class HitDataStats(object):
         elif type == 'hitdata_fix':
             self.fixTransferGroupsHitData()
     
-    def createPhylumInteractionMatrix(self, remove_contamination):
+    def createPhylumInteractionMatrix(self):
         phylum_interactions = {}
         phylums = {}
         matrix = []
