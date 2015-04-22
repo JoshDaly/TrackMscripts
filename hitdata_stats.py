@@ -198,6 +198,8 @@ class HitDataStats(object):
                 hits = matrix[i][v]
                 #plt.text(i,v,"%d" % hits, color="black", ha='center', va='center', backgroundcolor='white', fontsize=1)
         
+        outfile = "%s.%s" % (outfile, outfmt) 
+        
         plt.savefig("%s" % (outfile),format="%s" % (outfmt), dpi = 300)
         
         """
