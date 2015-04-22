@@ -190,7 +190,7 @@ class LSTFrequency(object):
                 gid2 = gids[j]
                 ani  = float(self.PD.pairs_data[gid1][gid2])
                 
-                if ani >= 95:
+                if ani <= 95:
                     # within ANI cutoff
                     try:
                         self.ani_data[gid1][gid2] = 1 
@@ -328,6 +328,7 @@ if __name__ == '__main__':
     parser.add_argument('hit_data_file', help="")
     parser.add_argument('taxonomy_file', help="")
     parser.add_argument('pairs_file', help="")
+    #parser.add_argument('paths_file', help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

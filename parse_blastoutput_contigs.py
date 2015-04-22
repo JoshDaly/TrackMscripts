@@ -69,6 +69,7 @@ class Contigs(object):
         self.bamm_cov_links_files   = {}
         self.pidsqid_count          = {}
         self.pidsqid_list           = {}
+        self.dirty_contig_categories= {}
         self.ecoli                  = self.getEcoliOuttaHere()
     
     def getEcoliOuttaHere(self):
@@ -78,7 +79,7 @@ class Contigs(object):
                 ecoli_gids.append(gid)
         return ecoli_gids
     
-    def wrapper(self, blastdir, cov_links_dir, type, tg_status_outfile, contaminated_contigs_file, length_min, length_max, coverage_min, coverage_max, show_plot, pie_graph_outfile, pie_graph_outfmt, pidsqid_outfile):
+    def wrapper(self, blastdir, cov_links_dir, type, tg_status_outfile, contaminated_contigs_file, length_min, length_max, coverage_min, coverage_max, show_plot, pie_graph_outfile, pie_graph_outfmt, pidsqid_outfile, contig_outfile):
         # get contaminated contigs
         self.getContaminatedContigs(contaminated_contigs_file)
         
@@ -91,7 +92,7 @@ class Contigs(object):
         
         if type.lower() == 'pie_chart':
             # create pie chart
-            self.plotPieChart(length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot, pidsqid_outfile)
+            self.plotPieChart(length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot, pidsqid_outfile, contig_outfile)
         
         elif type.lower() == 'tg_status':
             self.returnTGStatus(tg_status_outfile)
@@ -193,9 +194,9 @@ class Contigs(object):
         contigid   = "_".join(underscore[1:])
         return contigid
                     
-    def plotPieChart(self, length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot, pidsqid_outfile):
+    def plotPieChart(self, length_min, length_max, coverage_min, coverage_max, pie_graph_outfile, pie_graph_outfmt, show_plot, pidsqid_outfile, contig_outfile):
         # get pie chart data
-        labels,sizes = self.getPieChartData(length_min, length_max, coverage_min, coverage_max)
+        labels,sizes = self.getPieChartData(length_min, length_max, coverage_min, coverage_max, contig_outfile)
         
         col_set = "qualSet3"
         ColBrewColours = self.cb2.maps[col_set].values()[0:len(labels)+1]
@@ -206,13 +207,14 @@ class Contigs(object):
         # print pidsqid counts data
         pos1 = -1.7
         pos2 = 0
+        
+        
         for category in self.pidsqid_count.keys():
             pos2 = pos2 + 0.1
             plt.text(pos1, pos2, "%s: %d" % (category, self.pidsqid_count[category]))
-            try:
-                pidsqid_outfile.write("%s\t%s\n" % (category, self.pidsqid_list[category]))
-            except KeyError:
-                pass
+            pidsqid_outfile.write("%s\t%s\n" % (category, self.pidsqid_list[category]))
+            print '%s %d' % (category, len(self.dirty_contig_categories[category]))
+
         # print header
         pos2 = pos2 + 0.1
         plt.text(pos1, pos2, "Pidsqids")
@@ -230,7 +232,7 @@ class Contigs(object):
         
         
         
-    def getPieChartData(self, length_min, length_max, coverage_min, coverage_max):
+    def getPieChartData(self, length_min, length_max, coverage_min, coverage_max, contig_outfile):
         common_contams = ['pseudomonas', 'propionibacterium', 'Streptococcus', 'Micrococcus', 'Stenotrophomonas', 'Xanthomonas', 'Pseudoxanthomonas', 'Burkholderia', 'Deinococcus', 'Corynebacterium']
         
         # contig properties
@@ -247,6 +249,9 @@ class Contigs(object):
         
         # create temp file for inter phyla output
         temp_output = open('temp_output_file','w')
+        
+        # open contig outfile
+        contig_outfile = open(contig_outfile,'w')
         
         for contig in self.blast_data.keys():
             
@@ -267,11 +272,13 @@ class Contigs(object):
                     
                     if  self.isVector[contig] > 0:
                         description = 'Vector'
+                        contig_outfile.write("%s\t%s\n" % (contig, description))
                         self.addData(description, piechartdata)
                         self.addContigPidsqidCount(contig, description)
                     else:
                         # check top blast hit
                         description = self.checkBLAST(temp_output, contig, contig_gid, description)
+                        contig_outfile.write("%s\t%s\n" % (contig, description))
                         self.addData(description, piechartdata)
                         self.addContigPidsqidCount(contig, description)
         
@@ -300,6 +307,11 @@ class Contigs(object):
             self.pidsqid_count[category] += pidsqid_count
         except KeyError:
             self.pidsqid_count[category] = pidsqid_count
+            
+        try:
+            self.dirty_contig_categories[category][contig] = 1
+        except KeyError:
+            self.dirty_contig_categories[category] = {contig:1}
             
         
     
@@ -478,7 +490,8 @@ def doWork( args ):
               args.show_plot,
               args.pie_graph_outfile,
               args.pie_graph_outfmt,
-              args.pidsqid_outfile
+              args.pidsqid_outfile,
+              args.contig_outfile
               )
     
 
@@ -506,6 +519,7 @@ if __name__ == '__main__':
     parser.add_argument('-sp','--show_plot', default=False, help="")
     parser.add_argument('-po','--pie_graph_outfile', default = 'piegraph', help="")
     parser.add_argument('-pidsqid_outfile','--pidsqid_outfile', default = 'pidsqid.csv', help="")
+    parser.add_argument('-co','--contig_outfile', default = False, help="Path to contig outfile")
     parser.add_argument('-pofmt','--pie_graph_outfmt', default='png',help="")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")

@@ -78,11 +78,13 @@ class PairwiseGenusTable(object):
                 self.pairwise_genus_interations[pidsqid] = {genus1:{genus2:1}}
        
 class TableData(object):
-    def __init__(self, group_file, taxon_file, hitdata_file, anno_file, kmer_file, kegg_file):
+    def __init__(self, group_file, hitdata_file, anno_file, kegg_file, contaminated_pidsqids, contaminated_contigs): #kmer_file
         self.GD                         = TFP.GroupData(group_file) 
-        self.HD                         = TFP.HitData(hitdata_file, taxon_file)
+        self.HD                         = TFP.HitData(hitdata_file)
         self.AD                         = TFP.AnnotationData(anno_file)
-        self.KD                         = TFP.KmerData(kmer_file)
+        self.CP                         = TFP.ContaminatedPidsqids(contaminated_pidsqids)
+        self.CC                         = TFP.ContaminatedContigData(contaminated_contigs)
+        #self.KD                         = TFP.KmerData(kmer_file)
         self.KEGG                       = TFP.KEGGData(kegg_file)
         self.phylum_counts              = {} 
         self.genus_counts               = {}
@@ -110,6 +112,8 @@ class TableData(object):
         self.status                     = {}
         self.TG_genus_counts            = {}
         self.TG_finished_genome_count   = {}
+        self.contaminated_pidsqids      = {}
+        self.dirty_pidsqids             = {}
     
     def tableDataByHitData(self):
         # print header
@@ -643,9 +647,12 @@ class TableData(object):
             except KeyError:
                 self.habitat_counts[genus] = {habitat: 1}
              
-    def tableDataByTransferGroup(self):
+    def tableDataByTransferGroup(self, outfile):
+        # open outfile
+        outfile = open(outfile, 'w')
+        
         # print header 
-        self.printHeader('TG')
+        self.printHeader('TG', outfile)
         
         for TG in self.GD.group_data.keys():
             transfer_len_mean = 0
@@ -675,13 +682,14 @@ class TableData(object):
                 self.buildContigLength(TG, pidsqid)
                 self.buildTransferLength(TG, pidsqid)
                 self.buildKEGGData(TG, pidsqid, Top_KEGG_ids)
-                self.buildDirectionalityData(TG, pidsqid)
+                self.getContamintedPidsqids(TG, pidsqid)
+                #self.buildDirectionalityData(TG, pidsqid)
                 self.buildPidsqidTG(TG, pidsqid)
-                self.buildFinishedGenomeCountTG(TG, status1, gid1)
-                self.buildFinishedGenomeCountTG(TG, status2, gid2)
+                #self.buildFinishedGenomeCountTG(TG, status1, gid1)
+                #self.buildFinishedGenomeCountTG(TG, status2, gid2)
 
             # count the number of Finished genomes per TG
-            finished_genomes = len(self.TG_finished_genome_count[TG])
+            #finished_genomes = len(self.TG_finished_genome_count[TG])
 
             # get Cogs descending order
             keggs = self.findKEGGs(Top_KEGG_ids)
@@ -694,8 +702,8 @@ class TableData(object):
             contig_length_array   = self.contig_length[TG] 
             contig_len_mean, contig_len_std = self.averageLength(contig_length_array)
             
-            kmer_score_array = self.directionality[TG]
-            kmer_score_mean, kmer_score_std = self.averageLength(kmer_score_array)
+            #kmer_score_array = self.directionality[TG]
+            #kmer_score_mean, kmer_score_std = self.averageLength(kmer_score_array)
             
             # get most connected genus
             most_connected_genus = self.getMostConnectedGenus(TG, self.genus_counts)
@@ -703,17 +711,37 @@ class TableData(object):
             # get number of pidsqids per TG
             pidsqid_number = len(self.pidsqid_tg_counts[TG])
             
-            self.printOutTGTable(keggs,
-                                 TG,
-                                 transfer_len_mean,
-                                 transfer_len_std,
-                                 contig_len_mean,
-                                 contig_len_std,
-                                 pidsqid_number,
-                                 most_connected_genus,
-                                 kmer_score_mean,
-                                 kmer_score_std,
-                                 finished_genomes)
+            # get contaminted pidsqid count
+            if TG in self.contaminated_pidsqids:
+                num_contaminated_pidsqid = len(self.contaminated_pidsqids[TG])
+            else:
+                num_contaminated_pidsqid = 0
+            
+            self.writeTransferGroupTableToFile(keggs,
+                                               TG,
+                                               round(transfer_len_mean),
+                                               round(transfer_len_std),
+                                               round(contig_len_mean),
+                                               round(contig_len_std),
+                                               pidsqid_number,
+                                               most_connected_genus,
+                                               num_contaminated_pidsqid,
+                                               outfile)#,#kmer_score_mean,#kmer_score_std,
+                                 #finished_genomes)
+        print 'intra', str(len(self.dirty_pidsqids['intra']))
+        print 'inter', str(len(self.dirty_pidsqids['inter']))
+    
+    def getContamintedPidsqids(self, TG, pidsqid):
+        if pidsqid in self.CP.contam_pidsqids:
+            try:
+                self.contaminated_pidsqids[TG][pidsqid] = 1
+            except KeyError:
+                self.contaminated_pidsqids[TG] = {pidsqid:1}
+            phylogenetic_dist = self.HD.intra_or_inter[pidsqid]
+            try:
+                self.dirty_pidsqids[phylogenetic_dist][pidsqid] = 1
+            except KeyError:
+                self.dirty_pidsqids[phylogenetic_dist] = {pidsqid:1}
     
     def buildFinishedGenomeCountTG(self, TG, status, gid):
         if 'finished' in status.lower():
@@ -847,23 +875,23 @@ class TableData(object):
         
         return cogs
         
-    def printHeader(self, type):
+    def printHeader(self, type, outfile):
         # header
         if type == 'TG':
-            print "\t".join(["transfer_group",
-                             "finished_genomes",
-                             "transfer_size_mean",
-                             "transfer_size_std",
-                             "contig_size_mean",
-                             "contig_size_std",
-                             "habitat_no.",
-                             "phylum_no.",
-                             "genus_no.",
-                             "pidsqids_no.",
-                             "most_connected_genus",
-                             "kmer_score_mean",
-                             "kmer_score_std",
-                             "kegg_ids"])    
+            string_to_print =  "\t".join(["transfer_group",
+                                          "transfer_size_mean",
+                                          "transfer_size_std",
+                                          "contig_size_mean",
+                                          "contig_size_std",
+                                          "habitat_no.",
+                                          "phylum_no.",
+                                          "genus_no.",
+                                          "pidsqids_no.",
+                                          "num_contaminated_pidsqids",
+                                          "most_connected_genus",
+                                          "kegg_ids"])
+            outfile.write("%s\n" % string_to_print)
+                
         elif type == 'genus':
             print "\t".join(["genus",
                              "phylum",
@@ -881,22 +909,22 @@ class TableData(object):
                              "kmer_score_std",
                              "kegg_ids"]) 
     
-    def printOutTGTable(self, keggs, TG, transfer_len_mean, transfer_len_std, contig_len_mean, contig_len_std, pidsqid_no, most_connected_genus, kmer_score_mean, kmer_score_std, finished_genomes):
+    def writeTransferGroupTableToFile(self, keggs, TG, transfer_len_mean, transfer_len_std, contig_len_mean, contig_len_std, pidsqid_no, most_connected_genus, num_contaminated_pidsqid, outfile): # kmer_score_mean, kmer_score_std, finished_genomes
         # print data
-        print "%s\t%d\t%f\t%f\t%f\t%f\t%d\t%d\t%d\t%d\t%s\t%f\t%f\t%s" % (TG,
-                                                                          finished_genomes,
-                                                                          transfer_len_mean,
-                                                                          transfer_len_std,
-                                                                          contig_len_mean,
-                                                                          contig_len_std,
-                                                                          len(self.habitat_counts[TG]),
-                                                                          len(self.phylum_counts[TG]),
-                                                                          len(self.genus_counts[TG]),
-                                                                          pidsqid_no,
-                                                                          most_connected_genus,
-                                                                          kmer_score_mean,
-                                                                          kmer_score_std,
-                                                                          keggs)
+        string_to_print = "\t".join([str(TG),
+                                     str(transfer_len_mean),
+                                     str(transfer_len_std),
+                                     str(contig_len_mean),
+                                     str(contig_len_std),
+                                     str(len(self.habitat_counts[TG])),
+                                     str(len(self.phylum_counts[TG])),
+                                     str(len(self.genus_counts[TG])),
+                                     str(pidsqid_no),
+                                     str(num_contaminated_pidsqid),
+                                     str(most_connected_genus),
+                                     str(keggs)]) 
+        outfile.write("%s\n" % string_to_print)
+        
             
     def buildPhylumCount(self, TG, phylum1, phylum2):
         try:
@@ -938,6 +966,9 @@ class TableData(object):
             self.habitat_counts[TG] = {habitat2:1}
     
     
+    def tableDataByContamination(self, outfile):
+        
+    
 ###############################################################################
 ###############################################################################
 ###############################################################################
@@ -956,18 +987,20 @@ returns (stdout, stderr)
 def doWork( args ):
     """ Main wrapper"""
     # call class
-    TD = TableData(args.group_file,
-                   args.taxon_file,
+    TD = TableData(args.group_file,#args.taxon_file,
                    args.hitdata_file,
-                   args.anno_file,
-                   args.kmer_file,
-                   args.kegg_file)
+                   args.anno_file,#args.kmer_file,
+                   args.kegg_file,
+                   args.contaminated_pidsqids,
+                   args.contaminated_contigs)
     if args.type.lower() == "transfer_group":
-        TD.tableDataByTransferGroup()
+        TD.tableDataByTransferGroup(args.outfile)
     elif args.type.lower() == "genus":
-        TD.tableDataByGenus(args.genome_status)
+        TD.tableDataByGenus(args.genome_status, args.outfile)
     elif args.type.lower() == "hitdata":
-        TD.tableDataByHitData()
+        TD.tableDataByHitData(args.outfile)
+    elif args.type.lower() == "contaminated":
+        TD.tableDataByContamination(args.outfile)
     elif args.type.lower() == 'test':
         TD.test()
 
@@ -981,12 +1014,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('anno_file', help="File containing tab delimited annotation information")
     parser.add_argument('group_file', help="File containing transfer groups")
-    parser.add_argument('taxon_file', help="File containing Phil's improved taxonomy")
+    #parser.add_argument('taxon_file', help="File containing Phil's improved taxonomy")
     parser.add_argument('hitdata_file', help="File containing hitdata")
-    parser.add_argument('kmer_file', help="File containing Kmer directionality data")
+   # parser.add_argument('kmer_file', help="File containing Kmer directionality data")
     parser.add_argument('kegg_file', help="File containing KEGG data")
+    parser.add_argument('contaminated_pidsqids', help="File containing contaminated pidsqids")
+    parser.add_argument('contaminated_contigs', help="Path to file containing contaminated contigs")
     parser.add_argument('-t','--type',default='transfer_group', help="Please select either genus or transfer_group. Default: transfer_group")
     parser.add_argument('-gs','--genome_status',default='all', help="Set the status of genome to use: Finished, Draft or all")
+    parser.add_argument('-o','--outfile',default='batch7.summary_table.csv', help="Path to outfile.")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

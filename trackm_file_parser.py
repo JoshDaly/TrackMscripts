@@ -85,14 +85,15 @@ class TaxonomyFileParser(object):
         
 class TaxonomyData(object):
     def __init__(self, taxon_data):
-        self.taxon_genus    = {}
-        self.taxon_family   = {}
-        self.taxon_order    = {}
-        self.taxon_class    = {}
-        self.taxon_phylum   = {}
-        self.taxon_string   = {}
-        self.taxon_organism = {}
-        self.gids           = {}
+        self.taxon_genus        = {}
+        self.taxon_family       = {}
+        self.taxon_order        = {}
+        self.taxon_class        = {}
+        self.taxon_phylum       = {}
+        self.taxon_string       = {}
+        self.taxon_string_genus = {}
+        self.taxon_organism     = {}
+        self.gids               = {}
         self.buildTaxonData(taxon_data)
         
     def buildTaxonData(self, taxon_data):
@@ -110,6 +111,8 @@ class TaxonomyData(object):
                 self.addTaxonData(TFP.gid, _organism, _genus, _family, _order, _class, _phylum)         
                 
                 self.taxon_string[_organism] = TFP.taxonomy
+                
+                self.taxon_string_genus[TFP.gid] = "p__%s; c__%s; o__%s; f__%s; g__%s" % (_phylum, _class, _order, _family, _genus)  
     
     def getTaxonData(self, taxon_string, organism):
         _organism  = ''
@@ -624,27 +627,29 @@ class KEGGFileParser(object):
         
     def readKEGGFile(self, l):
         tabs                    = l.rstrip().split("\t")
-        self.pidsqid_gene       = tabs[0]
-        self.pidsqid            = "_".join(tabs[0].split("_")[0:2])
-        self.kegg_id            = tabs[1]
-        self.description        = tabs[2]
-        self.identity           = tabs[3]
-        self.col3               = tabs[4]
-        self.col4               = tabs[5]
-        self.col5               = tabs[6]
-        self.col6               = tabs[7]
-        self.col7               = tabs[8]
-        self.col8               = tabs[9]
-        self.col9               = tabs[10]
-        self.evalue             = tabs[11]
-        self.col11              = tabs[12]
+        self.geneid             = tabs[0]
+        self.pidsqid_gene       = tabs[1]
+        self.pidsqid            = "_".join(tabs[1].split("_")[:-1])
+        self.kegg_id            = tabs[2]
+        self.definition         = tabs[3]
+        self.organism           = tabs[4]
+        self.identity           = tabs[5]
+        self.col4               = tabs[6]
+        self.col5               = tabs[7]
+        self.col6               = tabs[8]
+        self.col7               = tabs[9]
+        self.col8               = tabs[10]
+        self.col9               = tabs[11]
+        self.col10              = tabs[12]
+        self.evalue             = tabs[13]
+        self.col12              = tabs[14]
     
 class KEGGData(object):
     def __init__(self, kegg_file):
         self.kegg_data          = {}
         self.all_kegg_data      = {}
         self.kegg_to_pidsqid    = {}
-        self.kegg_description   = {}
+        self.kegg_definition    = {}
         self.buildKEGGData(kegg_file)
         
     def buildKEGGData(self, kegg_file):
@@ -660,21 +665,23 @@ class KEGGData(object):
                 except KeyError:
                     self.kegg_to_pidsqid[KFP.kegg_id] = [KFP.pidsqid]
                 # add description to dict
-                self.kegg_description[KFP.kegg_id] = KFP.description  
+                self.kegg_definition[KFP.kegg_id] = KFP.definition  
                 
                 self.all_kegg_data[KFP.pidsqid_gene] = [KFP.pidsqid_gene,
+                                                        KFP.pidsqid,
                                                         KFP.kegg_id,
-                                                        KFP.description,
+                                                        KFP.definition,
+                                                        KFP.organism,
                                                         KFP.identity,
-                                                        KFP.col3,
                                                         KFP.col4,
                                                         KFP.col5,
                                                         KFP.col6,
                                                         KFP.col7,
                                                         KFP.col8,
                                                         KFP.col9,
+                                                        KFP.col10,
                                                         KFP.evalue,
-                                                        KFP.col11]
+                                                        KFP.col12]
 
 ###############################################################################                    
 ###############################################################################
@@ -1191,20 +1198,54 @@ class ContaminatedPidsqidsFileParser(object):
 
 class ContaminatedPidsqids(object):
     def __init__(self, contam_pidsqids_file):
-        self.contam_pidsqids  = {}
+        self.contam_pidsqids        = {}
+        self.all_contam_pidsqids    = {}
         self.wrapper(contam_pidsqids_file)
         
     def wrapper(self, contam_pidsqids_file): 
         with open(contam_pidsqids_file) as fh:
             for l in fh:
                 CPFP = ContaminatedPidsqidsFileParser(l)
+                
+                for pidsqid in CPFP.pidsqids:
+                    self.all_contam_pidsqids[pidsqid] = 1
+                
                 # conservative threshold 
-                if CPFP.category == 'Inter Phyla' or CPFP.category == 'Vector': 
+                if CPFP.category == 'Inter Phyla' or CPFP.category == 'Vector' or CPFP.category == 'PhiX': 
                     for pidsqid in CPFP.pidsqids:
                         self.contam_pidsqids[pidsqid] = 1
+        print 'Total number of pidsqids affected %d' % (len(self.all_contam_pidsqids))
         
 ###############################################################################                    
 ###############################################################################
 ###############################################################################
-###############################################################################        
+###############################################################################    
+
+class ContaminatedContigsFileParser(object):
+    def __init__(self, l):
+        self.readContaminatedContigsFile(l)
+        
+    def readContaminatedContigsFile(self, l):
+        tabs = l.rstrip().split("\t")
+        self.contigid   = tabs[0]
+        self.category   = tabs[1]
+        
+class ContaminatedContigData(object):
+    def __init__(self, contam_contigs_file):
+        self.contam_contigs = {}
+        self.wrapper(contam_contigs_file)
+    
+    def wrapper(self, contam_contigs_file):
+        with open(contam_contigs_file) as fh:
+            for l in fh:
+                CCFP = ContaminatedContigsFileParser(l)
+                try:
+                    self.contam_contigs[CCFP.category][CCFP.contigid] = 1
+                except KeyError:
+                    self.contam_contigs[CCFP.category] = {CCFP.contigid:1}
+                    
+###############################################################################                    
+###############################################################################
+###############################################################################
+###############################################################################
         

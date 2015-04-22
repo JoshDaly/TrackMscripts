@@ -37,6 +37,7 @@ import sys
 from multiprocessing import Pool
 from subprocess import Popen, PIPE
 from collections import Counter
+import math
 
 # modules to be loaded
 import numpy as np
@@ -46,7 +47,7 @@ import matplotlib.pyplot as plt
 
 # local imports
 from cb2cols import Cb2Cols as CB2
-import trackm.fileparser as TFP
+import trackm_file_parser as TFP
 
 ###############################################################################
 ###############################################################################
@@ -77,12 +78,12 @@ class NetworkPlot(object):
             self.CP                         = TFP.ContaminatedPidsqids(contam_pidsqids_file)
         self.nodes                          = {}
         self.edges                          = {} 
-        self.genus_node_size                = {}
-        self.genus_node_size_values         = []
+        self.node_size                      = {}
+        self.node_size_values               = []
         self.edgewidth                      = []
-        self.phylumCols                     = {}
-        self.phylumDict                     = {}
-        self.phylum_colour_values           = []
+        self.nodeCols                       = {}
+        self.nodeDict                       = {}
+        self.node_colour_values             = []
         # ColorBrewer colours
         cb2                                 = CB2()
         col_set                             = "qualSet1"
@@ -91,31 +92,55 @@ class NetworkPlot(object):
         self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:10]
         
         
-    def wrapper(self, outfile, outfmt):
+    def wrapper(self, outfile, outfmt, data_type, centrality_type, node_repulsion):
         # ready hit data for network plot
-        self.prepareHitData()
+        self.prepareHitData(data_type)
         
         # make network plot
-        self.networkPlot(outfile, outfmt)
+        self.networkPlot(outfile, outfmt, centrality_type, data_type, node_repulsion)
         
-    def prepareHitData(self):
+    def prepareHitData(self, data_type):
         # loop through pidsqids
         for pidsqid in self.HD.hit_data.keys():
             
             # check if pidsqid passes criteria
-            if self.shallYouPass(pidsqid):
+            if self.shallYouPass(pidsqid, data_type):
                 
                 # build network data
-                self.buildHitData(pidsqid)
+                self.buildHitData(pidsqid, data_type)
             
-    def shallYouPass(self, pidsqid):
+    def shallYouPass(self, pidsqid, data_type):
         # shall you pass khazad dum, Balrog? 
         status = True
-        if self.clean_analysis:
-            # remove contaminated pidsqids
-            status = self.checkIfPidsqidContaminated()
+        if data_type:
+            if data_type == 'both' or data_type == 'habitat':
+                if self.clean_analysis:
+                    # remove contaminated pidsqids
+                    status = self.checkIfPidsqidContaminated(pidsqid)
+                return status
+            elif data_type == 'intra':
+                if self.HD.intra_or_inter[pidsqid] == 'intra':
+                    if self.clean_analysis:
+                        # remove contaminated pidsqids
+                        status = self.checkIfPidsqidContaminated(pidsqid)
+                    return status
+            elif data_type == 'inter':
+                if self.HD.intra_or_inter[pidsqid] == 'inter':
+                    if self.clean_analysis:
+                        # remove contaminated pidsqids
+                        status = self.checkIfPidsqidContaminated(pidsqid)
+                    return status
+            else:
+                print "####################"
+                print "Please select either inter, intra, both or habitat ie. -dt intra "
+                print "####################"
+                sys.exit()
+        else:
+            if self.clean_analysis:
+                # remove contaminated pidsqids
+                status = self.checkIfPidsqidContaminated(pidsqid)
+            return status
         
-        return status
 
     def checkIfPidsqidContaminated(self, pidsqid):
         if pidsqid in self.CP.contam_pidsqids:
@@ -123,115 +148,167 @@ class NetworkPlot(object):
         else:
             return True
         
-    def buildHitData(self, pidsqid):
+    def buildHitData(self, pidsqid, data_type):
         # get pidsqid data
         try:
             transfer_group  = self.TG.group_membership[pidsqid]
-            genus1          = self.HD.genus[pidsqid][0]
-            genus2          = self.HD.genus[pidsqid][1]
+            if data_type == 'habitat':
+                # nodes = habitats!
+                node1       = self.HD.habitat[pidsqid][0] 
+                node2       = self.HD.habitat[pidsqid][1]
+            else:
+                # nodes = genus!
+                node1       = self.HD.genus[pidsqid][0]
+                node2       = self.HD.genus[pidsqid][1]
             gid1            = self.HD.pidsqid_to_gid[pidsqid][0]
             gid2            = self.HD.pidsqid_to_gid[pidsqid][1]
             
             # add node
-            self.addGenusNode(genus1, gid1)
-            self.addGenusNode(genus2, gid2)
+            self.addNode(node1, gid1)
+            self.addNode(node2, gid2)
             
             # add edge, edges weighted by number of TGs
-            self.addEdge(genus1, genus2, transfer_group)
+            self.addEdge(node1, node2, transfer_group)
             
         except KeyError:
             pass
         
+    def colourNodesWrapper(self, node, data_type):
+        if data_type == 'habitat':
+            self.colourNodesByHabitat(node)
+        else:
+            self.colourNodesByPhylum(node)
+    
+    def colourNodesByHabitat(self, habitat):
+        if habitat not in self.nodeCols:
+            if habitat == 'Blood':
+                self.nodeDict[habitat] = self.ColBrewColours[0]
+                self.nodeCols[habitat] = self.ColBrewColours[0]
+                
+            elif habitat == 'Urogenital tract':
+                self.nodeDict[habitat] = self.ColBrewColours[1]
+                self.nodeCols[habitat] = self.ColBrewColours[1]
+            
+            elif habitat == 'plant':
+                self.nodeDict[habitat] = self.ColBrewColours[2]
+                self.nodeCols[habitat] = self.ColBrewColours[2]
+                
+            elif habitat == 'Gastrointestinal tract':
+                self.nodeDict[habitat] = self.ColBrewColours[3]
+                self.nodeCols[habitat] = self.ColBrewColours[3]
+            
+            elif habitat == 'Oral':
+                self.nodeDict[habitat] = self.ColBrewColours[4]
+                self.nodeCols[habitat] = self.ColBrewColours[4]
+                
+            elif habitat == 'Airways':
+                self.nodeDict[habitat] = self.ColBrewColours[5]
+                self.nodeCols[habitat] = self.ColBrewColours[5]
+                
+            elif habitat == 'skin':
+                self.nodeDict[habitat] = self.ColBrewColours[6]
+                self.nodeCols[habitat] = self.ColBrewColours[6]
+                
+            elif habitat == 'internal_organs':
+                self.nodeDict[habitat] = self.ColBrewColours[7]
+                self.nodeCols[habitat] = self.ColBrewColours[7]
+                
+            elif habitat == 'Ear':
+                self.nodeDict[habitat] = self.ColBrewColours[8]
+                self.nodeCols[habitat] = self.ColBrewColours[8]
+                
+            elif habitat == 'Eye':
+                self.nodeDict[habitat] = "#01B5B5"
+                self.nodeCols[habitat] = "#01B5B5" 
+    
     def colourNodesByPhylum(self, genus):
-        if genus not in self.phylumCols:
+        if genus not in self.nodeCols:
             if self.HD.genus_to_phylum[genus] == "p__Bacteroidetes":
-                self.phylumDict["p__Bacteroidetes"] =  self.ColBrewColours[0] #"#ea00ff"
-                self.phylumCols[genus] = self.ColBrewColours[0] #"#ea00ff"
+                self.nodeDict["p__Bacteroidetes"] =  self.ColBrewColours[0] #"#ea00ff"
+                self.nodeCols[genus] = self.ColBrewColours[0] #"#ea00ff"
 
             elif self.HD.genus_to_phylum[genus] == "p__Lentisphaerae":
-                self.phylumDict["p__Lentisphaerae"] = self.ColBrewColours[1] #"#ffb700"
-                self.phylumCols[genus] = self.ColBrewColours[1] #"#ffb700"
+                self.nodeDict["p__Lentisphaerae"] = self.ColBrewColours[1] #"#ffb700"
+                self.nodeCols[genus] = self.ColBrewColours[1] #"#ffb700"
                 
             elif self.HD.genus_to_phylum[genus] == "p__Firmicutes":
-                self.phylumDict["p__Firmicutes"] = self.ColBrewColours[2] #"#0047ff"
-                self.phylumCols[genus] = self.ColBrewColours[2] #"#0047ff"
+                self.nodeDict["p__Firmicutes"] = self.ColBrewColours[2] #"#0047ff"
+                self.nodeCols[genus] = self.ColBrewColours[2] #"#0047ff"
                 
             elif self.HD.genus_to_phylum[genus] == "p__Spirochaetes":
-                self.phylumDict["p__Spirochaetes"] = self.ColBrewColours[3] #"#14ff00"
-                self.phylumCols[genus] = self.ColBrewColours[3] #"#14ff00"   
+                self.nodeDict["p__Spirochaetes"] = self.ColBrewColours[3] #"#14ff00"
+                self.nodeCols[genus] = self.ColBrewColours[3] #"#14ff00"   
                 
             elif self.HD.genus_to_phylum[genus] == "p__Synergistetes":
-                self.phylumDict["p__Synergistetes"] = self.ColBrewColours[4] #"#6600CC"
-                self.phylumCols[genus] = self.ColBrewColours[4] #"#6600CC"
+                self.nodeDict["p__Synergistetes"] = self.ColBrewColours[4] #"#6600CC"
+                self.nodeCols[genus] = self.ColBrewColours[4] #"#6600CC"
                 
             elif self.HD.genus_to_phylum[genus] == "p__Actinobacteria":
-                self.phylumDict["p__Actinobacteria"] = self.ColBrewColours[5] #"#ffff00"
-                self.phylumCols[genus] = self.ColBrewColours[5] #"#ffff00"
+                self.nodeDict["p__Actinobacteria"] = self.ColBrewColours[5] #"#ffff00"
+                self.nodeCols[genus] = self.ColBrewColours[5] #"#ffff00"
                 
             elif self.HD.genus_to_phylum[genus] == "p__Tenericutes":
-                self.phylumDict["p__Tenericutes"] = self.ColBrewColours[6] #"#006600"
-                self.phylumCols[genus] = self.ColBrewColours[6] #"#0080ff"
+                self.nodeDict["p__Tenericutes"] = self.ColBrewColours[6] #"#006600"
+                self.nodeCols[genus] = self.ColBrewColours[6] #"#0080ff"
                 
             elif self.HD.genus_to_phylum[genus] == "p__Fusobacteria":
-                self.phylumDict["p__Fusobacteria"] = self.ColBrewColours[7] #"#00e0ff"
-                self.phylumCols[genus] = self.ColBrewColours[7] #"#00e0ff"
+                self.nodeDict["p__Fusobacteria"] = self.ColBrewColours[7] #"#00e0ff"
+                self.nodeCols[genus] = self.ColBrewColours[7] #"#00e0ff"
                 
             elif self.HD.genus_to_phylum[genus] == "p__Epsilonmicrobia": 
-                self.phylumDict["p__Epsilonmicrobia"] = self.ColBrewColours[8]
-                self.phylumCols[genus] = self.ColBrewColours[8] 
+                self.nodeDict["p__Epsilonmicrobia"] = self.ColBrewColours[8]
+                self.nodeCols[genus] = self.ColBrewColours[8] 
             
             elif self.HD.genus_to_phylum[genus] == "p__Proteobacteria":
-                self.phylumDict["p__Proteobacteria"] = "#01B5B5" # self.ColBrewColours[8] #"#ff1e00"
-                self.phylumCols[genus] = "#01B5B5" #self.ColBrewColours[8] #"#ff1e00"
+                self.nodeDict["p__Proteobacteria"] = "#01B5B5" # self.ColBrewColours[8] #"#ff1e00"
+                self.nodeCols[genus] = "#01B5B5" #self.ColBrewColours[8] #"#ff1e00"
             else:
                 print "%s not in a recognised phylum" % genus
-                
     
-    
-    def addGenusNode(self, genus, gid):
+    def addNode(self, node, gid):
         try:
-            self.nodes[genus][gid] = 1 
+            self.nodes[node][gid] = 1 
         except KeyError:
-            self.nodes[genus]= {gid:1}
+            self.nodes[node]= {gid:1}
             
-    def addEdge(self, genus1, genus2, transfer_group):
+    def addEdge(self, node1, node2, transfer_group):
         # make it a one side pyramid of data
-        if genus1 > genus2: 
+        if node1 > node2: 
             try:
-                self.edges[genus1][genus2][transfer_group] = 1
+                self.edges[node1][node2][transfer_group] = 1
             except KeyError:
                 try:
-                    self.edges[genus1][genus2] = {transfer_group:1}
+                    self.edges[node1][node2] = {transfer_group:1}
                 except KeyError:
-                    self.edges[genus1] = {genus2:{transfer_group:1}}
+                    self.edges[node1] = {node2:{transfer_group:1}}
         else:
             try:
-                self.edges[genus2][genus1][transfer_group] = 1
+                self.edges[node2][node1][transfer_group] = 1
             except KeyError:
                 try:
-                    self.edges[genus2][genus1] = {transfer_group:1}
+                    self.edges[node2][node1] = {transfer_group:1}
                 except KeyError:
-                    self.edges[genus2] = {genus1:{transfer_group:1}}
+                    self.edges[node2] = {node1:{transfer_group:1}}
     
-    def networkPlot(self, outfile, outfmt):
+    def networkPlot(self, outfile, outfmt, centrality_type, data_type, node_repulsion):
         # initialise network plot
         G = nx.Graph()
         
         # build network data
-        self.buildNetworkData(G)
+        self.buildNetworkData(G, data_type)
         
         # create figure
         fig = plt.figure(figsize=(30,15),dpi=300)
         plt.subplot(1,1,1,axisbg='white',autoscale_on=False, aspect='equal', xlim=[-0.2,1.2], ylim=[-0.2,1.2])
         
         # set position of nodes
-        pos= nx.spring_layout(G,k=0.15,iterations=500)
+        pos= nx.spring_layout(G,k=node_repulsion,iterations=500)
         
         nx.draw_networkx_nodes(G,
                                pos,
                                linewidths=0,
-                               node_size= self.genus_node_size_values,
-                               node_color = self.phylum_colour_values,
+                               node_size= self.node_size_values,
+                               node_color = self.node_colour_values,
                                alpha=0.7,
                                with_labels=True)
         # draw network labels
@@ -253,43 +330,149 @@ class NetworkPlot(object):
                         labelbottom='off',
                         labelleft='off')
         
-        # write to file
-        plt.savefig("%s" % (outfile),format="%s" % (outfmt), dpi = 300)
         
-    def buildNetworkData(self, G):
+        # calculate centrality
+        self.calculateCentrality(G, centrality_type, outfile)
+        
+        # adjacency matrix
+        self.createAdjacencyMatrix(G, outfile)
+        
+        # write to file
+        plt.savefig("%s.%s" % (outfile, outfmt),format="%s" % (outfmt), dpi = 300)
+        
+    def createAdjacencyMatrix(self, G, outfile):
+        
+        matrix = []
+        
+        # produce adjacency matrix
+        A = nx.to_dict_of_dicts(G)
+        
+        # nodes 
+        nodes = A.keys()
+        
+        # populate matrix with zeros
+        self.zeroArray(matrix, nodes)
+        
+        # loop through data and populate matrix
+        for i in range(len(nodes)):
+            for j in range(i, len(nodes)):
+                
+                # get nodes names 
+                node1 = nodes[i]
+                node2 = nodes[j]
+                
+                # calculate hit
+                try:
+                    hits = str(A[node1][node2]['capacity'])
+                except KeyError:
+                    hits = '0'
+                
+                # add to matrix
+                matrix[i][j] = hits
+        
+        # insert node names to top of array
+        nodes.insert(0, 'node')
+        matrix.insert(0, nodes)
+        
+        # insert nodes name to start of each array
+        for i in range(len(nodes)):
+            
+            # dont consider first element
+            if i != 0:
+                
+                # insert node name to array
+                matrix[i].insert(0, nodes[i])
+        
+        # matrix outfile
+        matrix_outfile = open("%s.adjacency_matrix.txt" % outfile, 'w')
+        
+        # write matrix to file
+        for i in matrix:
+            string_to_write = "\t".join(i)
+            matrix_outfile.write("%s\n" % string_to_write)
+
+    def zeroArray(self, matrix, array):
+        for i in range(len(array)):
+            zeros = []
+            for v in range(len(array)):
+                zeros.append('0')
+            matrix.append(zeros)
+    
+    def calculateCentrality(self, G, centrality_type, outfile):
+        if centrality_type == 'degree':
+            
+            # calculate degree centrality
+            centrality = nx.degree_centrality(G)
+            
+            # create output file
+            centrality_outfile = open("%s.centrality.csv" % outfile, 'w')
+            
+            # loop through nodes
+            for node in centrality.keys():
+                
+                # determine centrality
+                degree_centrality = centrality[node]
+                
+                # write to file
+                centrality_outfile.write("%s\t%s\n" % (node, degree_centrality))
+            
+            # close file
+            centrality_outfile.close()
+            
+        elif centrality_type == 'eigenvector':
+            
+            # calculate eigenvector centrality
+            eigenvector_centrality = nx.eigenvector_centrality(G)
+            
+            # create output file
+            eigenvector_centrality_outfile = open("%s.eigenvector_centrality.csv" % outfile, 'w')
+            
+            # loop through nodes
+            for node in centrality.keys():
+                
+                # determine centrality
+                eigen_centrality  = eigenvector_centrality[node]
+                
+                # write to file
+                eigenvector_centrality_outfile.write("%s\t%s\n" % (node, eigen_centrality))
+            
+            # close file
+            eigenvector_centrality_outfile.close()
+                
+    def buildNetworkData(self, G, data_type):
         """build data to be used to create network plot"""
 
         # get list of genus nodes
-        genus_nodes = self.nodes.keys()
+        nodes = self.nodes.keys()
         
         # add nodes 
-        G.add_nodes_from(genus_nodes)
+        G.add_nodes_from(nodes)
         
         # build node properties
-        for genus in genus_nodes:
+        for node in nodes:
             
             # Size nodes by no. of genomes
-            self.genus_node_size[genus] = len(self.nodes[genus])*100
+            self.node_size[node] = len(self.nodes[node])*100
             
             # colour nodes by phylum
-            self.colourNodesByPhylum(genus)
+            self.colourNodesWrapper(node, data_type)
             
         # build node data
-        self.genus_node_size_values = [self.genus_node_size.get(node) for node in G.nodes()]
-        self.phylum_colour_values   = [self.phylumCols.get(node) for node in G.nodes()]
+        self.node_size_values = [self.node_size.get(node) for node in G.nodes()]
+        self.node_colour_values   = [self.nodeCols.get(node) for node in G.nodes()]
         
         # build edge properties
-        for genus1 in self.edges.keys():
-            for genus2 in self.edges[genus1]:
+        for node1 in self.edges.keys():
+            for node2 in self.edges[node1]:
                 
-                G.add_edge(genus2,
-                           genus1, 
-                           capacity = len(self.edges[genus1][genus2]))
-                           #weight = len(self.edges[genus1][genus2]))
+                G.add_edge(node1,
+                           node2, 
+                           capacity = len(self.edges[node1][node2]), # aka edge width 
+                           weight = len(self.edges[node1][node2]))
                 
         # Edgewidth is # of transfer groups
         for (u,v,d) in G.edges(data=True):
-            self.edgewidth.append(int(str(d).split(':')[-1].split()[0].split('}')[0]))
+            self.edgewidth.append(math.sqrt(int(str(d).split(':')[-1].split()[0].split('}')[0])))
 
 ###############################################################################
 ###############################################################################
@@ -312,7 +495,10 @@ def doWork( args ):
                      args.transfer_group_file,
                      args.contam_pidsqids_file)
     NP.wrapper(args.outfile,
-               args.outfmt)
+               args.outfmt,
+               args.data_type,
+               args.centrality_type,
+               args.node_repulsion)
     
 ###############################################################################
 ###############################################################################
@@ -327,6 +513,9 @@ if __name__ == '__main__':
     parser.add_argument('-cpf','--contam_pidsqids_file', default=False, help="File containing a list of the contaminated pidsqids")
     parser.add_argument('-o','--outfile', default='network_plot', help="Output file name prefix.")
     parser.add_argument('-of','--outfmt', default='png', help="format of network plot. Default = png.")
+    parser.add_argument('-k','--node_repulsion', default=0.15, type=float, help="Set the node repulsion value 0-1. Default = 0.15.")
+    parser.add_argument('-dt','--data_type', default='all', help="Limit transfers to: inter, intra or both[default].")
+    parser.add_argument('-ct','--centrality_type', default='degree', help="Determine node centrality and write to file. degree (default) or eigenvector.")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

@@ -1,0 +1,101 @@
+ko:K00435	peroxiredoxin 
+ko:K07708	two-component system, NtrC family, nitrogen regulation sensor histidine kinase GlnL 
+ko:K07709	two-component system, NtrC family, sensor histidine kinase HydH 
+ko:K15344	secreted effector protein SseB
+ko:K15866	2-(1,2-epoxy-1,2-dihydrophenyl)acetyl-CoA isomerase 
+ko:K00434	L-ascorbate peroxidase 
+ko:K07702	two-component system, CitB family, response regulator CitB
+ko:K07703	two-component system, CitB family, response regulator DcuR
+ko:K07700	two-component system, CitB family, cit operon sensor histidine kinase CitA 
+ko:K07701	two-component system, CitB family, sensor histidine kinase DcuS 
+ko:K07706	two-component system, AgrA family, sensor histidine kinase AgrC 
+ko:K00437	 NiFe] hydrogenase large subunit 
+ko:K07704	two-component system, LytT family, sensor histidine kinase LytS 
+ko:K07705	two-component system, LytT family, response regulator LytT
+ko:K00436	NAD-reducing hydrogenase large subunit 
+ko:K00431	thyroid peroxidase 
+ko:K08068	UDP-N-acetylglucosamine 2-epimerase (hydrolysing) 
+ko:K00430	peroxidase 
+ko:K13828	hemoglobin subunit mu
+ko:K00433	non-heme chloroperoxidase 
+ko:K16423	(S)-3,5-dihydroxyphenylglycine transaminase 
+ko:K17958	cytochrome P450, family 36, subfamily A
+ko:K04548	guanine nucleotide-binding protein G(T) subunit gamma-T1
+ko:K08737	DNA mismatch repair protein MSH6
+ko:K17959	cytochrome P450, family 37
+ko:K17275	plastin-1
+ko:K16686	scaffold protein salvador
+ko:K13829	shikimate kinase / 3-dehydroquinate synthase 
+ko:K17748	benzylmalate synthase 
+ko:K07707	two-component system, AgrA family, response regulator AgrA
+ko:K12930	anthocyanidin 3-O-glucosyltransferase 
+ko:K13273	phosphomevalonate kinase 
+ko:K10645	E3 ubiquitin-protein ligase mind-bomb 
+ko:K17225	sulfane dehydrogenase subunit SoxC
+ko:K16681	protein crumbs
+ko:K10644	E3 ubiquitin-protein ligase CHFR 
+ko:K17950	L-cysteate sulfo-lyase 
+ko:K16877	2-furoyl-CoA dehydrogenase large subunit 
+ko:K17951	cytochrome P450, family 27, subfamily C
+ko:K08143	MFS transporter, SP family, solute carrier family 2 (facilitated glucose/fructose transporter), member 5
+ko:K10249	elongation of very long chain fatty acids protein 4 
+ko:K10248	elongation of very long chain fatty acids protein 3 
+ko:K10247	elongation of very long chain fatty acids protein 1 
+ko:K10246	fatty acid elongase 3 
+ko:K10245	fatty acid elongase 2 
+ko:K10244	elongation of very long chain fatty acids protein 5 
+ko:K10168	toll-like receptor 5
+ko:K10241	cellobiose transport system permease protein
+ko:K10240	cellobiose transport system substrate-binding protein
+ko:K08471	gustatory receptor
+ko:K08470	Ocular albinism type 1 protein
+ko:K08473	nematode chemoreceptor
+ko:K08472	mlo protein
+ko:K08475	two-component system, NtrC family, phosphoglycerate transport system sensor histidine kinase PgtB 
+ko:K08474	taste receptor type 2
+ko:K08477	outer membrane protease E 
+ko:K08476	two-component system, NtrC family, phosphoglycerate transport system response regulator PgtA
+ko:K08479	two-component system, OmpR family, clock-associated histidine kinase SasA 
+ko:K08478	phosphoglycerate transport regulatory protein PgtC
+ko:K17223	sulfur-oxidizing protein SoxX
+ko:K13604	bacteriochlorophyll C20 methyltransferase 
+ko:K16748	Bardet-Biedl syndrome 5 protein
+ko:K02613	ring-1,2-phenylacetyl-CoA epoxidase subunit PaaE
+ko:K02612	ring-1,2-phenylacetyl-CoA epoxidase subunit PaaD
+ko:K02611	ring-1,2-phenylacetyl-CoA epoxidase subunit PaaC 
+ko:K02610	ring-1,2-phenylacetyl-CoA epoxidase subunit PaaB
+ko:K02617	phenylacetic acid degradation protein
+ko:K02616	phenylacetic acid degradation operon negative regulatory protein
+ko:K02615	3-oxo-5,6-didehydrosuberyl-CoA/3-oxoadipyl-CoA thiolase 
+ko:K02614	acyl-CoA thioesterase 
+ko:K02969	small subunit ribosomal protein S20e
+ko:K02968	small subunit ribosomal protein S20
+ko:K02619	4-amino-4-deoxychorismate lyase 
+ko:K02618	oxepin-CoA hydrolase / 3-oxo-5,6-dehydrosuberyl-CoA semialdehyde dehydrogenase 
+ko:K13603	3-vinyl bacteriochlorophyllide hydratase 
+ko:K04750	PhnB protein
+ko:K04751	nitrogen regulatory protein P-II 1
+ko:K04752	nitrogen regulatory protein P-II 2
+ko:K04753	suppressor of ftsI
+ko:K04754	phospholipid-binding lipoprotein MlaA
+ko:K04755	ferredoxin, 2Fe-2S
+ko:K04756	alkyl hydroperoxide reductase subunit D
+ko:K04757	serine/threonine-protein kinase RsbW 
+ko:K04758	ferrous iron transport protein A
+ko:K04759	ferrous iron transport protein B
+ko:K15347	secreted effector protein SifA
+ko:K13601	bacteriochlorophyll C8 methyltransferase 
+ko:K15195	AF4/FMR2 family member 3
+ko:K12059	conjugal transfer pilus assembly protein TrbC
+ko:K16495	protocadherin gamma subfamily A
+ko:K16579	neuronal migration protein doublecortin
+ko:K16578	CLIP-associating protein 1/2
+ko:K08615	disintegrin and metalloproteinase domain-containing protein 30 
+ko:K08614	disintegrin and metalloproteinase domain-containing protein 28 
+ko:K08617	a disintegrin and metalloproteinase with thrombospondin motifs 1 
+ko:K08616	disintegrin and metalloproteinase domain-containing protein 33 
+ko:K08611	disintegrin and metalloproteinase domain-containing protein 24 
+ko:K08610	disintegrin and metalloproteinase domain-containing protein 21 
+ko:K08613	disintegrin and metalloproteinase domain-containing protein 26 
+ko:K08612	disintegrin and metalloproteinase domain-containing protein 25 
+ko:K15213	TATA box-binding protein-associated factor RNA polymerase I subunit B
