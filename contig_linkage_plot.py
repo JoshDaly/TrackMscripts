@@ -41,12 +41,6 @@ import numpy as np
 np.seterr(all='raise')
 import math as math
 import glob
-#import matplotlib as mpl
-#import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import axes3d, Axes3D
-#from pylab import plot,subplot,axis,stem,show,figure
-#from Bio import SeqIO
-#from Bio.Seq import Seq
 
 # local imports
 import trackm_file_parser as TFP

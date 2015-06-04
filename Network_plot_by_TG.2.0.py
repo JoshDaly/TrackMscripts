@@ -92,12 +92,12 @@ class NetworkPlot(object):
         self.colBrewColoursGradient         = cb2.maps[col_set_gradient].values()[0:10]
         
         
-    def wrapper(self, outfile, outfmt, data_type, centrality_type, node_repulsion):
+    def wrapper(self, outfile, outfmt, data_type, centrality_type, node_repulsion, node_labels):
         # ready hit data for network plot
         self.prepareHitData(data_type)
         
         # make network plot
-        self.networkPlot(outfile, outfmt, centrality_type, data_type, node_repulsion)
+        self.networkPlot(outfile, outfmt, centrality_type, data_type, node_repulsion, node_labels)
         
     def prepareHitData(self, data_type):
         # loop through pidsqids
@@ -290,7 +290,7 @@ class NetworkPlot(object):
                 except KeyError:
                     self.edges[node2] = {node1:{transfer_group:1}}
     
-    def networkPlot(self, outfile, outfmt, centrality_type, data_type, node_repulsion):
+    def networkPlot(self, outfile, outfmt, centrality_type, data_type, node_repulsion, node_labels):
         # initialise network plot
         G = nx.Graph()
         
@@ -304,18 +304,23 @@ class NetworkPlot(object):
         # set position of nodes
         pos= nx.spring_layout(G,k=node_repulsion,iterations=500)
         
+        # set arguments
+        node_labels = self.setNodeLabels(node_labels)
+        
+        # draw network nodes
         nx.draw_networkx_nodes(G,
                                pos,
                                linewidths=0,
                                node_size= self.node_size_values,
                                node_color = self.node_colour_values,
-                               alpha=0.7,
-                               with_labels=True)
+                               alpha=0.7)
+        
         # draw network labels
-        nx.draw_networkx_labels(G,
-                                pos,
-                                font_size=12,
-                                font_color= 'black')
+        if node_labels:
+            nx.draw_networkx_labels(G,
+                                    pos,
+                                    font_size=12,
+                                    font_color= 'black')
         # draw network edges
         nx.draw_networkx_edges(G,
                                pos,
@@ -340,6 +345,12 @@ class NetworkPlot(object):
         # write to file
         plt.savefig("%s.%s" % (outfile, outfmt),format="%s" % (outfmt), dpi = 300)
         
+    def setNodeLabels(self, node_labels):
+        if node_labels == 'True':
+            return True
+        elif node_labels == 'False':
+            return False
+            
     def createAdjacencyMatrix(self, G, outfile):
         
         matrix = []
@@ -399,45 +410,45 @@ class NetworkPlot(object):
             matrix.append(zeros)
     
     def calculateCentrality(self, G, centrality_type, outfile):
-        if centrality_type == 'degree':
+        '''Degree centrality'''
             
-            # calculate degree centrality
-            centrality = nx.degree_centrality(G)
+        # calculate degree centrality
+        centrality = nx.degree_centrality(G)
+        
+        # create output file
+        centrality_outfile = open("%s.centrality.csv" % outfile, 'w')
+        
+        # loop through nodes
+        for node in centrality.keys():
             
-            # create output file
-            centrality_outfile = open("%s.centrality.csv" % outfile, 'w')
+            # determine centrality
+            degree_centrality = centrality[node]
             
-            # loop through nodes
-            for node in centrality.keys():
-                
-                # determine centrality
-                degree_centrality = centrality[node]
-                
-                # write to file
-                centrality_outfile.write("%s\t%s\n" % (node, degree_centrality))
+            # write to file
+            centrality_outfile.write("%s\t%s\n" % (node, degree_centrality))
+        
+        # close file
+        centrality_outfile.close()
             
-            # close file
-            centrality_outfile.close()
+        '''Eigenvector centrality'''
             
-        elif centrality_type == 'eigenvector':
+        # calculate eigenvector centrality
+        eigenvector_centrality = nx.eigenvector_centrality(G)
+        
+        # create output file
+        eigenvector_centrality_outfile = open("%s.eigenvector_centrality.csv" % outfile, 'w')
+        
+        # loop through nodes
+        for node in centrality.keys():
             
-            # calculate eigenvector centrality
-            eigenvector_centrality = nx.eigenvector_centrality(G)
+            # determine centrality
+            eigen_centrality  = eigenvector_centrality[node]
             
-            # create output file
-            eigenvector_centrality_outfile = open("%s.eigenvector_centrality.csv" % outfile, 'w')
-            
-            # loop through nodes
-            for node in centrality.keys():
-                
-                # determine centrality
-                eigen_centrality  = eigenvector_centrality[node]
-                
-                # write to file
-                eigenvector_centrality_outfile.write("%s\t%s\n" % (node, eigen_centrality))
-            
-            # close file
-            eigenvector_centrality_outfile.close()
+            # write to file
+            eigenvector_centrality_outfile.write("%s\t%s\n" % (node, eigen_centrality))
+        
+        # close file
+        eigenvector_centrality_outfile.close()
                 
     def buildNetworkData(self, G, data_type):
         """build data to be used to create network plot"""
@@ -468,7 +479,7 @@ class NetworkPlot(object):
                 G.add_edge(node1,
                            node2, 
                            capacity = len(self.edges[node1][node2]), # aka edge width 
-                           weight = len(self.edges[node1][node2]))
+                           weight = len(self.edges[node1][node2]))   # weights edges according to num TGs
                 
         # Edgewidth is # of transfer groups
         for (u,v,d) in G.edges(data=True):
@@ -498,7 +509,8 @@ def doWork( args ):
                args.outfmt,
                args.data_type,
                args.centrality_type,
-               args.node_repulsion)
+               args.node_repulsion,
+               args.node_labels)
     
 ###############################################################################
 ###############################################################################
@@ -508,14 +520,15 @@ def doWork( args ):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('hit_data', help="File containing hit data")
-    parser.add_argument('transfer_group_file', help="File containing transfer groups")
-    parser.add_argument('-cpf','--contam_pidsqids_file', default=False, help="File containing a list of the contaminated pidsqids")
+    parser.add_argument('hit_data', help="File containing hit data.")
+    parser.add_argument('transfer_group_file', help="File containing transfer groups.")
+    parser.add_argument('-cpf','--contam_pidsqids_file', default=False, help="File containing a list of the contaminated pidsqids to remove from network.")
     parser.add_argument('-o','--outfile', default='network_plot', help="Output file name prefix.")
-    parser.add_argument('-of','--outfmt', default='png', help="format of network plot. Default = png.")
+    parser.add_argument('-of','--outfmt', default='png', help="format of network plot i.e. png (Default).")
     parser.add_argument('-k','--node_repulsion', default=0.15, type=float, help="Set the node repulsion value 0-1. Default = 0.15.")
-    parser.add_argument('-dt','--data_type', default='all', help="Limit transfers to: inter, intra or both[default].")
+    parser.add_argument('-dt','--data_type', default='both', help="Limit transfers to: inter, intra habitat, or both(default).")
     parser.add_argument('-ct','--centrality_type', default='degree', help="Determine node centrality and write to file. degree (default) or eigenvector.")
+    parser.add_argument('-nl','--node_labels', default=True, help="Set node labels to be True (default) or False.")
     #parser.add_argument('input_file2', help="gut_img_ids")
     #parser.add_argument('input_file3', help="oral_img_ids")
     #parser.add_argument('input_file4', help="ids_present_gut_and_oral.csv")

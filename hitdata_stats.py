@@ -39,8 +39,6 @@ from subprocess import Popen, PIPE
 import os
 import errno
 import matplotlib.pyplot as plt
-#import numpy as np
-#np.seterr(all='raise')
 
 # local imports
 import trackm_file_parser as TFP
@@ -96,6 +94,9 @@ class HitDataStats(object):
         
         elif type == 'PhiX':
             self.phixStats()
+            
+        elif type == 'tg_stats':
+            self.transferGroupStats()
     
     def createInteractionMatrix(self, outfile, outfmt, contam_pidsqids, type, data_type):
         # determine contaminated transfer groups
@@ -507,9 +508,54 @@ class HitDataStats(object):
                 genus[genus2] = 1
                 seq_centre[sequence_centre1] = 1
                 seq_centre[sequence_centre2] = 1
-                
-        for centre in seq_centre.keys():
-            print centre
+        
+        # print each genus
+        for genus in genus.keys():
+            print genus
+        
+        # print sequencing centre
+        #for centre in seq_centre.keys():
+        #    print centre
+        
+    def transferGroupStats(self):
+        tg_flux = {}
+        
+        for pidsqid in self.HD.hit_data.keys():
+            transfer_group = self.HD.hit_data[pidsqid][0]
+            genus1              = self.HD.genus[pidsqid][0] 
+            genus2              = self.HD.genus[pidsqid][1]
+            
+            try:
+                if pidsqid not in self.CP.contam_pidsqids:
+                    if genus1 > genus2:
+                        self.addTG(transfer_group, genus1, genus2, tg_flux)
+                    else:
+                        self.addTG(transfer_group, genus2, genus1, tg_flux)
+            except AttributeError:
+                if genus1 > genus2:
+                    self.addTG(transfer_group, genus1, genus2, tg_flux)
+                else:
+                    self.addTG(transfer_group, genus2, genus1, tg_flux)
+        
+        print tg_flux['4']
+        
+        #for tg in tg_flux.keys():
+        #    count = 0 
+        #    for genus1 in tg_flux[tg]:
+        #        count += len(tg_flux[tg][genus1])
+        #    print "%s %d" % (tg, count)
+                    
+    def addTG(self, tg, genus1, genus2, dictionary):
+        try:
+            dictionary[tg][genus1][genus2] = 1
+        except KeyError:
+            try:
+                dictionary[tg][genus1] = {genus2:1}
+            except KeyError:
+                dictionary[tg] = {genus1:{genus2:1}}
+    
+    
+    
         
 ###############################################################################
 ###############################################################################
@@ -557,7 +603,7 @@ if __name__ == '__main__':
     parser.add_argument('-tf','--taxon_file', default=False, help="")
     parser.add_argument('-tg','--transfer_groups_file', help="")
     parser.add_argument('-dt','--data_type', default='transfer_group', help="transfer_group[default] or pidsqid")
-    parser.add_argument('-t','--type', default = 'phylum_hit_frequency', help="Type of summary table to create. phylum_interactions, genus_interactions, habitat_hit_frequency, genus_hit_frequency, phylum_hit_frequency(default), genome_status_hit_frequency.")
+    parser.add_argument('-t','--type', default = 'phylum_hit_frequency', help="Type of summary table to create. phylum_interactions, genus_interactions, habitat_hit_frequency, genus_hit_frequency, phylum_hit_frequency(default), genome_status_hit_frequency, PhiX.")
     parser.add_argument('-cp','--contaminted_pidsqids', default=False, help="Remove contaminated pidsqids file. Default=False")
     parser.add_argument('-o','--outfile', default='hitdata_plot', help="Output file name prefix.")
     parser.add_argument('-of','--outfmt', default='png', help="format of network plot. Default = png.")
